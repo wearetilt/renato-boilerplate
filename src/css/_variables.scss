@@ -1,0 +1,135 @@
+/* breakpoints */
+$breakpoints: (
+  xsmall: 20rem, /* 320px */
+  small: 36rem,  /* 576px */
+  medium: 48rem, /* 768px */
+  large: 64rem,  /* 1024px */
+  xlarge: 75rem  /* 1200px */
+);
+
+@function breakpoint($breakpoint) {
+  @return map-get($breakpoints, $breakpoint);
+}
+
+:root {
+  /* brand colors */
+  --brand-pink: #ee087d;
+  --brand-yellow: #fac736;
+  --brand-green: #20a188;
+  --deloitte-green: #86bc25;
+  --tone-mid-gray: #cccccc;
+
+  /* grid variabsles */
+  --grid-gutter: 1rem;
+  --grid-width: calc(100% - 2rem);
+
+  /* font sizes */
+  --font-xsmall: 12px;
+  --font-small: 14px;
+
+  /* block spacing */
+  --spacing-medium: 3rem;
+  --spacing-large: 5rem;
+
+  /* animation */
+  --duration: 15s;
+  --transition-dur: 495ms;
+  --transition-ease: cubic-bezier(0, .5, .5, 1);
+
+  /* intro mask */
+  --mask-size: 0px;
+  --mask-opacity: 0;
+
+  --sticky-top: 160px;
+
+  /* shapes */
+  --blob-radii: 78% 63% 62% 73%;
+  --blob-radii-1: 63% 76% 58% 63%;
+  --blob-radii-2: 59% 82% 68% 83%;
+  --blob-radii-3: 69% 72% 56% 71%;
+
+  @media screen and (min-width: 1200px) {
+    /* grid variabsles */
+    --grid-gutter: 2.5rem;
+    --grid-width: calc(1200px - 4rem);
+  }
+}
+
+// Title animations
+@keyframes slide-in {
+  to {
+    opacity: 1;
+    transform: translateX(0)
+  }
+}
+
+@keyframes slide-out-left {
+  to {
+    opacity: 0;
+    transform: translateX(-360px)
+  }
+}
+
+@keyframes slide-out-right {
+  to {
+    opacity: 0;
+    transform: translateX(360px)
+  }
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+// Blob morphing animations
+@keyframes morph {
+  0% {
+    border-radius: var(--blob-radii);
+    transform: rotate(0)
+  }
+  28% {
+    border-radius: var(--blob-radii-1);
+    /* transform: rotate(15deg); */
+  }
+  56% {
+    border-radius: var(--blob-radii-2);
+    /* transform: rotate(-2deg); */
+  }
+  84% {
+    border-radius: var(--blob-radii-3);
+    /* transform: rotate(8deg); */
+  }
+  100% {
+    border-radius: var(--blob-radii);
+  }
+}
+
+@keyframes morph-alt {
+  0% {
+    border-radius: var(--blob-radii-3);
+    transform: rotate(0)
+  }
+  28% {
+    border-radius: var(--blob-radii-1);
+    /* transform: rotate(15deg); */
+  }
+  56% {
+    border-radius: var(--blob-radii);
+    /* transform: rotate(-2deg); */
+  }
+  84% {
+    border-radius: var(--blob-radii-2);
+    /* transform: rotate(8deg); */
+  }
+  100% {
+    border-radius: var(--blob-radii-3);
+  }
+}

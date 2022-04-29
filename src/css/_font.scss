@@ -1,0 +1,24 @@
+$fallbacks: Helvetica Neue, Helvetica, Arial, sans-serif;
+
+@mixin font-opensans($weight: 400, $style: normal) {
+  font-family: 'Open Sans', $fallbacks;
+  font-style: $style;
+  font-weight: $weight;
+}
+
+// https://www.madebymike.com.au/writing/fluid-type-calc-examples/
+  // font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));
+@mixin font-size($min: '1rem', $max: '4rem') {
+  font-size: clamp(
+    $min,
+    calc($min +
+      (strip-unit($max) - strip-unit($min)) *
+      ((100vw - 320px) / (1200 - 320))
+    ),
+    $max
+  );
+
+  @media screen and (min-width: 1200px) {
+    font-size: $max;
+  }
+}

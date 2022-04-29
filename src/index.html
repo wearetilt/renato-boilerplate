@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <header>
+      <a class="js-skip-trigger header__skip" href="#main">
+        Skip to content
+      </a>
+      <div class="header__logo">
+        <img src="<%=require('./assets/avatar.png')%>" alt="" width="60" height="60" />
+        <p>
+          The Artistry of<br>
+          <b>Allyship</b>
+        </p>
+      </div>
+      <nav class="js-nav nav">
+        <ul class="nav__list">
+          <li>
+            <a class="js-nav-link nav__link is-active" href="#intro" aria-label="Introduction">
+              <span class="nav__marker"></span>
+              <span class="nav__label" role="presentation">Introduction</span>
+            </a>
+          </li>
+          <li>
+            <a class="js-nav-link nav__link" href="#getting-started" aria-label="Getting Started">
+              <span class="nav__marker"></span>
+              <span class="nav__label" role="presentation">Getting Started</span>
+            </a>
+          </li>
+          <li>
+            <a class="js-nav-link nav__link" href="#capabilities" aria-label="Allyship Capabilities">
+              <span class="nav__marker"></span>
+              <span class="nav__label" role="presentation">Capabilities</span>
+            </a>
+          </li>
+          <li>
+            <a class="js-nav-link nav__link" href="#studio-sessions" aria-label="Studio Sessions">
+              <span class="nav__marker"></span>
+              <span class="nav__label" role="presentation">Studio Sessions</span>
+            </a>
+          </li>
+          <li>
+            <a class="js-nav-link nav__link" href="#challenges" aria-label="Allyship Challenges">
+              <span class="nav__marker"></span>
+              <span class="nav__label" role="presentation">Challenges</span>
+            </a>
+          </li>
+          <li>
+            <a class="js-nav-link nav__link" href="#gallery" aria-label="The Gallery">
+              <span class="nav__marker"></span>
+              <span class="nav__label" role="presentation">The Gallery</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main" class="js-scroll-in">
+      <!-- Introduction -->
+      <section id="intro" class="js-intro intro section">
+        <div class="js-intro-background intro__background"></div>
+        <div class="js-intro-instruct intro__instruct" role="presentation">Scroll down</div>
+        <div class="intro__body">
+          <div class="js-intro-section content-block content-block--wide">
+            <h1 class="js-scroll-item title anim-in" data-title-type="split">
+              <span class="title__left"><b>Allyship</b> like art is not linear</span>
+              <span class="title__right ut-indent-25">and not monochromatic.</span>
+            </h1>
+          </div>
+
+          <div class="js-intro-section content-block">
+            <h2 class="js-scroll-item title">
+              <b>Allyship</b> is fluid, with ebbs and flows, and looks different for everyone and every situation-
+            </h2>
+          </div>
+
+          <div class="js-intro-section content-block">
+            <h2 class="js-scroll-item title">
+              making each person's journey as an ally a beautiful work of art.
+            </h2>
+          </div>
+
+          <div class="js-intro-section content-block">
+            <h2 class="js-scroll-item title">
+              While there is no one way to put allyship into action, it is everyone's responsibility. The year of allyship is dedicated to this discovery.
+            </h2>
+          </div>
+
+          <div class="js-intro-section content-block content-block--wide" data-video="full">
+            <h2 class="js-scroll-item title title--extra ut-text-left" data-title-type="split">
+              <span class="title__left">Welcome to the</span>
+              <span class="title__right ut-indent-13"><b>Artistry of Allyship!</b></span>
+            </h2>
+          </div>
+
+          <div class="js-intro-section js-list-section content-block content-block--start">
+            <div class="content-block__inner">
+              <h2 class="js-scroll-item title ut-text-left">
+                During this experience,<br />
+                <span class="ut-indent-32"><b>you will discover...</b></span>
+              </h2>
+              <ul class="js-list list">
+                <li class="list__item">What allyship is and is not</li>
+                <li class="list__item">How to identify inequity</li>
+                <li class="list__item">Strategies for sharing power</li>
+                <li class="list__item">Techniques to respectfully intervene</li>
+                <li class="list__item">Approaches to connect through conversation</li>
+                <li class="list__item">Tips to overcome allyship stumbling blocks</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="content-block content-block--wide" data-video="fade">
+            <div class="js-intro-video video">
+              <div class="video__poster">
+                <div class="video__content">
+                  <h3 class="video__title">Video Title</h3>
+                  <p class="video__description">Art paints a picture of deeper understanding. Allyship connects us with others.</p>
+                  <span class="video__play"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Getting Started -->
+      <section id="getting-started" class="js-getting-started section gettting-started">
+        <!-- <div class="getting-started__background">
+          <svg viewBox="0 0 1920 1080">
+            <mask id="getting-started-mask">
+              <rect fill="white" width="1920" height="1080"/>
+              <path fill="black" d="M835.38,703.77c-64.57,66.04-131.38,88.23-225.36,82.8-100.86-5.83-168.66-80.01-184.38-153.77-20.64-96.8-12.97-275.74,150.36-329.8,139-46,273.96,78.42,300.36,164.2,27.64,89.8,9.64,184.8-40.98,236.57Z" />
+              <path fill="black" d="M1332.58,778.43c-90.08,20.37-158.24,2.71-234.19-52.9-81.51-59.68-98.14-158.79-71.28-229.26,35.25-92.48,138.89-238.56,305.39-195.22,141.69,36.88,187.42,214.65,162.99,301.02-25.57,90.41-92.29,160.39-162.91,176.36Z" />
+            </mask>
+            <rect fill="black" width="1920" height="1080" mask="url(#getting-started-mask)" />
+          </svg>
+        </div> -->
+        <div class="content-block content-block--wide">
+          <h2 class="js-scroll-item title" data-title-type="split">
+            <span class="title__left ut-indent-neg-22">So let's</span>
+            <span class="title__right ut-indent-13"><b>get started...</b></span>
+          </h2>
+        </div>
+        <div class="js-parallax-section content-block content-block--wide content-block--start">
+          <div class="content-block__inner">
+            <p class="js-parallax-fixed-content section__intro">
+              Click below to discover our allyship capabilities or take a quick survey about your experience:
+            </p>
+            <div class="content-columns" data-columns="2">
+              <div class="js-parallax-item content-columns__item">
+                <p>Read about the <b>Artistry of Allyship</b> and our allyship capabilities.</p>
+                <a class="content-columns__link" href="" target="_blank" rel="noopener noreferrer nofollow">Download PDF</a>
+              </div>
+              <div class="js-parallax-item content-columns__item">
+                <p>Take this quick survey on allyship actions you’ve experienced at Deloitte.</p>
+                <a class="content-columns__link" href="" target="_blank" rel="noopener noreferrer nofollow">Take survey</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content-block content-block--wide content-block--center">
+          <h2 class="js-scroll-item title" data-title-type="split">
+            <span class="title__left ut-indent-neg-50">Allyship is a personal</span>
+            <span class="title__right ut-indent-13">responsibility and</span>
+            <span class="title__fade ut-indent-neg-22"><b>life-long journey.</b></span>
+          </h2>
+          <div class="js-staggered-section section__text">
+            <p>
+              It is the practice of empathizing with the experiences of systemically-disadvantaged groups, looking out for biases, and actively using a voice and power to advance equity.
+            </p>
+            <p>
+              Allyship is not a destination or a self-assessed title; others must see an individual as an ally.
+            </p>
+            <p>
+              Discover what it means to practice allyship, and consider how comfortable you are with these allyship behaviors.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="content-block content-block--wide content-block--center"></div>
+      </section>
+    </main>
+    <footer class="footer">
+      <img class="footer__logo" src="<%=require('./assets/deloitte.svg')%>" alt="Deloitte logo" />
+      <p class="footer__text">Copyright © 2022 Deloitte Development LLC. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

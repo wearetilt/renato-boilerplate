@@ -1,0 +1,53 @@
+.title {
+  @include title;
+  width: 100%;
+  max-width: 820px;
+  text-align: center;
+}
+
+.title--extra {
+  @include title-extra;
+  max-width: 860px;
+}
+
+.title:not([data-title-type="split"]) {
+  opacity: 0;
+  margin: 80px;
+}
+
+.title__left,
+.title__right {
+  display: block;
+
+  .title.anim-in & {
+    opacity: 0;
+    animation: slide-in 400ms both;
+  }
+}
+
+.title__left {
+  animation: slide-out-left 400ms both;
+
+  .title.anim-in & {
+    transform: translateX(-360px);
+  }
+}
+
+.title__right {
+  animation: slide-out-right 400ms both;
+
+  .title.anim-in & {
+    transform: translateX(360px);
+    animation: slide-in 400ms 100ms both;
+  }
+}
+
+.title__fade {
+  display: block;
+  animation: fade-out 400ms both;
+
+  .title.anim-in & {
+    opacity: 0;
+    animation: fade-in 400ms 200ms both;
+  }
+}

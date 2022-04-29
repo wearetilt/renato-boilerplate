@@ -1,0 +1,42 @@
+.header__skip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: rem(12);
+  color: black;
+  background-color: white;
+  border: 1px solid color(wwod-gold);
+  text-decoration: none;
+  text-transform: uppercase;
+  transform: translateY(-110%);
+  z-index: 15;
+}
+
+.header__skip:focus-visible {
+  transform: translateY(0);
+}
+
+.header__logo {
+  @include font-opensans(300, italic);
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 32px;
+  align-items: center;
+
+  img {
+    margin-right: 12px;
+  }
+
+  p {
+    font-size: 18px;
+    letter-spacing: -0.36px;
+    line-height: 1.1;
+  }
+
+  b {
+    @include font-opensans(800, italic);
+    font-size: 20px;
+  }
+}

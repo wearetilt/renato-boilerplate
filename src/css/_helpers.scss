@@ -1,0 +1,11 @@
+@mixin bg-img($size: cover) {
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: $size;
+}
+
+@mixin transition($props, $ease: var(--transition-ease), $duration: var(--transition-dur)) {
+  transition-duration: $duration;
+  transition-property: $props;
+  transition-timing-function: $ease;
+}
