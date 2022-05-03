@@ -47,12 +47,12 @@ To help improve maintainability SCSS is broken into separate 'component' partial
 ##### States
 Used to indicate the state of a component, scoped to component
 
-_Pattern_
+*Pattern*
 ```scss
 .is-stateType
 ```
 
-_Examples_
+*Examples*
 ```scss
 .modal {
 	&.is-active {}
@@ -70,12 +70,12 @@ _Examples_
 ##### Utility Classes
 These are one purpose classes
 
-_Pattern_
+*Pattern*
 ```scss
 .ut-utilityName
 ```
 
-_Examples_
+*Examples*
 ```scss
 .ut-alignCenter
 .ut-inlineBlock
