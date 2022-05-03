@@ -1,8 +1,8 @@
-node_modules
-
+## Compiled Assets ##
 dist
 
-## Yarn things ##
+## Package things ##
+node_modules
 yarn-error.log
 
 ## Misc ##
