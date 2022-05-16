@@ -1,4 +1,5 @@
 import { setOpacity } from "../helpers/scrollHelpers"
+import { getStyleAttribute } from '../helpers/cssHelpers'
 
 export default class ParallaxSection {
   constructor(wrap) {
@@ -6,22 +7,24 @@ export default class ParallaxSection {
     this.innerEl = this.wrap.firstElementChild
     this.fixedContent = this.wrap.querySelector('.js-parallax-fixed-content')
     this.items = this.wrap.querySelectorAll('.js-parallax-item')
-    this.innerHeight = window.innerHeight
-    this.topOffset = this.innerHeight * 0.15
-    this.midOffset = this.innerHeight * 0.5
+    this.topOffset = window.innerHeight * 0.15
+    this.midOffset = window.innerHeight * 0.5
 
     this.init()
-    window.addEventListener('scroll', this.handleScroll)
+    window.addEventListener('resize', this.init)
   }
 
   init = () => {
-    this.wrap.style.height = `${this.wrap.offsetHeight + 400}px`
-    this.innerEl.style.height = `100vh`
+    let isDesktop = window.innerWidth >= 1024
+    this.wrap.style.height = isDesktop ? `${this.wrap.offsetHeight + (window.innerHeight / 2)}px` : 'auto'
+    this.innerEl.style.height = isDesktop ? `100vh` : 'auto'
     this.fixedContent.style.opacity = 0
     this.items.forEach(item => {
       item.style.opacity = 0
-      item.setAttribute('data-top', item.computedStyleMap().get('margin-top').value)
+      item.setAttribute('data-top', getStyleAttribute(item, 'marginTop'))
     })
+
+    window.addEventListener('scroll', this.handleScroll)
   }
 
   handleItemScroll = (item, speedOffset = 1) => {
@@ -31,7 +34,8 @@ export default class ParallaxSection {
     let margin
 
     if (wrapTop < this.topOffset) {
-      let dist = window.scrollY - (this.wrap.offsetTop - this.topOffset)
+      let dist = window.scrollY - this.wrap.parentElement.offsetTop - this.wrap.offsetTop + - this.topOffset
+
       let percentage = (dist / item.dataset.top) * 100 * speedOffset
       margin = item.dataset.top - (item.dataset.top / 100) * percentage
 

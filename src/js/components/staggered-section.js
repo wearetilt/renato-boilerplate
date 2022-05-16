@@ -1,4 +1,5 @@
 import { setOpacity, setMargin } from "../helpers/scrollHelpers"
+import { getStyleAttribute } from "../helpers/cssHelpers"
 
 export default class StaggeredSection {
   constructor(wrap) {
@@ -12,7 +13,7 @@ export default class StaggeredSection {
   init = () => {
     this.paragraphs.forEach(p => {
       p.style.opacity = 0
-      p.setAttribute('data-top', p.computedStyleMap().get('margin-top').value)
+      p.setAttribute('data-top', getStyleAttribute(p, 'marginTop'))
     })
   }
 

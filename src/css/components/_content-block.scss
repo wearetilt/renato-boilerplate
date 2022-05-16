@@ -8,9 +8,15 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+
+  @media screen and (max-width: 1023px) {
+    min-height: 100vh;
+  }
 
   @media screen and (min-width: 1200px) {
     padding: var(--spacing-medium) 0;
+    overflow-x: hidden;
   }
 }
 
@@ -19,6 +25,10 @@
     min-height: 100vh;
     padding: var(--spacing-large) 0;
   }
+}
+
+.content-block--sticky {
+  overflow: initial;
 }
 
 .content-block--start {
@@ -34,11 +44,15 @@
 
 .content-block__inner {
   display: flex;
-  position: sticky;
-  top: var(--sticky-top);
-  left: 0;
+  width: 100%;
   flex-wrap: wrap;
   align-content: flex-start;
   align-items: flex-start;
   justify-content: center;
+
+  @media screen and (min-width: 1024px) {
+    position: sticky;
+    top: var(--sticky-top);
+    left: 0;
+  }
 }

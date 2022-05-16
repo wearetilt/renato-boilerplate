@@ -1,9 +1,9 @@
 const path = require("path")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
-const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 const globImporter = require("node-sass-glob-importer")
 const { WebpackManifestPlugin } = require("webpack-manifest-plugin")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
+const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin')
 
 module.exports = {
   entry: {
@@ -49,7 +49,15 @@ module.exports = {
         exclude: /node_modules/,
         type: 'asset/resource',
         generator: {
-          filename: 'assets/[name][ext]',
+          filename: 'assets/images/[name][ext]',
+        },
+      },
+      {
+        test: /\.(mp4|webm)$/,
+        exclude: /node_modules/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/media/[name][ext]',
         },
       },
     ]
@@ -59,25 +67,32 @@ module.exports = {
       template: 'src/index.html',
       inject: "body",
     }),
-    // new SVGSpritemapPlugin({
-    //   src: path.resolve(__dirname, "./assets/sprites/svgs/*.svg"),
-    //   filename: "sprite.svg",
-    //   prefix: "",
-    //   generate: [{
-    //     title: false,
-    //     symbol: false,
-    //     use: true,
-    //   }],
-    //   svgo: {
-    //     plugins: [{
-    //       removeUselessDefs: false,
-    //       removeUnknownsAndDefaults: false,
-    //     }]
-    //   },
-    //   styles: "./assets/sprites/tmpl.scss",
-    //   svg4everybody: true,
-    //   deleteChunk: false,
-    // }),
+    new SVGSpritemapPlugin(path.resolve(__dirname, "./src/assets/sprites/svgs/*.svg"), {
+      output: {
+        filename: "assets/sprites/sprite.svg",
+        svgo: {
+          plugins: [{
+            name: "removeUselessDefs",
+            active: false,
+          }, {
+            name: "removeUnknownsAndDefaults",
+            active: false,
+          }]
+        },
+        svg4everybody: true,
+      },
+      sprite: {
+        prefix: "",
+        generate: {
+          title: false,
+          symbol: true,
+          use: true,
+        },
+      },
+      styles: {
+        filename: "./src/assets/sprites/tmpl.scss"
+      }
+    }),
     new WebpackManifestPlugin({
       writeToFileEmit: true,
       seed: {}

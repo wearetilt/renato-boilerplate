@@ -1,26 +1,22 @@
-.video {
+@import 'plyr/dist/plyr.css';
+
+.video__placeholder {
+  @include aspect-ratio(56%);
   position: relative;
-  aspect-ratio: 16/9;
   width: 1024px;
-  max-height: calc(100vh - 160px);
   margin: auto;
   color: white;
   border: none;
-  border-radius: 16px;
   opacity: 0;
   overflow: hidden;
 }
 
 .video__poster {
   @include bg-img;
-  display: flex;
-  width: 100%;
-  height: 100%;
-  margin: auto;
-  background-image: url('../assets/poster-placeholder.avif');
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  position: relative;
+  padding-top: 56.25%;
+  background-image: url('../assets/images/poster.gif');
+  border-radius: 16px;
   cursor: pointer;
 }
 
@@ -36,11 +32,16 @@
 
 .video__content {
   position: relative;
+  text-align: center;
   z-index: 1;
+
+  @media screen and (min-width: 1024px) {
+   @include absolute-center;
+  }
 }
 
 .video__title {
-  @include title-mid;
+  @include title-small;
   width: 100%;
   margin-bottom: 1rem;
 }
@@ -52,22 +53,98 @@
   margin: 0 auto 1rem;
 }
 
-.video__play {
+.video__play,
+.video__play--mobile {
+  @include transition(background-color);
   display: flex;
-  right: 2rem;
-  bottom: 2rem;
   width: 34px;
   height: 34px;
   margin: auto;
-  background: white;
+  background-color: white;
   border-radius: 50%;
 }
 
-.video__play::after {
+.video__play::after,
+.video__play--mobile::after {
+  @include transition(border-left-color);
   content: "";
   display: flex;
   margin: 10px 12px;
   border-left: 14px solid black;
   border-top: 7px solid transparent;
   border-bottom: 7px solid transparent;
+}
+
+.video__play:hover,
+.video__play--mobile:hover {
+  background-color: var(--deloitte-green);
+
+  &::after {
+    border-left-color: white;
+  }
+}
+
+.video__modal {
+  @include transition((opacity, transform, visibility));
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(black, 0.9);
+  opacity: 0;
+  transform: scale(0.8);
+  visibility: hidden;
+  z-index: 10;
+}
+
+.video__play {
+  @media screen and (max-width: 1023px) {
+    display: none;
+  }
+}
+
+
+.video__play--mobile {
+  @include absolute-center;
+  z-index: 1;
+
+  @media screen and (min-width: 1024px) {
+    display: none;
+  }
+}
+
+.video__modal[open] {
+  opacity: 1;
+  transform: scale(1);
+  visibility: visible;
+}
+
+.video__modal__inner {
+  position: relative;
+  width: var(--grid-width);
+  padding-bottom: calc(9 / 16 * 100%);
+  margin: auto;
+}
+
+.video__modal__dismiss {
+  @include font-opensans(600);
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  padding: 0;
+  color: white;
+  font-size: 32px;
+  line-height: 1;
+  background: none;
+  border: none;
+}
+
+.video,
+.plyr {
+  --plyr-color-main: var(--deloitte-green);
+  @include absolute-center;
+  width: 100%;
+  height: 100%;
 }

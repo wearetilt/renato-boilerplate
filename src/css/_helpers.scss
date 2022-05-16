@@ -9,3 +9,27 @@
   transition-property: $props;
   transition-timing-function: $ease;
 }
+
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin aspect-ratio($aspect: 100%) {
+  // Fallback (current, using padding hack)
+  @supports not (aspect-ratio) {
+    &::before {
+      content: "";
+      float: left;
+      padding-top: $aspect;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+  }
+}

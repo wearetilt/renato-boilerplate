@@ -1,3 +1,5 @@
+import { getStyleAttribute } from '../helpers/cssHelpers'
+
 export default class SplitList {
   constructor(wrap) {
     this.wrap = wrap
@@ -5,10 +7,9 @@ export default class SplitList {
     this.list = this.wrap.querySelector('.js-list')
     this.listItems = this.list.querySelectorAll('li')
 
-    this.innerHeight = window.innerHeight
     this.listTop = this.list.offsetTop
-    this.fixedPos = this.innerEl.computedStyleMap().get('top').value
-    this.sectionSpacing = this.wrap.computedStyleMap().get('padding-top').value
+    this.fixedPos = getStyleAttribute(this.innerEl, 'top')
+    this.sectionSpacing = getStyleAttribute(this.wrap, 'paddingTop')
     this.offsets = []
     this.activeEl = 0
     this.percentage = 0
@@ -21,7 +22,7 @@ export default class SplitList {
     for(let i = 0; i < this.listItems.length; i++) {
       const top = this.listItems[i].getBoundingClientRect()?.top
       const prevTop = i > 0 ? this.listItems[i - 1].getBoundingClientRect().top : 0
-      const offset = this.innerHeight / 3
+      const offset = window.innerHeight / 3
       const margin = top > prevTop ? offset : offset * 2
       const deg = i % 2 === 1 ? '15deg' : '-15deg'
       this.offsets[i] = { margin, deg }

@@ -1,45 +1,10 @@
 .intro {}
 
-.intro__background {
-  @include bg-img;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-image: url('../assets/background-placeholder.jpg');
-  opacity: var(--mask-opacity);
-  clip-path: circle(var(--mask-size) at 50% 50%);
-  overflow: hidden;
-  z-index: -1;
-}
-
-.intro__background::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: calc(var(--mask-size) * 2);
-  height: calc(var(--mask-size) * 2);
-  background-image: radial-gradient(
-    circle at 50%,
-    transparent 50%,
-    rgba(0, 0, 0, 1) 90%
-  );
-  border-radius: 50%;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 1),
-    inset 0 0 calc(var(--mask-size) / 5) 1px rgba(0, 0, 0, 0.5),
-    inset 0 0 calc(var(--mask-size) / 5) 1px rgba(0, 0, 0, 1);
-  transform: translate(-50%, -50%);
-  z-index: 1;
-}
-
 .intro__instruct {
   @include label;
   position: fixed;
   bottom: 0;
   width: 100%;
-  font-size: 1rem;
   text-align: center;
   pointer-events: none;
 }

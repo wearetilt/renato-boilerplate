@@ -1,0 +1,58 @@
+.link {
+  @include label;
+  display: inline-block;
+  line-height: 1;
+  text-align: center;
+}
+
+.link--vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.link--reverse {
+  flex-direction: column-reverse;
+}
+
+.link__icon {
+  @include transition(background-color);
+  display: inline-block;
+  position: relative;
+  width: 48px;
+  height: 48px;
+  margin-left: 16px;
+  background-color: var(--deloitte-green);
+  border-radius: 50%;
+  vertical-align: middle;
+
+  i {
+    @include absolute-center;
+    width: 32px;
+  }
+
+  svg {
+    @include transition(color);
+    color: white;
+  }
+
+  .link--vertical & {
+    margin-top: 16px;
+    margin-left: 0;
+    transform: rotate(90deg);
+  }
+
+  .link--reverse & {
+    margin-top: 0;
+    margin-bottom: 16px;
+    transform: rotate(-90deg);
+  }
+}
+
+.link:hover .link__icon {
+  background-color: white;
+
+  svg {
+    color: black;
+  }
+}

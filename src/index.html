@@ -1,20 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
     <header>
       <a class="js-skip-trigger header__skip" href="#main">
         Skip to content
       </a>
-      <div class="header__logo">
-        <img src="<%=require('./assets/avatar.png')%>" alt="" width="60" height="60" />
-        <p>
-          The Artistry of<br>
-          <b>Allyship</b>
-        </p>
+      <div class="header">
+        <div class="js-nav-label header__logo is-active" data-section="#intro">
+          <img src="<%=require('./assets/images/avatar.png')%>" alt="" width="60" height="60" />
+          <p>The Artistry of<br><b>Allyship</b></p>
+        </div>
+        <p class="js-nav-label header__label" data-section="#get-started">Get <b>Started</b></p>
+        <p class="js-nav-label header__label" data-section="#capabilities">Allyship <b>Capabilities</b></p>
+        <p class="js-nav-label header__label" data-section="#sessions">Studio <b>Sessions</b></p>
+        <p class="js-nav-label header__label" data-section="#challenges">Allyship <b>Challenges</b></p>
+        <p class="js-nav-label header__label" data-section="#gallery">The <b>Gallery</b></p>
       </div>
-      <nav class="js-nav nav">
+      <nav class="js-nav nav" aria-label="Main">
         <ul class="nav__list">
           <li>
             <a class="js-nav-link nav__link is-active" href="#intro" aria-label="Introduction">
@@ -23,9 +30,9 @@
             </a>
           </li>
           <li>
-            <a class="js-nav-link nav__link" href="#getting-started" aria-label="Getting Started">
+            <a class="js-nav-link nav__link" href="#get-started" aria-label="Get Started">
               <span class="nav__marker"></span>
-              <span class="nav__label" role="presentation">Getting Started</span>
+              <span class="nav__label" role="presentation">Get Started</span>
             </a>
           </li>
           <li>
@@ -35,9 +42,9 @@
             </a>
           </li>
           <li>
-            <a class="js-nav-link nav__link" href="#studio-sessions" aria-label="Studio Sessions">
+            <a class="js-nav-link nav__link" href="#sessions" aria-label="Studio Sessions">
               <span class="nav__marker"></span>
-              <span class="nav__label" role="presentation">Studio Sessions</span>
+              <span class="nav__label" role="presentation">Sessions</span>
             </a>
           </li>
           <li>
@@ -56,25 +63,46 @@
       </nav>
     </header>
     <main id="main" class="js-scroll-in">
+      <div class="js-background background">
+        <video class="background__video" playsinline muted autoplay loop poster="<%=require('./assets/images/background-placeholder.jpg')%>">
+          <source src="<%=require('./assets/media/background.mp4')%>" type="video/mp4">
+        </video>
+        <!-- <svg viewBox="0 0 1920 1080">
+          <mask id="getting-started-mask">
+            <rect fill="white" width="1920" height="1080"/>
+            <path fill="black" d="M835.38,703.77c-64.57,66.04-131.38,88.23-225.36,82.8-100.86-5.83-168.66-80.01-184.38-153.77-20.64-96.8-12.97-275.74,150.36-329.8,139-46,273.96,78.42,300.36,164.2,27.64,89.8,9.64,184.8-40.98,236.57Z" />
+            <path fill="black" d="M1332.58,778.43c-90.08,20.37-158.24,2.71-234.19-52.9-81.51-59.68-98.14-158.79-71.28-229.26,35.25-92.48,138.89-238.56,305.39-195.22,141.69,36.88,187.42,214.65,162.99,301.02-25.57,90.41-92.29,160.39-162.91,176.36Z" />
+          </mask>
+          <rect fill="black" width="1920" height="1080" mask="url(#getting-started-mask)" />
+        </svg> -->
+      </div>
       <!-- Introduction -->
       <section id="intro" class="js-intro intro section">
-        <div class="js-intro-background intro__background"></div>
-        <div class="js-intro-instruct intro__instruct" role="presentation">Scroll down</div>
+        <div class="js-instruct intro__instruct" role="presentation">Scroll down</div>
         <div class="intro__body">
           <div class="js-intro-section content-block content-block--wide">
-            <h1 class="js-scroll-item title anim-in" data-title-type="split">
+            <!-- Desktop title, hidden on mobile -->
+            <h1 class="js-scroll-item title anim-in ut-desktop-only" data-type="split">
               <span class="title__left"><b>Allyship</b> like art is not linear</span>
               <span class="title__right ut-indent-25">and not monochromatic.</span>
+            </h1>
+
+            <!-- Mobile title, hidden on desktop -->
+            <h1 class="js-scroll-item title anim-in ut-mobile-only" data-type="split">
+              <span class="title__left ut-text-left"><b>Allyship</b> like art is</span>
+              <span class="title__right ut-text-right">not linear and not</span>
+              <span class="title__fade ut-text-left">monochromatic.</span>
             </h1>
           </div>
 
           <div class="js-intro-section content-block">
             <h2 class="js-scroll-item title">
-              <b>Allyship</b> is fluid, with ebbs and flows, and looks different for everyone and every situation-
+              <span class="ut-desktop-only"><b>Allyship</b> is fluid, with ebbs and flows, and looks different for everyone and every situation-</span>
+              <span class="ut-mobile-only"><b>Allyship</b> is fluid, with ebbs and flows, and looks different for everyone and every situation-making each person's journey as an ally a beautiful work of art.</span>
             </h2>
           </div>
 
-          <div class="js-intro-section content-block">
+          <div class="js-intro-section content-block ut-desktop-only">
             <h2 class="js-scroll-item title">
               making each person's journey as an ally a beautiful work of art.
             </h2>
@@ -87,9 +115,9 @@
           </div>
 
           <div class="js-intro-section content-block content-block--wide" data-video="full">
-            <h2 class="js-scroll-item title title--extra ut-text-left" data-title-type="split">
+            <h2 class="js-scroll-item title title--extra ut-text-left" data-type="split">
               <span class="title__left">Welcome to the</span>
-              <span class="title__right ut-indent-13"><b>Artistry of Allyship!</b></span>
+              <span class="title__right ut-sm-indent-45 ut-indent-13"><b>Artistry of Allyship!</b></span>
             </h2>
           </div>
 
@@ -97,9 +125,9 @@
             <div class="content-block__inner">
               <h2 class="js-scroll-item title ut-text-left">
                 During this experience,<br />
-                <span class="ut-indent-32"><b>you will discover...</b></span>
+                <span class="ut-sm-indent-8 ut-indent-32"><b>you will discover...</b></span>
               </h2>
-              <ul class="js-list list">
+              <ul class="js-list js-split-text list" data-split-by="items">
                 <li class="list__item">What allyship is and is not</li>
                 <li class="list__item">How to identify inequity</li>
                 <li class="list__item">Strategies for sharing power</li>
@@ -111,61 +139,81 @@
           </div>
 
           <div class="content-block content-block--wide" data-video="fade">
-            <div class="js-intro-video video">
-              <div class="video__poster">
-                <div class="video__content">
-                  <h3 class="video__title">Video Title</h3>
-                  <p class="video__description">Art paints a picture of deeper understanding. Allyship connects us with others.</p>
-                  <span class="video__play"></span>
-                </div>
+            <div class="js-scroll-item js-video-trigger video__placeholder" data-type="video">
+              <div class="video__content">
+                <h3 class="video__title">Video Title</h3>
+                <p class="video__description">Art paints a picture of deeper understanding. Allyship connects us with others.</p>
+                <span class="video__play"></span>
+              </div>
+              <div class="js-video-poster video__poster">
+                <span class="video__play--mobile"></span>
               </div>
             </div>
           </div>
         </div>
+        <a class="section__link link link--vertical"" href="#get-started">
+          Get Started
+          <span class="link__icon">
+            <i class="icon icon--arrow" role="presentation">
+              <svg>
+                <use xlink:href="./assets/sprites/sprite.svg#arrow"></use>
+              </svg>
+            </i>
+          </span>
+        </a>
       </section>
 
-      <!-- Getting Started -->
-      <section id="getting-started" class="js-getting-started section gettting-started">
-        <!-- <div class="getting-started__background">
-          <svg viewBox="0 0 1920 1080">
-            <mask id="getting-started-mask">
-              <rect fill="white" width="1920" height="1080"/>
-              <path fill="black" d="M835.38,703.77c-64.57,66.04-131.38,88.23-225.36,82.8-100.86-5.83-168.66-80.01-184.38-153.77-20.64-96.8-12.97-275.74,150.36-329.8,139-46,273.96,78.42,300.36,164.2,27.64,89.8,9.64,184.8-40.98,236.57Z" />
-              <path fill="black" d="M1332.58,778.43c-90.08,20.37-158.24,2.71-234.19-52.9-81.51-59.68-98.14-158.79-71.28-229.26,35.25-92.48,138.89-238.56,305.39-195.22,141.69,36.88,187.42,214.65,162.99,301.02-25.57,90.41-92.29,160.39-162.91,176.36Z" />
-            </mask>
-            <rect fill="black" width="1920" height="1080" mask="url(#getting-started-mask)" />
-          </svg>
-        </div> -->
+      <!-- Get Started -->
+      <section id="get-started" class="js-getting-started section gettting-started" data-bg-src="<%=require('./assets/images/background-placeholder-2.jpg')%>">
         <div class="content-block content-block--wide">
-          <h2 class="js-scroll-item title" data-title-type="split">
-            <span class="title__left ut-indent-neg-22">So let's</span>
+          <h2 class="js-scroll-item title title--extra ut-desktop-only" data-type="split">
+            <span class="title__left ut-indent-neg-25">So let's</span>
             <span class="title__right ut-indent-13"><b>get started...</b></span>
           </h2>
+          <h2 class="js-scroll-item title title--extra ut-mobile-only ut-text-left" data-type="split">
+            <span class="title__left ut-indent-8">So let's</span>
+            <span class="title__right ut-indent-18"><b>get started</b></span>
+          </h2>
         </div>
-        <div class="js-parallax-section content-block content-block--wide content-block--start">
+        <div class="js-parallax-section content-block content-block--wide content-block--start content-block--sticky">
           <div class="content-block__inner">
             <p class="js-parallax-fixed-content section__intro">
               Click below to discover our allyship capabilities or take a quick survey about your experience:
             </p>
-            <div class="content-columns" data-columns="2">
-              <div class="js-parallax-item content-columns__item">
+            <div class="content-columns content-columns--async" data-columns="2">
+              <div class="js-parallax-item content-columns__item" data-type="download">
+                <span class="content_columns__icon">
+                  <svg class="icon icon--download" role="presentation">
+                    <use xlink:href="./assets/sprites/sprite.svg#download"></use>
+                  </svg>
+                </span>
                 <p>Read about the <b>Artistry of Allyship</b> and our allyship capabilities.</p>
-                <a class="content-columns__link" href="" target="_blank" rel="noopener noreferrer nofollow">Download PDF</a>
+                <a class="content-columns__link link" href="" target="_blank" rel="noopener noreferrer nofollow">Download PDF</a>
               </div>
-              <div class="js-parallax-item content-columns__item">
+              <div class="js-parallax-item content-columns__item" data-type="quiz">
+                <span class="content_columns__icon">
+                  <svg class="icon icon--download" role="presentation">
+                    <use xlink:href="./assets/sprites/sprite.svg#question"></use>
+                  </svg>
+                </span>
                 <p>Take this quick survey on allyship actions you’ve experienced at Deloitte.</p>
-                <a class="content-columns__link" href="" target="_blank" rel="noopener noreferrer nofollow">Take survey</a>
+                <a class="content-columns__link link" href="" target="_blank" rel="noopener noreferrer nofollow">Take survey</a>
               </div>
             </div>
           </div>
         </div>
         <div class="content-block content-block--wide content-block--center">
-          <h2 class="js-scroll-item title" data-title-type="split">
+          <h2 class="js-scroll-item title ut-desktop-only" data-type="split">
             <span class="title__left ut-indent-neg-50">Allyship is a personal</span>
             <span class="title__right ut-indent-13">responsibility and</span>
             <span class="title__fade ut-indent-neg-22"><b>life-long journey.</b></span>
           </h2>
-          <div class="js-staggered-section section__text">
+          <h2 class="js-scroll-item title ut-mobile-only" data-type="split">
+            <span class="title__left ut-text-left">Allyship is a personal</span>
+            <span class="title__right ut-text-right">responsibility and</span>
+            <span class="title__fade ut-text-left"><b>life-long journey.</b></span>
+          </h2>
+          <div class="js-staggered-section section__text ut-text-center ut-lg-text-left">
             <p>
               It is the practice of empathizing with the experiences of systemically-disadvantaged groups, looking out for biases, and actively using a voice and power to advance equity.
             </p>
@@ -178,12 +226,878 @@
           </div>
         </div>
       </section>
-      <section>
-        <div class="content-block content-block--wide content-block--center"></div>
+
+      <!-- Allyship Capabilities -->
+      <section id="capabilities" class="js-section section section--horizontal" data-background-video="full" data-section="glob">
+        <div class="section__inner">
+          <div class="js-section-track section__track">
+            <div class="js-section-frame section__frame globule-section">
+              <div class="js-section-title globule-wrap">
+                <div class="globule globule--pink globule--sticky">
+                  <h3 class="globule__title">
+                    Disrupt the
+                    <span class="ut-indent-13"><b>Status Quo</b></span>
+                  </h3>
+                  <svg x="0px" y="0px" viewBox="0 0 730.36 483.6" preserveAspectRatio="none">
+                    <path class="bottom" d="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z">
+                      <animate repeatCount="indefinite" attributeName="d" dur="10s" values="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z; M602.55,65.03c95.4,74.3,122,238,83,308-46.3,83.1-144,107-291,95-133.65-10.91-311,37-376-172C-28.1,146.03,111.87,63.49,228.55,32.03c89-24,270-48,374,33Z; M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z" />
+                    </path>
+                    <path class="top" d="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z">
+                      <animate repeatCount="indefinite" attributeName="d" dur="10s" values="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z; M602.55,65.03c95.4,74.3,122,238,83,308-46.3,83.1-144,107-291,95-133.65-10.91-311,37-376-172C-28.1,146.03,111.87,63.49,228.55,32.03c89-24,270-48,374,33Z; M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z" />
+                    </path>
+                  </svg>
+                </div>
+              </div>
+              <div class="globule-wrap">
+                <div class="globule">
+                  <h4 class="globule__subtitle">Aware</h4>
+                  <p class="globule__text">
+                    Observes and understand the pervasiveness of oppression in society, can identify it, and seeks out information to proactively fill gaps in knowledge.
+                  </p>
+                  <svg x="0px" y="0px" viewBox="0 0 730.36 483.6" preserveAspectRatio="none">
+                    <path class="bottom" d="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z">
+                      <animate repeatCount="indefinite" attributeName="d" dur="10s" values="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z; M602.55,65.03c95.4,74.3,122,238,83,308-46.3,83.1-144,107-291,95-133.65-10.91-311,37-376-172C-28.1,146.03,111.87,63.49,228.55,32.03c89-24,270-48,374,33Z; M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z" />
+                    </path>
+                    <path class="top" d="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z">
+                      <animate repeatCount="indefinite" attributeName="d" dur="10s" values="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z; M602.55,65.03c95.4,74.3,122,238,83,308-46.3,83.1-144,107-291,95-133.65-10.91-311,37-376-172C-28.1,146.03,111.87,63.49,228.55,32.03c89-24,270-48,374,33Z; M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z" />
+                    </path>
+                  </svg>
+                </div>
+              </div>
+              <div class="globule-wrap">
+                <div class="globule">
+                  <h4 class="globule__subtitle">Accountable</h4>
+                  <p class="globule__text">
+                    Holds self, peers, and organization accountable by practicing integrity and actively seeking to challenge and eliminate inequities.
+                  </p>
+                  <svg x="0px" y="0px" viewBox="0 0 730.36 483.6" preserveAspectRatio="none">
+                    <path class="bottom" d="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z">
+                      <animate repeatCount="indefinite" attributeName="d" dur="10s" values="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z; M602.55,65.03c95.4,74.3,122,238,83,308-46.3,83.1-144,107-291,95-133.65-10.91-311,37-376-172C-28.1,146.03,111.87,63.49,228.55,32.03c89-24,270-48,374,33Z; M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z" />
+                    </path>
+                    <path class="top" d="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z">
+                      <animate repeatCount="indefinite" attributeName="d" dur="10s" values="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z; M602.55,65.03c95.4,74.3,122,238,83,308-46.3,83.1-144,107-291,95-133.65-10.91-311,37-376-172C-28.1,146.03,111.87,63.49,228.55,32.03c89-24,270-48,374,33Z; M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z" />
+                    </path>
+                  </svg>
+                </div>
+              </div>
+              <div class="globule-wrap">
+                <div class="globule">
+                  <h4 class="globule__subtitle">Bold</h4>
+                  <p class="globule__text">
+                    Respectfully intervenes in non-equitable and non-inclusive situations. Challenges orthodoxies and behaviors that maintain the status quo.
+                  </p>
+                  <svg x="0px" y="0px" viewBox="0 0 730.36 483.6" preserveAspectRatio="none">
+                    <path class="bottom" d="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z">
+                      <animate repeatCount="indefinite" attributeName="d" dur="10s" values="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z; M602.55,65.03c95.4,74.3,122,238,83,308-46.3,83.1-144,107-291,95-133.65-10.91-311,37-376-172C-28.1,146.03,111.87,63.49,228.55,32.03c89-24,270-48,374,33Z; M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z" />
+                    </path>
+                    <path class="top" d="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z">
+                      <animate repeatCount="indefinite" attributeName="d" dur="10s" values="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z; M602.55,65.03c95.4,74.3,122,238,83,308-46.3,83.1-144,107-291,95-133.65-10.91-311,37-376-172C-28.1,146.03,111.87,63.49,228.55,32.03c89-24,270-48,374,33Z; M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z" />
+                    </path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="js-section-frame section__frame globule-section">
+              <div class="js-section-title globule-wrap">
+                <div class="globule globule--orange globule--sticky">
+                  <h3 class="globule__title">
+                    Shares
+                    <span class="ut-indent-13"><b>Power</b></span>
+                  </h3>
+                  <svg x="0px" y="0px" viewBox="0 0 730.36 483.6" preserveAspectRatio="none">
+                    <path class="bottom" d="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z">
+                      <animate repeatCount="indefinite" attributeName="d" dur="10s" values="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z; M602.55,65.03c95.4,74.3,122,238,83,308-46.3,83.1-144,107-291,95-133.65-10.91-311,37-376-172C-28.1,146.03,111.87,63.49,228.55,32.03c89-24,270-48,374,33Z; M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z" />
+                    </path>
+                    <path class="top" d="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z">
+                      <animate repeatCount="indefinite" attributeName="d" dur="10s" values="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z; M602.55,65.03c95.4,74.3,122,238,83,308-46.3,83.1-144,107-291,95-133.65-10.91-311,37-376-172C-28.1,146.03,111.87,63.49,228.55,32.03c89-24,270-48,374,33Z; M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z" />
+                    </path>
+                  </svg>
+                </div>
+              </div>
+              <div class="globule-wrap">
+                <div class="globule globule--wide">
+                  <h4 class="globule__subtitle">Power Cognizant</h4>
+                  <p class="globule__text">
+                    Recognizes one’s own power and ability to reshape inequitable systems, processes, policies, and values to advance equity.
+                  </p>
+                  <svg x="0px" y="0px" viewBox="0 0 730.36 483.6" preserveAspectRatio="none">
+                    <path class="bottom" d="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z">
+                      <animate repeatCount="indefinite" attributeName="d" dur="10s" values="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z; M602.55,65.03c95.4,74.3,122,238,83,308-46.3,83.1-144,107-291,95-133.65-10.91-311,37-376-172C-28.1,146.03,111.87,63.49,228.55,32.03c89-24,270-48,374,33Z; M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z" />
+                    </path>
+                    <path class="top" d="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z">
+                      <animate repeatCount="indefinite" attributeName="d" dur="10s" values="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z; M602.55,65.03c95.4,74.3,122,238,83,308-46.3,83.1-144,107-291,95-133.65-10.91-311,37-376-172C-28.1,146.03,111.87,63.49,228.55,32.03c89-24,270-48,374,33Z; M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z" />
+                    </path>
+                  </svg>
+                </div>
+              </div>
+              <div class="globule-wrap">
+                <div class="globule">
+                  <h4 class="globule__subtitle">Empower</h4>
+                  <p class="globule__text">
+                    Elevates the ideas and strengths of those from systematically disadvantage groups, even when they’re not in the room. Knows when to take a “backseat” so others can share their voices. Invites others into the conversation who may be overlooked.
+                  </p>
+                  <svg x="0px" y="0px" viewBox="0 0 730.36 483.6" preserveAspectRatio="none">
+                    <path class="bottom" d="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z">
+                      <animate repeatCount="indefinite" attributeName="d" dur="10s" values="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z; M602.55,65.03c95.4,74.3,122,238,83,308-46.3,83.1-144,107-291,95-133.65-10.91-311,37-376-172C-28.1,146.03,111.87,63.49,228.55,32.03c89-24,270-48,374,33Z; M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z" />
+                    </path>
+                    <path class="top" d="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z">
+                      <animate repeatCount="indefinite" attributeName="d" dur="10s" values="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z; M602.55,65.03c95.4,74.3,122,238,83,308-46.3,83.1-144,107-291,95-133.65-10.91-311,37-376-172C-28.1,146.03,111.87,63.49,228.55,32.03c89-24,270-48,374,33Z; M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z" />
+                    </path>
+                  </svg>
+                </div>
+              </div>
+              <div class="globule-wrap">
+                <div class="globule globule--wide">
+                  <h4 class="globule__subtitle">Power Imaginative</h4>
+                  <p class="globule__text">
+                    Uses influence, voice or authority to effect change within inequitable systems, processes, policies, and values.
+                  </p>
+                  <svg x="0px" y="0px" viewBox="0 0 730.36 483.6" preserveAspectRatio="none">
+                    <path class="bottom" d="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z">
+                      <animate repeatCount="indefinite" attributeName="d" dur="10s" values="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z; M602.55,65.03c95.4,74.3,122,238,83,308-46.3,83.1-144,107-291,95-133.65-10.91-311,37-376-172C-28.1,146.03,111.87,63.49,228.55,32.03c89-24,270-48,374,33Z; M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z" />
+                    </path>
+                    <path class="top" d="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z">
+                      <animate repeatCount="indefinite" attributeName="d" dur="10s" values="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z; M602.55,65.03c95.4,74.3,122,238,83,308-46.3,83.1-144,107-291,95-133.65-10.91-311,37-376-172C-28.1,146.03,111.87,63.49,228.55,32.03c89-24,270-48,374,33Z; M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z" />
+                    </path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="js-section-frame section__frame globule-section">
+              <div class="js-section-title globule-wrap">
+                <div class="globule globule--green globule--sticky">
+                  <h3 class="globule__title">
+                    Improves
+                    <span class="ut-indent-13"><b>Continuously</b></span>
+                  </h3>
+                  <svg x="0px" y="0px" viewBox="0 0 730.36 483.6" preserveAspectRatio="none">
+                    <path class="bottom" d="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z">
+                      <animate repeatCount="indefinite" attributeName="d" dur="10s" values="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z; M602.55,65.03c95.4,74.3,122,238,83,308-46.3,83.1-144,107-291,95-133.65-10.91-311,37-376-172C-28.1,146.03,111.87,63.49,228.55,32.03c89-24,270-48,374,33Z; M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z" />
+                    </path>
+                    <path class="top" d="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z">
+                      <animate repeatCount="indefinite" attributeName="d" dur="10s" values="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z; M602.55,65.03c95.4,74.3,122,238,83,308-46.3,83.1-144,107-291,95-133.65-10.91-311,37-376-172C-28.1,146.03,111.87,63.49,228.55,32.03c89-24,270-48,374,33Z; M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z" />
+                    </path>
+                  </svg>
+                </div>
+              </div>
+              <div class="globule-wrap">
+                <div class="globule globule--wide">
+                  <h4 class="globule__subtitle">Lifelong Learner</h4>
+                  <p class="globule__text">
+                    Increases self-awareness around oppressive and inequitable systems. Seeks new information to broaden one’s perspective and serves as a teacher by sharing the new ideas one learns.
+                  </p>
+                  <svg x="0px" y="0px" viewBox="0 0 730.36 483.6" preserveAspectRatio="none">
+                    <path class="bottom" d="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z">
+                      <animate repeatCount="indefinite" attributeName="d" dur="10s" values="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z; M602.55,65.03c95.4,74.3,122,238,83,308-46.3,83.1-144,107-291,95-133.65-10.91-311,37-376-172C-28.1,146.03,111.87,63.49,228.55,32.03c89-24,270-48,374,33Z; M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z" />
+                    </path>
+                    <path class="top" d="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z">
+                      <animate repeatCount="indefinite" attributeName="d" dur="10s" values="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z; M602.55,65.03c95.4,74.3,122,238,83,308-46.3,83.1-144,107-291,95-133.65-10.91-311,37-376-172C-28.1,146.03,111.87,63.49,228.55,32.03c89-24,270-48,374,33Z; M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z" />
+                    </path>
+                  </svg>
+                </div>
+              </div>
+              <div class="globule-wrap">
+                <div class="globule">
+                  <h4 class="globule__subtitle">Unlearn</h4>
+                  <p class="globule__text">
+                    Commits to an ongoing journey of examining one’s behaviors and mindsets, understands origins, and seizes opportunities to adopt and practice more inclusive behaviors. Comfortable with being uncomfortable and growing from mistakes.
+                  </p>
+                  <svg x="0px" y="0px" viewBox="0 0 730.36 483.6" preserveAspectRatio="none">
+                    <path class="bottom" d="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z">
+                      <animate repeatCount="indefinite" attributeName="d" dur="10s" values="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z; M602.55,65.03c95.4,74.3,122,238,83,308-46.3,83.1-144,107-291,95-133.65-10.91-311,37-376-172C-28.1,146.03,111.87,63.49,228.55,32.03c89-24,270-48,374,33Z; M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z" />
+                    </path>
+                    <path class="top" d="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z">
+                      <animate repeatCount="indefinite" attributeName="d" dur="10s" values="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z; M602.55,65.03c95.4,74.3,122,238,83,308-46.3,83.1-144,107-291,95-133.65-10.91-311,37-376-172C-28.1,146.03,111.87,63.49,228.55,32.03c89-24,270-48,374,33Z; M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z" />
+                    </path>
+                  </svg>
+                </div>
+              </div>
+              <div class="globule-wrap">
+                <div class="globule">
+                  <h4 class="globule__subtitle">Empathetic</h4>
+                  <p class="globule__text">
+                    Practices active listening, asks questions, and seeks out feedback, recognizing their perspectives can always be broadened.
+                  </p>
+                  <svg x="0px" y="0px" viewBox="0 0 730.36 483.6" preserveAspectRatio="none">
+                    <path class="bottom" d="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z">
+                      <animate repeatCount="indefinite" attributeName="d" dur="10s" values="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z; M602.55,65.03c95.4,74.3,122,238,83,308-46.3,83.1-144,107-291,95-133.65-10.91-311,37-376-172C-28.1,146.03,111.87,63.49,228.55,32.03c89-24,270-48,374,33Z; M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z" />
+                    </path>
+                    <path class="top" d="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z">
+                      <animate repeatCount="indefinite" attributeName="d" dur="10s" values="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z; M602.55,65.03c95.4,74.3,122,238,83,308-46.3,83.1-144,107-291,95-133.65-10.91-311,37-376-172C-28.1,146.03,111.87,63.49,228.55,32.03c89-24,270-48,374,33Z; M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z" />
+                    </path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- In-person Sessions -->
+      <section id="sessions" class="section">
+        <div class="content-block content-block--wide content-block--center ut-text-center">
+          <h2 class="js-scroll-item title ut-desktop-only">
+            Become an <b>active ally</b>
+          </h2>
+          <h2 class="js-scroll-item title ut-text-left ut-mobile-only">
+            <span class="ut-indent-13">Become an</span>
+            <span class="ut-indent-32"><b>active ally</b></span>
+          </h2>
+          <div class="js-staggered-section section__text section__text--wide">
+            <p>
+              In this 2-hour virtual learning experience, you’ll learn how to be an active ally that shares power, disrupts the status quo, and improves continuously.
+            </p>
+            <p>
+              Practice research-based skills to engage as an ally every day, explore how to overcome stumbling blocks to allyship, and set your sights on the journey ahead.
+            </p>
+            <p>
+              <a class="link" href="">
+                Register for the experience
+                <span class="link__icon">
+                  <i class="icon icon--arrow" role="presentation">
+                    <svg>
+                      <use xlink:href="./assets/sprites/sprite.svg#arrow"></use>
+                    </svg>
+                  </i>
+                </span>
+              </a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Allyship Challenges -->
+      <section id="challenges" class="js-section section section--horizontal">
+        <div class="section__inner">
+          <div class="js-group js-section-track section__track">
+            <div class="js-section-frame section__frame section__frame--full">
+              <div class="content-block content-block--wide content-block--center ut-text-center">
+                <h2 class="js-scroll-item title ut-desktop-only">
+                  Personalize <b>your artistry</b>
+                </h2>
+                <h2 class="js-scroll-item title ut-mobile-only">
+                  Personalize 
+                  <b class="ut-block">your artistry</b>
+                </h2>
+                <div class="js-staggered-section section__text section__text--tight">
+                  <p>
+                    To personalize your artistry click on an allyship capability you’d like to accelerate below:
+                  </p>
+                </div>
+                <ul class="orb-list">
+                  <li class="orb-list__item">
+                    <a class="js-section-link" href="#disrupts">
+                      <video class="orb-list__orb" playsinline muted autoplay loop poster="<%=require('./assets/images/orb-1-poster.png')%>">
+                        <source src="<%=require('./assets/media/sphere-1.mp4')%>" type="video/mp4">
+                      </video>
+                      <h3 class="orb-list__title">
+                        Disrupts the
+                        <span>Status Quo</span>
+                      </h3>
+                    </a>
+                  </li>
+                  <li class="orb-list__item">
+                    <a class="js-section-link" href="#shares">
+                      <video class="orb-list__orb" playsinline muted autoplay loop>
+                        <source src="<%=require('./assets/media/sphere-1.mp4')%>" type="video/mp4">
+                      </video>
+                      <h3 class="orb-list__title">
+                        Shares
+                        <span>Power</span>
+                      </h3>
+                    </a>
+                  </li>
+                  <li class="orb-list__item">
+                    <a class="js-section-link" href="#improves">
+                      <video class="orb-list__orb" playsinline muted autoplay loop>
+                        <source src="<%=require('./assets/media/sphere-1.mp4')%>" type="video/mp4">
+                      </video>
+                      <h3 class="orb-list__title">
+                        Continuously
+                        <span>Improves</span>
+                      </h3>
+                    </a>
+                  </li>
+                </ul>
+                <p class="section__footnote">Not sure which capability to choose? Take a look at the allyship capabilities in <a href="#getting-started">Get Started.</a></p>
+              </div>
+            </div>
+            <div class="js-section-nav group">
+              <nav class="group__nav" aria-label="Allyship Challenges">
+                <ul class="group__list">
+                  <li class="group__item">
+                    <a class="js-section-link group__link" href="#disrupts">
+                      <span class="group__nav__marker" style="background-image: url(<%=require('./assets/images/orb-1-poster.png')%>)"></span>
+                      <span class="group__nav__label" role="presentation">
+                        <span>Disrupt the</span>
+                        <span>Status Quo</span>
+                      </span>
+                    </a>
+                  </li>
+                  <li class="group__item">
+                    <a class="js-section-link group__link" href="#shares">
+                      <span class="group__nav__marker"></span>
+                      <span class="group__nav__label" role="presentation">
+                        <span>Shares</span>
+                        <span>Power</span>
+                      </span>
+                    </a>
+                  </li>
+                  <li class="group__item">
+                    <a class="js-section-link group__link" href="#improves">
+                      <span class="group__nav__marker"></span>
+                      <span class="group__nav__label" role="presentation">
+                        <span>Improves</span>
+                        <span>Continuously</span>
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+              <div id="disrupts" class="js-section-frame section__frame section__frame--full">
+                <div class="content-block content-block--wide content-block--start content-block--sticky">
+                  <div class="content-block__inner">
+                    <p class="js-parallax-fixed-content section__intro">
+                      Choose to lean in, dive in, or lead the way where you’d like to accelerate your allyship capabilities:
+                    </p>
+                    <div class="content-columns" data-columns="3" data-theme="pink">
+                      <a 
+                        class="js-parallax-item content-columns__item content-columns__item--alt ut-self-bottom"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer nofollow"
+                        data-type="chart"
+                      >
+                        <p><b>Lean in to allyship by asking questions</b> to increase awareness, taking actions that hold yourself and other accountable, and amplifying allyship by boldly intervening on behalf of others.</p>
+                        <div class="content-columns__footer">
+                          <span class="content-columns__link link">Read infographic</span>
+                          <span class="content-columns__info">(5 mins)</span>
+                          <span class="content_columns__icon">
+                            <i class="icon icon--chart" role="presentation">
+                              <svg>
+                                <use xlink:href="./assets/sprites/sprite.svg#chart"></use>
+                              </svg>
+                            </i>
+                          </span>
+                        </div>
+                      </a>
+                      <a
+                        class="js-parallax-item content-columns__item content-columns__item--alt"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer nofollow"
+                        data-type="link"
+                      >
+                        <p><b>Dive in to allyship with a short micro-learning</b> to discover additional practices to share power on your journey as an ally.</p>
+                        <p>Explore ways to reshape inequitable situations, elevate the ideas and voice of others, and build a deeper awareness of how rupples of sharing power can turn into waves, Take the challenge to conduct a power analysis.</p>
+                        <div class="content-columns__footer">
+                          <span class="content-columns__link link" >Access micro-learning</span>
+                          <span class="content-columns__info">(15 mins)</span>
+                          <span class="content_columns__icon">
+                            <i class="icon icon--link" role="presentation">
+                              <svg>
+                                <use xlink:href="./assets/sprites/sprite.svg#link"></use>
+                              </svg>
+                            </i>
+                          </span>
+                        </div>
+                      </a>
+                      <a
+                        class="js-parallax-item content-columns__item content-columns__item--alt ut-self-center"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer nofollow"
+                        data-type="play"
+                      >
+                        <p><b>Lead the way on allyship with challenges</b> issued by our leaders to identifying inequity and take action to share power..</p>
+                        <div class="content-columns__footer">
+                          <span class="content-columns__link link">Watch video</span>
+                          <span class="content_columns__icon">
+                            <i class="icon icon--play" role="presentation">
+                              <svg>
+                                <use xlink:href="./assets/sprites/sprite.svg#play"></use>
+                              </svg>
+                            </i>
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="shares" class="js-section-frame section__frame section__frame--full">
+                <div class="content-block content-block--wide content-block--start content-block--sticky">
+                  <div class="content-block__inner">
+                    <p class="js-parallax-fixed-content section__intro">
+                      Choose to lean in, dive in, or lead the way where you’d like to accelerate your allyship capabilities:
+                    </p>
+                    <div class="content-columns" data-columns="3" data-theme="orange">
+                      <a 
+                        class="js-parallax-item content-columns__item content-columns__item--alt ut-self-bottom"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer nofollow"
+                      >
+                        <p><b>Lean in to allyship by asking questions</b> to increase awareness, taking actions that hold yourself and other accountable, and amplifying allyship by boldly intervening on behalf of others.</p>
+                        <div class="content-columns__footer">
+                          <span class="content-columns__link link">Read infographic</span>
+                          <span class="content-columns__info">(5 mins)</span>
+                          <span class="content_columns__icon">
+                            <i class="icon icon--external" role="presentation">
+                              <svg>
+                                <use xlink:href="./assets/sprites/sprite.svg#external"></use>
+                              </svg>
+                            </i>
+                          </span>
+                        </div>
+                      </a>
+                      <a
+                        class="js-parallax-item content-columns__item content-columns__item--alt"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer nofollow"
+                      >
+                        <p>Dive in to allyship with a short micro-learning to discover additional practices to share power on your journey as an ally.</p>
+                        <p>Explore ways to reshape inequitable situations, elevate the ideas and voice of others, and build a deeper awareness of how rupples of sharing power can turn into waves, Take the challenge to conduct a power analysis.</p>
+                        <div class="content-columns__footer">
+                          <span class="content-columns__link link" >Access micro-learning</span>
+                          <span class="content-columns__info">(15 mins)</span>
+                          <span class="content_columns__icon">
+                            <i class="icon icon--external" role="presentation">
+                              <svg>
+                                <use xlink:href="./assets/sprites/sprite.svg#external"></use>
+                              </svg>
+                            </i>
+                          </span>
+                        </div>
+                      </a>
+                      <a
+                        class="js-parallax-item content-columns__item content-columns__item--alt ut-self-center"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer nofollow"
+                      >
+                        <p><b>Lead the way on allyship with challenges</b> issued by our leaders to identifying inequity and take action to share power..</p>
+                        <div class="content-columns__footer">
+                          <span class="content-columns__link link">Watch video</span>
+                          <span class="content-columns__info">(5 mins)</span>
+                          <span class="content_columns__icon">
+                            <i class="icon icon--external" role="presentation">
+                              <svg>
+                                <use xlink:href="./assets/sprites/sprite.svg#external"></use>
+                              </svg>
+                            </i>
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="improves" class="js-section-frame section__frame section__frame--full">
+                <div class="content-block content-block--wide content-block--start content-block--sticky">
+                  <div class="content-block__inner">
+                    <p class="js-parallax-fixed-content section__intro">
+                      Choose to lean in, dive in, or lead the way where you’d like to accelerate your allyship capabilities:
+                    </p>
+                    <div class="content-columns" data-columns="3" data-theme="green">
+                      <a 
+                        class="js-parallax-item content-columns__item content-columns__item--alt ut-self-bottom"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer nofollow"
+                      >
+                        <p><b>Lean in to allyship by asking questions</b> to increase awareness, taking actions that hold yourself and other accountable, and amplifying allyship by boldly intervening on behalf of others.</p>
+                        <div class="content-columns__footer">
+                          <span class="content-columns__link link">Read infographic</span>
+                          <span class="content-columns__info">(5 mins)</span>
+                          <span class="content_columns__icon">
+                            <i class="icon icon--external" role="presentation">
+                              <svg>
+                                <use xlink:href="./assets/sprites/sprite.svg#external"></use>
+                              </svg>
+                            </i>
+                          </span>
+                        </div>
+                      </a>
+                      <a
+                        class="js-parallax-item content-columns__item content-columns__item--alt"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer nofollow"
+                      >
+                        <p><b>Dive in to allyship with a short micro-learning</b> to discover additional practices to share power on your journey as an ally.</p>
+                        <p>Explore ways to reshape inequitable situations, elevate the ideas and voice of others, and build a deeper awareness of how rupples of sharing power can turn into waves, Take the challenge to conduct a power analysis.</p>
+                        <div class="content-columns__footer">
+                          <span class="content-columns__link link" >Access micro-learning</span>
+                          <span class="content-columns__info">(15 mins)</span>
+                          <span class="content_columns__icon">
+                            <i class="icon icon--external" role="presentation">
+                              <svg>
+                                <use xlink:href="./assets/sprites/sprite.svg#external"></use>
+                              </svg>
+                            </i>
+                          </span>
+                        </div>
+                      </a>
+                      <a
+                        class="js-parallax-item content-columns__item content-columns__item--alt ut-self-center"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer nofollow"
+                      >
+                        <p><b>Lead the way on allyship with challenges</b> issued by our leaders to identifying inequity and take action to share power..</p>
+                        <div class="content-columns__footer">
+                          <span class="content-columns__link link">Watch video</span>
+                          <span class="content-columns__info">(5 mins)</span>
+                          <span class="content_columns__icon">
+                            <i class="icon icon--external" role="presentation">
+                              <svg>
+                                <use xlink:href="./assets/sprites/sprite.svg#external"></use>
+                              </svg>
+                            </i>
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- The Gallery -->
+      <section id="gallery" class="js-section section section--horizontal">
+        <div class="section__inner">
+          <div class="js-section-track section__track">
+            <div class="js-section-frame section__frame section__frame--full">
+              <div class="content-block content-block--wide content-block--center ut-text-center">
+                <h2 class="js-scroll-item title">
+                  The <b>gallery</b>
+                </h2>
+                <div class="js-staggered-section section__text section__text--tight">
+                  <p>
+                    Access tools to advance your artistry of allyship.
+                  </p>
+                </div>
+                <ul class="orb-list">
+                  <li class="orb-list__item">
+                    <a href="">
+                      <span class="orb-list__orb"></span>
+                      <h3 class="orb-list__title">
+                        Disrupts the
+                        <span class="ut-indent-13">Status Quo</span>
+                      </h3>
+                    </a>
+                  </li>
+                  <li class="orb-list__item">
+                    <a href="">
+                      <span class="orb-list__orb"></span>
+                      <h3 class="orb-list__title">
+                        Shares
+                        <span class="ut-indent-13">Power</span>
+                      </h3>
+                    </a>
+                  </li>
+                  <li class="orb-list__item">
+                    <a href="">
+                      <span class="orb-list__orb"></span>
+                      <h3 class="orb-list__title">
+                        Continuously
+                        <span class="ut-indent-13">Improves</span>
+                      </h3>
+                    </a>
+                  </li>
+                </ul>
+                <p class="section__footnote">Not sure which capability to choose? Take a look at the allyship capabilities in <a href="#getting-started">Get Started.</a></p>
+              </div>
+            </div>
+            <div class="group">
+              <nav class="group__nav" aria-label="Allyship Challenges">
+                <ul class="group__list">
+                  <li class="group__item">
+                    <a class="group__link" href="disrupt">
+                      <span class="group__nav__marker"></span>
+                      <span class="group__nav__label" role="presentation">
+                        <span>Disrupt the</span>
+                        <span>Status Quo</span>
+                      </span>
+                    </a>
+                  </li>
+                  <li class="group__item">
+                    <a class="group__link" href="#shares">
+                      <span class="group__nav__marker"></span>
+                      <span class="group__nav__label" role="presentation">
+                        <span>Shares</span>
+                        <span>Power</span>
+                      </span>
+                    </a>
+                  </li>
+                  <li class="group__item">
+                    <a class="group__link" href="#improves">
+                      <span class="group__nav__marker"></span>
+                      <span class="group__nav__label" role="presentation">
+                        <span>Improves</span>
+                        <span>Continuously</span>
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+              <div class="js-section-frame section__frame section__frame--full">
+                <div class="content-block content-block--wide content-block--start content-block--sticky">
+                  <div class="content-block__inner">
+                    <p class="js-parallax-fixed-content section__intro">
+                      Choose to lean in, dive in, or lead the way where you’d like to accelerate your allyship capabilities:
+                    </p>
+                    <div class="content-columns" data-columns="3" data-theme="pink">
+                      <a 
+                        class="js-parallax-item content-columns__item content-columns__item--alt ut-self-bottom"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer nofollow"
+                      >
+                        <p><b>Lean in to allyship by asking questions</b> to increase awareness, taking actions that hold yourself and other accountable, and amplifying allyship by boldly intervening on behalf of others.</p>
+                        <div>
+                          <span class="content-columns__link link">Read infographic</span>
+                          <span class="content_columns__icon">
+                            <i class="icon icon--external" role="presentation">
+                              <svg>
+                                <use xlink:href="./assets/sprites/sprite.svg#external"></use>
+                              </svg>
+                            </i>
+                          </span>
+                        </div>
+                      </a>
+                      <a
+                        class="js-parallax-item content-columns__item content-columns__item--alt"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer nofollow"
+                      >
+                        <p><b>Dive in to allyship with a short micro-learning</b> to discover additional practices to share power on your journey as an ally.</p>
+                        <p>Explore ways to reshape inequitable situations, elevate the ideas and voice of others, and build a deeper awareness of how rupples of sharing power can turn into waves, Take the challenge to conduct a power analysis.</p>
+                        <div>
+                          <span class="content-columns__link link" >Access micro-learning</span>
+                          <span class="content_columns__icon">
+                            <i class="icon icon--external" role="presentation">
+                              <svg>
+                                <use xlink:href="./assets/sprites/sprite.svg#external"></use>
+                              </svg>
+                            </i>
+                          </span>
+                        </div>
+                      </a>
+                      <a
+                        class="js-parallax-item content-columns__item content-columns__item--alt ut-self-center"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer nofollow"
+                      >
+                        <p><b>Lead the way on allyship with challenges</b> issued by our leaders to identifying inequity and take action to share power..</p>
+                        <div>
+                          <span class="content-columns__link link">Watch video</span>
+                          <span class="content_columns__icon">
+                            <i class="icon icon--external" role="presentation">
+                              <svg>
+                                <use xlink:href="./assets/sprites/sprite.svg#external"></use>
+                              </svg>
+                            </i>
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="js-section-frame section__frame section__frame--full">
+                <div class="content-block content-block--wide content-block--start content-block--sticky">
+                  <div class="content-block__inner">
+                    <p class="js-parallax-fixed-content section__intro">
+                      Choose to lean in, dive in, or lead the way where you’d like to accelerate your allyship capabilities:
+                    </p>
+                    <div class="content-columns" data-columns="3" data-theme="orange">
+                      <a 
+                        class="js-parallax-item content-columns__item content-columns__item--alt ut-self-bottom"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer nofollow"
+                      >
+                        <p><b>Lean in to allyship by asking questions</b> to increase awareness, taking actions that hold yourself and other accountable, and amplifying allyship by boldly intervening on behalf of others.</p>
+                        <div>
+                          <span class="content-columns__link link">Read infographic</span>
+                          <span class="content-columns__info">(5 mins)</span>
+                          <span class="content_columns__icon">
+                            <i class="icon icon--external" role="presentation">
+                              <svg>
+                                <use xlink:href="./assets/sprites/sprite.svg#external"></use>
+                              </svg>
+                            </i>
+                          </span>
+                        </div>
+                      </a>
+                      <a
+                        class="js-parallax-item content-columns__item content-columns__item--alt"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer nofollow"
+                      >
+                        <p>Dive in to allyship with a short micro-learning to discover additional practices to share power on your journey as an ally.</p>
+                        <p>Explore ways to reshape inequitable situations, elevate the ideas and voice of others, and build a deeper awareness of how rupples of sharing power can turn into waves, Take the challenge to conduct a power analysis.</p>
+                        <div>
+                          <span class="content-columns__link link" >Access micro-learning</span>
+                          <span class="content-columns__info">(15 mins)</span>
+                          <span class="content_columns__icon">
+                            <i class="icon icon--external" role="presentation">
+                              <svg>
+                                <use xlink:href="./assets/sprites/sprite.svg#external"></use>
+                              </svg>
+                            </i>
+                          </span>
+                        </div>
+                      </a>
+                      <a
+                        class="js-parallax-item content-columns__item content-columns__item--alt ut-self-center"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer nofollow"
+                      >
+                        <p><b>Lead the way on allyship with challenges</b> issued by our leaders to identifying inequity and take action to share power..</p>
+                        <div>
+                          <span class="content-columns__link link">Watch video</span>
+                          <span class="content-columns__info">(5 mins)</span>
+                          <span class="content_columns__icon">
+                            <i class="icon icon--external" role="presentation">
+                              <svg>
+                                <use xlink:href="./assets/sprites/sprite.svg#external"></use>
+                              </svg>
+                            </i>
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+              <div class="js-section-frame section__frame section__frame--full">
+                <div class="content-block content-block--wide content-block--start content-block--sticky">
+                  <div class="content-block__inner">
+                    <p class="js-parallax-fixed-content section__intro">
+                      Choose to lean in, dive in, or lead the way where you’d like to accelerate your allyship capabilities:
+                    </p>
+                    <div class="content-columns" data-columns="3" data-theme="green">
+                      <a 
+                        class="js-parallax-item content-columns__item content-columns__item--alt ut-self-bottom"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer nofollow"
+                      >
+                        <p><b>Lean in to allyship by asking questions</b> to increase awareness, taking actions that hold yourself and other accountable, and amplifying allyship by boldly intervening on behalf of others.</p>
+                        <div>
+                          <span class="content-columns__link link">Read infographic</span>
+                          <span class="content_columns__icon">
+                            <i class="icon icon--external" role="presentation">
+                              <svg>
+                                <use xlink:href="./assets/sprites/sprite.svg#external"></use>
+                              </svg>
+                            </i>
+                          </span>
+                        </div>
+                      </a>
+                      <a
+                        class="js-parallax-item content-columns__item content-columns__item--alt"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer nofollow"
+                      >
+                        <p><b>Dive in to allyship with a short micro-learning</b> to discover additional practices to share power on your journey as an ally.</p>
+                        <p>Explore ways to reshape inequitable situations, elevate the ideas and voice of others, and build a deeper awareness of how rupples of sharing power can turn into waves, Take the challenge to conduct a power analysis.</p>
+                        <div>
+                          <span class="content-columns__link link" >Access micro-learning</span>
+                          <span class="content_columns__icon">
+                            <i class="icon icon--external" role="presentation">
+                              <svg>
+                                <use xlink:href="./assets/sprites/sprite.svg#external"></use>
+                              </svg>
+                            </i>
+                          </span>
+                        </div>
+                      </a>
+                      <a
+                        class="js-parallax-item content-columns__item content-columns__item--alt ut-self-center"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer nofollow"
+                      >
+                        <p><b>Lead the way on allyship with challenges</b> issued by our leaders to identifying inequity and take action to share power..</p>
+                        <div>
+                          <span class="content-columns__link link">Watch video</span>
+                          <span class="content_columns__icon">
+                            <i class="icon icon--external" role="presentation">
+                              <svg>
+                                <use xlink:href="./assets/sprites/sprite.svg#external"></use>
+                              </svg>
+                            </i>
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Outro -->
+      <section id="outro" class="section">
+        <div class="content-block content-block--wide">
+          <h2 class="js-scroll-item title title--wide ut-desktop-only" data-type="split">
+            <span class="title__left ut-indent-neg-20">Allyship is not a performative act,</span>
+            <span class="title__right ut-indent-13"><b>it is a lifetime commitment.</b></span>
+          </h2>
+          <h2 class="js-scroll-item title title--wide ut-mobile-only ut-text-left" data-type="split">
+            <span class="title__left ut-indent-13">Allyship is not a</span>
+            <span class="title__right ut-text-right">performative act,</span>
+            <span class="title__left"><b>it is a lifetime</b></span>
+            <span class="title__right ut-text-center"><b>commitment.</b></span>
+          </h2>
+        </div>
+        <div class="content-block content-block--wide">
+          <h2 class="js-scroll-item title title--wide">
+            Together as allies, we can make an impact that matters to one another, our teams, our firm, our clients, and our community.
+          </h2>
+        </div>
+        <a class="section__link link link--vertical link--reverse" href="#intro">
+          Back to the top
+          <span class="link__icon">
+            <i class="icon icon--arrow" role="presentation">
+              <svg>
+                <use xlink:href="./assets/sprites/sprite.svg#arrow"></use>
+              </svg>
+            </i>
+          </span>
+        </a>
       </section>
     </main>
+    <dialog class="js-video-dialog video__modal">
+      <button class="js-video-dismiss video__modal__dismiss" type="button">
+        &times;
+        <span class="ut-screenreader">Close</span>
+      </button>
+      <div class="video__modal__inner">
+        <video id="player" class="js-video video" playsinline controls poster="<%=require('./assets/images/poster.jpg')%>">
+          <source src="<%=require('./assets/media/storybook.mp4')%>" type="video/mp4" />
+        </video>
+      </div>
+    </dialog>
     <footer class="footer">
-      <img class="footer__logo" src="<%=require('./assets/deloitte.svg')%>" alt="Deloitte logo" />
+      <img class="footer__logo" src="<%=require('./assets/images/deloitte.svg')%>" alt="Deloitte logo" />
       <p class="footer__text">Copyright © 2022 Deloitte Development LLC. All rights reserved.</p>
     </footer>
   </body>

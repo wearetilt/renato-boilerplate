@@ -18,7 +18,7 @@ const devConfig = {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
     filename: "[name].js",
-    assetModuleFilename: 'assets/[name][ext]',
+    assetModuleFilename: 'assets/*/[name][ext]',
     clean: true,
   },
   plugins: [

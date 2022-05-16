@@ -1,18 +1,33 @@
 .title {
   @include title;
   width: 100%;
-  max-width: 820px;
+  max-width: 375px;
   text-align: center;
+
+  @media screen and (min-width: 1024px) {
+    max-width: 820px;
+  }
 }
 
 .title--extra {
   @include title-extra;
-  max-width: 860px;
+
+  @media screen and (min-width: 1024px) {
+    max-width: 860px;
+  }
 }
 
-.title:not([data-title-type="split"]) {
+.title--wide {
+  max-width: 400px;
+
+  @media screen and (min-width: 1024px) {
+    max-width: 1024px;
+  }
+}
+
+.title:not([data-type="split"]) {
   opacity: 0;
-  margin: 80px;
+  margin-top: 160px;
 }
 
 .title__left,
@@ -38,7 +53,7 @@
 
   .title.anim-in & {
     transform: translateX(360px);
-    animation: slide-in 400ms 100ms both;
+    animation: slide-in 400ms both;
   }
 }
 
@@ -48,6 +63,19 @@
 
   .title.anim-in & {
     opacity: 0;
-    animation: fade-in 400ms 200ms both;
+    animation: fade-in 400ms both;
   }
+}
+
+
+.title.anim-in span:nth-child(2) {
+  animation-delay: 200ms;
+}
+
+.title.anim-in span:nth-child(3) {
+  animation-delay: 300ms;
+}
+
+.title.anim-in span:nth-child(4) {
+  animation-delay: 400ms;
 }

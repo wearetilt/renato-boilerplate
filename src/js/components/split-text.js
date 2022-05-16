@@ -1,4 +1,5 @@
 import Splitting from 'splitting'
+import { createObserver } from '../helpers/intersectionObsever'
 
 export default class SplitText {
   constructor(wrap) {
@@ -8,5 +9,8 @@ export default class SplitText {
     }
     
     Splitting(options)
+
+    this.observer = createObserver()
+    this.observer.observe(wrap)
   }
 }

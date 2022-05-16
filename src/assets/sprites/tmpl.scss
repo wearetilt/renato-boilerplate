@@ -1,0 +1,101 @@
+$sprites: (
+    'arrow': "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill='currentColor' d='m240.8 60.2-58.15 58.15c-1.37 1.36-3.16 2.05-4.95 2.05s-3.58-.69-4.95-2.05c-2.73-2.74-2.73-7.17 0-9.9l41.68-41.68-207.4.93H7c-3.85 0-6.98-3.11-7-6.97-.02-3.86 3.1-7.01 6.97-7.03l206.6-.93-40.82-40.82c-2.73-2.73-2.73-7.16 0-9.9a7.007 7.007 0 0 1 9.9 0L240.8 60.2Z'/%3e%3c/svg%3e",
+    'chart': "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill='currentColor' d='M25.94 13.98h-11.7V2.28c0-.47-.38-.84-.84-.84C6 1.44.01 7.44 0 14.83c.01 7.39 6 13.39 13.4 13.39 3.69 0 7.04-1.5 9.46-3.92s3.93-5.78 3.93-9.47a.85.85 0 0 0-.85-.85ZM13.4 26.53c-6.46-.01-11.69-5.24-11.7-11.7C1.7 8.7 6.44 3.61 12.55 3.16v11.67c0 .47.38.85.85.85h11.67c-.45 6.11-5.54 10.84-11.67 10.85Z'/%3e%3cpath fill='currentColor' d='M28.18 10.01A15.35 15.35 0 0 0 18.22.04a.89.89 0 0 0-.76.12c-.22.16-.35.42-.35.69v9.42c0 .47.38.84.85.84h9.41c.27 0 .53-.12.69-.34h-.01c.16-.22.21-.5.13-.76Zm-9.37-.59V2.06a13.66 13.66 0 0 1 7.35 7.36h-7.35Z'/%3e%3c/svg%3e",
+    'download': "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill='currentColor' d='m87 240.8-58.15-58.15c-1.36-1.37-2.05-3.16-2.05-4.95s.69-3.58 2.05-4.95c2.74-2.73 7.17-2.73 9.9 0l41.68 41.68L79.53 14H7c-3.87 0-7-3.13-7-7s3.13-7 7-7h79c.08 0 .16 0 .24.01.07-.01.15-.01.23-.01 3.86-.02 7.01 3.1 7.03 6.97l.93 206.6 40.82-40.82c2.73-2.73 7.16-2.73 9.9 0a7.007 7.007 0 0 1 0 9.9L87 240.8Z'/%3e%3c/svg%3e",
+    'external': "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill='currentColor' d='M24 0C10.75 0 0 10.75 0 24s10.75 24 24 24 24-10.75 24-24S37.25 0 24 0m0 46.31C11.69 46.3 1.71 36.32 1.69 24 1.71 11.69 11.69 1.71 24 1.69 36.31 1.7 46.29 11.68 46.31 24 46.3 36.31 36.32 46.29 24 46.31'/%3e%3cpath fill='currentColor' d='M36.46 24.19c-.47 0-.85.38-.85.84V35.6H12.39V12.39h10.57c.47 0 .85-.38.85-.84 0-.47-.38-.85-.84-.85H11.55c-.47 0-.85.38-.85.84v24.91c0 .47.38.85.84.85h24.91c.47 0 .85-.38.85-.84V25.04c0-.47-.38-.85-.84-.85'/%3e%3cpath fill='currentColor' d='M36.78 10.76a.866.866 0 0 0-.32-.06h-8.3c-.47 0-.85.38-.85.84 0 .47.38.85.84.85h6.26L23.4 23.4c-.33.33-.33.87 0 1.2.16.16.37.25.6.25.23 0 .44-.09.6-.25l11.01-11.01v6.26c0 .47.38.85.84.85.47 0 .85-.38.85-.84v-8.31a.876.876 0 0 0-.53-.78'/%3e%3c/svg%3e",
+    'link': "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill='currentColor' d='M11.72 16.01c.14.14.21.32.21.5s-.07.36-.2.5h-.01L7.39 21.4c-.81.83-1.9 1.3-3.05 1.31a4.318 4.318 0 0 1-3.05-1.3A4.256 4.256 0 0 1 0 18.27c.03-1.11.49-2.17 1.29-2.96l5.73-5.73a4.208 4.208 0 0 1 5.96-.14c.04.05.09.09.13.14.28.27.28.71.01.99h-.01c-.27.28-.71.29-.99.02l-.01-.01a2.84 2.84 0 0 0-4.01-.09l-.09.09-5.72 5.73a2.822 2.822 0 0 0-.09 4.01l.09.09a2.831 2.831 0 0 0 4.01.08c.03-.02.06-.05.09-.08l4.33-4.39a.71.71 0 0 1 1-.01Z'/%3e%3cpath fill='currentColor' d='M21.39 1.3a4.226 4.226 0 0 1 .14 5.96c-.05.04-.09.09-.14.13l-5.73 5.73c-.8.83-1.9 1.29-3.05 1.3a4.254 4.254 0 0 1-3.04-1.3.697.697 0 0 1-.01-.99h.01c.27-.28.72-.28.99-.01h.01a2.831 2.831 0 0 0 4.01.09l.09-.09 5.73-5.73a2.831 2.831 0 0 0 .08-4.01c-.03-.03-.05-.06-.08-.09a2.843 2.843 0 0 0-4.02-.08c-.03.02-.06.05-.08.08l-4.16 4.39a.7.7 0 0 1-1 .03.704.704 0 0 1-.22-.52c0-.17.06-.34.19-.48l4.17-4.4a4.22 4.22 0 0 1 5.97-.15c.05.04.09.09.14.14Z'/%3e%3c/svg%3e",
+    'play': "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill='currentColor' d='M23.71 12.36 1.25.1a.865.865 0 0 0-.84.02C.16.27 0 .55 0 .85v24.51c0 .29.16.57.41.72.13.08.28.12.44.12.14 0 .27-.03.4-.1l22.46-12.25c.14-.08.26-.2.34-.34.22-.41.07-.93-.34-1.15ZM1.69 23.93V2.27L21.54 13.1 1.69 23.93Z'/%3e%3c/svg%3e",
+    'question': "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill='currentColor' d='M9.18 25.29c-1.63 0-2.95 1.32-2.96 2.95 0 1.63 1.32 2.95 2.96 2.95 1.63 0 2.95-1.32 2.95-2.95 0-1.63-1.32-2.96-2.95-2.96Zm0 4.22a1.261 1.261 0 1 1 .002-2.518 1.261 1.261 0 0 1-.002 2.518ZM9.18 0A9.252 9.252 0 0 0 .03 7.76c-.02.15-.03.31-.03.46 0 .45.34.82.79.85l4.25.3c.41 0 .76-.3.83-.7A3.368 3.368 0 0 1 9.19 5.9c1.86 0 3.37 1.51 3.37 3.37a3.466 3.466 0 0 1-3.37 3.37H7.07a.857.857 0 0 0-.85.85v8.43c0 .47.39.85.86.85h4.22c.47 0 .85-.38.84-.85v-3.86a9.282 9.282 0 0 0 6.33-8.78C18.46 4.16 14.31 0 9.18 0Zm1.9 16.61c-.37.1-.63.43-.64.82v3.64H7.92v-6.74h1.26c2.77-.07 4.99-2.3 5.06-5.06 0-2.8-2.27-5.06-5.06-5.06a5.06 5.06 0 0 0-4.79 3.42l-2.58-.19a7.546 7.546 0 0 1 7.37-5.75c4.19 0 7.58 3.4 7.59 7.59 0 3.46-2.34 6.48-5.69 7.34Z'/%3e%3c/svg%3e"
+);
+
+$sizes: (
+    'arrow': (
+        'width': 240.8px,
+        'height': 120.4px
+    ),
+    'chart': (
+        'width': 28.22px,
+        'height': 28.22px
+    ),
+    'download': (
+        'width': 147.2px,
+        'height': 240.8px
+    ),
+    'external': (
+        'width': 48px,
+        'height': 48px
+    ),
+    'link': (
+        'width': 22.69px,
+        'height': 22.71px
+    ),
+    'play': (
+        'width': 24.15px,
+        'height': 26.2px
+    ),
+    'question': (
+        'width': 18.46px,
+        'height': 31.2px
+    )
+);
+
+$variables: (
+    /* EMPTY */
+);
+
+// https://github.com/waldemarfm/sass-svg-uri/blob/v1.0.0/_svg-uri.scss
+@function sprite-str-replace($string, $search, $replace: '') {
+    $index: str-index($string, $search);
+
+    @if type-of($replace) == 'null' {
+        $replace: '';
+    }
+
+    @if ( $index ) {
+        @return str-slice($string, 1, $index - 1) + $replace + sprite-str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    }
+
+    @return $string;
+}
+
+@function sprite-svg-uri($value) {
+    $output: $value;
+
+    $output: sprite-str-replace($output, '"', "'");
+    $output: sprite-str-replace($output, '<', '%3C');
+    $output: sprite-str-replace($output, '>', '%3E');
+    $output: sprite-str-replace($output, '&', '%26');
+    $output: sprite-str-replace($output, '#', '%23');
+
+    @return $output;
+}
+
+@mixin sprite($name, $user-variables: (), $include-size: false) {
+    $sprite: map-get($sprites, $name);
+
+    // Inject variables
+    $default-variables: map-get($variables, $name);
+    @if type-of($default-variables) == 'map' {
+        @each $key, $value in map-merge($default-variables, $user-variables) {
+            @if ( not map-has-key($default-variables, $key) ) {
+                @warn 'Sprite \'#{$name}\' does not support variable named \'#{$key}\'';
+            }
+
+            $sprite: sprite-str-replace($sprite, '___#{$key}___', sprite-svg-uri(quote(#{$value})));
+        }
+    } @else if type-of($user-variables) == 'map' {
+        @warn 'Sprite \'#{$name}\' does not contain any variables';
+    }
+
+    background: url($sprite) center no-repeat;
+
+    @if $include-size {
+        $size: map-get($sizes, $name);
+        @if $include-size == true {
+            background-size: map-get($size, width) map-get($size, height);
+        } @else if $include-size == 'box' {
+            width: map-get($size, width);
+            height: map-get($size, height);
+        }
+    }
+}

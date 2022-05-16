@@ -14,26 +14,26 @@ $breakpoints: (
 :root {
   /* brand colors */
   --brand-pink: #ee087d;
-  --brand-yellow: #fac736;
+  --brand-orange: #E17C13;
   --brand-green: #20a188;
   --deloitte-green: #86bc25;
   --tone-mid-gray: #cccccc;
 
   /* grid variabsles */
-  --grid-gutter: 1rem;
-  --grid-width: calc(100% - 2rem);
+  --grid-gutter: 20px;
+  --grid-width: calc(100% - 80px);
 
   /* font sizes */
   --font-xsmall: 12px;
-  --font-small: 14px;
+  --font-small: 15px;
 
   /* block spacing */
-  --spacing-medium: 3rem;
-  --spacing-large: 5rem;
+  --spacing-medium: 2rem;
+  --spacing-large: 3rem;
 
   /* animation */
   --duration: 15s;
-  --transition-dur: 495ms;
+  --transition-dur: 295ms;
   --transition-ease: cubic-bezier(0, .5, .5, 1);
 
   /* intro mask */
@@ -42,16 +42,14 @@ $breakpoints: (
 
   --sticky-top: 160px;
 
-  /* shapes */
-  --blob-radii: 78% 63% 62% 73%;
-  --blob-radii-1: 63% 76% 58% 63%;
-  --blob-radii-2: 59% 82% 68% 83%;
-  --blob-radii-3: 69% 72% 56% 71%;
-
   @media screen and (min-width: 1200px) {
     /* grid variabsles */
     --grid-gutter: 2.5rem;
     --grid-width: calc(1200px - 4rem);
+
+      /* block spacing */
+  --spacing-medium: 3rem;
+  --spacing-large: 5rem;
   }
 }
 
@@ -83,53 +81,15 @@ $breakpoints: (
   }
 }
 
+@keyframes slide-out {
+  to {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+}
+
 @keyframes fade-out {
   to {
     opacity: 0;
-  }
-}
-
-// Blob morphing animations
-@keyframes morph {
-  0% {
-    border-radius: var(--blob-radii);
-    transform: rotate(0)
-  }
-  28% {
-    border-radius: var(--blob-radii-1);
-    /* transform: rotate(15deg); */
-  }
-  56% {
-    border-radius: var(--blob-radii-2);
-    /* transform: rotate(-2deg); */
-  }
-  84% {
-    border-radius: var(--blob-radii-3);
-    /* transform: rotate(8deg); */
-  }
-  100% {
-    border-radius: var(--blob-radii);
-  }
-}
-
-@keyframes morph-alt {
-  0% {
-    border-radius: var(--blob-radii-3);
-    transform: rotate(0)
-  }
-  28% {
-    border-radius: var(--blob-radii-1);
-    /* transform: rotate(15deg); */
-  }
-  56% {
-    border-radius: var(--blob-radii);
-    /* transform: rotate(-2deg); */
-  }
-  84% {
-    border-radius: var(--blob-radii-2);
-    /* transform: rotate(8deg); */
-  }
-  100% {
-    border-radius: var(--blob-radii-3);
   }
 }

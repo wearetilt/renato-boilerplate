@@ -2,12 +2,14 @@ const domReady = function() {
   const inits = [
     [".js-skip-trigger", require('./components/skip_to_content')],
     [".js-nav", require('./components/nav')],
-    [".js-intro", require('./components/intro')],
+    [".js-background", require('./components/background')],
     [".js-scroll-in", require('./components/scoll-in')],
     [".js-split-text", require('./components/split-text')],
-    [".js-list-section", require('./components/list-section')],
+    // [".js-list-section", require('./components/list-section')],
     [".js-parallax-section", require('./components/parallax-section')],
-    [".js-staggered-section", require('./components/staggered-section')]
+    [".js-staggered-section", require('./components/staggered-section')],
+    [".js-section", require('./components/section')],
+    [".js-video-dialog", require('./components/video')]
   ]
 
   Array.from(inits).map(init => {

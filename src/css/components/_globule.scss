@@ -1,0 +1,153 @@
+.globule-wrap {
+  display: block;
+  width: fit-content;
+  opacity: 0;
+
+  @media screen and (min-width: 1024px) {
+    display: inline-block;
+  }
+}
+
+.globule {
+  position: relative;
+  max-width: 100%;
+  min-height: 240px;
+  padding: 72px 48px;
+  color: black;
+  vertical-align: top;
+
+  svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .top {
+    fill: white;
+    fill-opacity: 0.9;
+  }
+
+  .bottom {
+    fill: rgba(black, 0.1);
+  }
+
+  @media screen and (min-width: 1024px) {
+    padding: 88px 60px;
+  }
+}
+
+.globule--pink {
+  min-width: 280px;
+  padding: 80px 40px;
+  color: white;
+
+  .top {
+    fill: var(--brand-pink);
+  }
+
+  @media screen and (min-width: 1024px) {
+    min-width: 340px;
+  }
+}
+
+.globule--orange {
+  padding: 80px;
+
+  .top {
+    fill: var(--brand-orange);
+  }
+
+  @media screen and (min-width: 1024px) {
+    transform: translateY(50vh);
+  }
+}
+
+.globule--green {
+  padding: 80px 40px;
+  margin-right: 0;
+  color: white;
+
+  .top {
+    fill: var(--brand-green);
+  }
+
+  @media screen and (min-width: 1024px) {
+    min-width: 540px;
+    transform: translateY(30vh);
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .globule-wrap:nth-child(odd) .globule {
+    margin-right: 20px;
+  }
+
+  .globule-wrap:nth-child(even) .globule {
+    margin-left: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  @for $i from 2 through 4 {
+    .globule-wrap:nth-child(#{$i}) .globule {
+      width: random(100) + 360px;
+    }
+  }
+
+  .globule-wrap .globule.globule--wide {
+    width: random(100) + 420px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  @for $i from 1 through 3 {
+    .globule-section:nth-child(#{$i}) {
+
+      @for $j from 2 through 4 {
+        .globule-wrap:nth-child(#{$j}) .globule {
+          $marg: random(200) + 200 + px;
+          margin-left: $marg;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 767px) and (max-width: 1023px) {
+  .globule-wrap:nth-child(2) {
+    margin-left: auto;
+    margin-right: 22%;
+  }
+
+  .globule-wrap:nth-child(3) {
+    margin-left: auto;
+  }
+
+  .globule-wrap:nth-child(4) {
+    margin-left: 18%;
+  }
+}
+
+.globule__title {
+  @include title;
+
+  @media screen and (min-width: 1024px) {
+    min-width: 354px;
+
+    .globule--orange & {
+      min-width: 240px;
+    }
+  }
+}
+
+.globule__subtitle {
+  @include title-small;
+  margin-bottom: 1rem;
+}
+
+.globule__text {
+  @include body-mid;
+}

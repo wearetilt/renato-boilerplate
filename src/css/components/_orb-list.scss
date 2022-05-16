@@ -1,0 +1,78 @@
+.orb-list {
+  display: grid;
+  width: 100%;
+  margin-top: var(--spacing-large);
+  column-gap: var(--grid-gutter);
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.orb-list__item a {
+
+  @media screen and (max-width: 1023px) {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  @media screen and (max-width: 767px) {
+    margin-bottom: 40px;
+    align-items: center;
+    justify-content: start;
+    flex-direction: row;
+  }
+}
+
+.orb-list__title {
+  @include title-xsmall;
+  flex-shrink: 0;
+  text-align: left;
+
+  span {
+    display: block;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+
+    span {
+      text-indent: 13%;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    margin-top: 32px;
+  }
+}
+
+.orb-list__orb {
+  @include transition((filter, transform));
+  @include aspect-ratio;
+  display: block;
+  width: 100px;
+  margin-right: 32px;
+  aspect-ratio: 1;
+  flex-grow: 0;
+
+  @media screen and (min-width: 768px) {
+    margin: auto;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 260px;
+
+    .orb-list:hover & {
+      filter: grayscale(100%);
+      transform: scale(0.9);
+    }
+  
+    .orb-list__item a:hover & {
+      filter: grayscale(0);
+      transform: scale(1.1);
+    }
+  }
+}

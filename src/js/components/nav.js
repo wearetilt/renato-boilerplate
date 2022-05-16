@@ -1,6 +1,7 @@
 export default class Nav {
   constructor(wrap) {
     this.wrap = wrap
+    this.labels =  Array.from(document.querySelectorAll('.js-nav-label'))
     this.navLinks = this.wrap.querySelectorAll('.js-nav-link')
     const options = {
       root: null,
@@ -18,9 +19,17 @@ export default class Nav {
   handleIntersect = (entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
+        // Update active link
         this.navLinks.forEach(link => link.classList.remove('is-active'))
         const activeLink = Array.from(this.navLinks).find(link => link.hash === `#${entry.target.id}`)
         activeLink.classList.add('is-active')
+        // Update section label
+        this.labels.map(label => {
+          const activeLabel = this.labels.find(l => l.dataset.section === activeLink.hash) ?? this.labels[0]
+          label === activeLabel
+            ? label.classList.add('is-active') 
+            : label.classList.remove('is-active')
+        })
       }
     })
   }

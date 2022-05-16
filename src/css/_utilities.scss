@@ -1,9 +1,70 @@
-.ut-block {
+.ut-screenreader {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+
+  &.focusable {
+    &:active,
+    &:focus {
+      clip: auto;
+      height: auto;
+      margin: 0;
+      overflow: visible;
+      position: static;
+      white-space: inherit;
+      width: auto;
+    }
+  }
+}
+
+.ut-mobile-only {
+  @media screen and (min-width: 1024px) {
+    display: none;
+  }
+}
+
+.ut-desktop-only {
+  @media screen and (max-width: 1023px) {
+    display: none;
+  }
+}
+
+.ut-block,
+[class^="ut-indent-"],
+[class^="ut-sm-indent-"] {
   display: block;
 }
 
 .ut-text-left {
   text-align: left;
+}
+
+.ut-text-center {
+  text-align: center;
+}
+
+.ut-text-right {
+  text-align: right;
+}
+
+.ut-text-left {
+  text-align: left;
+}
+
+@media screen and (min-width: 1024px) {
+  .ut-lg-text-left {
+    text-align: left;
+  }
+}
+
+.ut-no-padding {
+  padding: 0;
 }
 
 .ut-no-marg {
@@ -14,12 +75,24 @@
   margin-bottom: 0;
 }
 
-[class^="ut-indent-"] {
-  display: block
+.ut-self-center {
+  align-self: center;
+}
+
+.ut-self-bottom {
+  align-self: end;
+}
+
+.ut-indent-8 {
+  text-indent: 8%;
 }
 
 .ut-indent-13 {
   text-indent: 13%;
+}
+
+.ut-indent-18 {
+  text-indent: 18%;
 }
 
 .ut-indent-25 {
@@ -30,10 +103,32 @@
   text-indent: 32%;
 }
 
+.ut-indent-neg-20 {
+  text-indent: -20%;
+}
+
 .ut-indent-neg-22 {
   text-indent: -22%;
 }
 
+.ut-indent-neg-25 {
+  text-indent: -25%;
+}
+
+.ut-indent-40 {
+  text-indent: 40%
+}
+
 .ut-indent-neg-50 {
   text-indent: -50%
+}
+
+@media screen and (max-width: 1023px) {
+  .ut-sm-indent-8 {
+    text-indent: 8%;
+  }
+  
+  .ut-sm-indent-45 {
+    text-indent: 45%;
+  }
 }

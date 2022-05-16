@@ -1,9 +1,26 @@
+@keyframes split-list-anim {
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(0);
+  }
+}
+
+@keyframes split-list-fade-anim {
+  to {
+    opacity: 0;
+  }
+}
+
 .list {
   display: flex;
   margin-top: 40px;
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: center;
+
+  @media screen and (max-width: 1023px) {
+    max-width: 820px;
+  }
 
   @media screen and (min-width: breakpoint(medium)) {
     margin-top: 60px;
@@ -16,23 +33,64 @@
   position: relative;
   padding: 0 14px;
   padding-left: 36px;
-  margin: 8px;
+  margin: 8px 0;
   letter-spacing: 0px;
   line-height: calc(42px / 24px);
   border: 1px solid;
-  border-radius: 30px;
+  border-radius: 16px;
   opacity: 0;
   text-transform: uppercase;
+  animation: split-list-fade-anim var(--transition-dur) var(--transition-ease) both;
+
+  @media screen and (max-width: 767px) {
+    display: block;
+    width: 100%;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin: 8px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    border-radius: 30px;
+  }
+}
+
+.list__item:nth-child(odd) {
+  transform: translateY(60px) rotate(12deg);
+}
+
+.list__item:nth-child(even) {
+  transform: translateY(60px) rotate(-12deg);
+}
+
+.list__item:nth-child(odd),
+.list__item:nth-child(even) {
+  @media (prefers-reduced-motion) {
+    transform: translateY(0) rotate(0);
+  }
 }
 
 .list__item::before {
   content: "";
   position: absolute;
-  top: 50%;
   left: 14px;
   width: 16px;
   height: 16px;
   background-color: currentColor;
   border-radius: 50%;
-  transform: translateY(-50%);
+
+  @media screen and (max-width: 1023px) {
+    top: 6px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.list.is-intersecting .list__item {
+  animation: split-list-anim var(--transition-dur) var(--transition-ease) both;
+  animation-delay: calc(100ms * var(--item-index) + 200ms);
 }

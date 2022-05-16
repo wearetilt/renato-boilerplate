@@ -1,0 +1,146 @@
+.group {
+  position: relative;
+
+  @media screen and (min-width: 1024px) {
+    display: flex;
+    width: fit-content;
+    height: 100vh;
+    flex-flow: row nowrap;
+    align-self: flex-start;
+    align-items: flex-start;
+  }
+}
+
+.group__nav {
+  display: flex;
+  position: absolute;
+  z-index: 5;
+
+  &.is-fixed {
+    position: fixed;
+  }
+
+  @media screen and (max-width: 1023px) {
+    bottom: 32px;
+    left: 50%;
+    margin-bottom: 32px;
+    transform: translateX(-50%);
+  }
+
+  @media screen and (min-width: 1024px) {
+    top: 0;
+    left: 32px;
+    margin-left: 32px;
+    height: 100vh;
+    flex-wrap: wrap;
+  }
+}
+
+.group__list {
+  margin: auto;
+
+  @media screen and (max-width: 1023px) {
+    padding: 8px;
+    line-height: 1;
+    background-color: rgba(black, 0.7);
+    border-radius: 50px;
+  }
+}
+
+.group__item {
+  margin: 0 4px;
+
+  @media screen and (max-width: 1023px) {
+    display: inline-block;
+  }
+
+  @media screen and (min-width: 1024px) {
+    @include transition((opacity, transform));
+    margin: 48px 0;
+    opacity: 0;
+    transform: translateX(-20px);
+
+    .group__nav.is-fixed & {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+.group__item:nth-child(2) {
+  @media screen and (min-width: 1024px) {
+    transition-delay: 100ms;
+  }
+}
+
+.group__item:nth-child(3) {
+  @media screen and (min-width: 1024px) {
+    transition-delay: 200ms;
+  }
+}
+
+.group__link {
+  display: block;
+  position: relative;
+}
+
+.group__nav__marker {
+  @include bg-img(contain);
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+  @media screen and (min-width: 1024px) {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.group__nav__marker::after {
+  @media screen and (min-width: 1024px) {
+    @include absolute-center;
+    content: '';
+    width: 80px;
+    height: 80px;
+    border: 1px solid white;
+    border-radius: 50%;
+  }
+}
+
+.group__nav__label {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 80px;
+  margin-left: 20px;
+  font-size: 0.875rem;
+  line-height: calc(20 / 14);
+  transform: translateY(-50%);
+
+  span {
+    @include transition((opacity, transform));
+    display: block;
+    opacity: 0;
+    transform: translateX(20px);
+    transition-delay: 100ms;
+  }
+
+  &:nth-child(2) {
+    transition-delay: 0ms;
+  }
+
+  @media screen and (max-width: 1023px) {
+    display: none;
+  }
+}
+
+.group__link:hover .group__nav__label span {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0ms;
+
+  &:nth-child(2) {
+    transition-delay: 100ms;
+  }
+}
