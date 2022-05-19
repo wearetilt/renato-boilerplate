@@ -9,7 +9,8 @@ const domReady = function() {
     [".js-parallax-section", require('./components/parallax-section')],
     [".js-staggered-section", require('./components/staggered-section')],
     [".js-section", require('./components/section')],
-    [".js-video-dialog", require('./components/video')]
+    [".js-video-dialog", require('./components/video')],
+    [".js-group", require('./components/group')]
   ]
 
   Array.from(inits).map(init => {

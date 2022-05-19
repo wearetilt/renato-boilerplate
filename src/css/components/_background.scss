@@ -1,26 +1,16 @@
 .background {
+  --position: 300%;
+  --position-2: 300%;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: var(--mask-opacity);
+  opacity: var(--opacity);
   clip-path: circle(var(--mask-size) at 50% 50%);
   overflow: hidden;
+  pointer-events: none;
   z-index: -1;
-
-  svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  rect {
-    width: 100%;
-    height: 100%;
-  }
 }
 
 .background__video {
@@ -30,4 +20,53 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.background__mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: var(--split-mask-opacity);
+
+  @media screen and (min-width: 1024px) {
+    width: 50%;
+  }
+}
+
+.background__mask::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  -webkit-mask: url(../assets/images/blob.svg) 0/80% auto no-repeat, linear-gradient(white, white);
+  -webkit-mask-composite: destination-out;
+  mask: url(../assets/images/blob.svg) 0/80% auto no-repeat, linear-gradient(white, white);
+  mask-composite: exclude;
+}
+
+.background__mask--left {
+  left: 0;
+
+  &::after {
+    -webkit-mask-position: 90% var(--position), 0 0;
+    mask-position: 90% var(--position), 0 0;
+  }
+}
+
+.background__mask--right {
+  left: 0;
+
+  &::after {
+    -webkit-mask-position: 10% var(--position-2);
+    mask-position: 10% var(--position-2);
+  }
+
+  @media screen and (min-width: 1024px) {
+    left: 50%;
+  }
 }

@@ -3,12 +3,17 @@
 .video__placeholder {
   @include aspect-ratio(56%);
   position: relative;
-  width: 1024px;
+  width: calc(100% - 80px);
+  max-width: 400px;
   margin: auto;
   color: white;
   border: none;
   opacity: 0;
   overflow: hidden;
+
+  @media screen and (min-width: 1200px) {
+    max-width: 800px;
+  }
 }
 
 .video__poster {

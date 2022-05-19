@@ -7,6 +7,7 @@ export default class Section {
     this.sectionNavArea = this.wrap.querySelector('.js-section-nav')
     this.sectionNav = this.wrap.querySelector('.js-section-nav nav')
     this.sectionLinks = this.wrap.querySelectorAll('.js-section-link')
+    this.sectionBackground = this.wrap.querySelector('.js-section-bg')
     this.sectionType = this.wrap.dataset.section
     this.isDesktop = window.innerWidth >= 1024
 
@@ -35,7 +36,7 @@ export default class Section {
   initGlobs = () => {
     this.sectionFrames.forEach(frame => {
       Array.from(frame.children).map(glob => {
-        let translate = Math.floor(Math.random()) * (window.innerHeight - glob.offsetHeight) + glob.offsetHeight
+        let translate = (window.innerHeight / 100) * 45
         glob.classList.contains('js-section-title')
           ? glob.firstElementChild.setAttribute('data-translate', getTranslate(glob.firstElementChild).y)
           : glob.firstElementChild.setAttribute('data-translate', translate)
@@ -94,30 +95,29 @@ export default class Section {
         const { left, top } = glob.getBoundingClientRect()
         const max = this.isDesktop ? window.innerWidth : window.innerHeight
         const pos = this.isDesktop ? left : top
-        const inThreshhold = max * 0.33
-        const outThreshhold = max * 0.25
+        const inThreshold = max * 0.33
+        const outThreshold = max * 0.15
+        const transData = child.dataset.translate
 
         // // If glob more than 2/3 across the viewport ensure fully visible
         // if (pos < inThreshhold) glob.style.opacity = 1
         // If glob has entered viewport from the right and less 2/3 across
-        if (pos >= inThreshhold && pos > outThreshhold) {
+        if (pos >= inThreshold && pos > outThreshold && pos < max) {
           // Calculate the distance scrolled
           let dist = max - pos
           // Use the distance to calculate the percentage
           let percentage = (dist / max) * 100 * 1.5
-          let opacity = percentage < 100 ? 1 / 100 * percentage : 1
+          let opacity = percentage * 1.33 < 100 ? 1 / 100 * percentage * 1.25 : 1
           let translation
 
           glob.style.opacity = opacity
 
           if (this.isDesktop) {
             if (glob === title) {
-              // Get the initial translate value from the data attribute set in the init function
-              const start = child.dataset.translate
-              translation = percentage < 100 ? start - (start / 100 * percentage) : 0
+              // console.log((transData / 100), percentage)
+              translation = percentage < 100 ? transData - (transData / 100 * percentage) : 0
             } else {
-              const end = child.dataset.translate
-              translation = percentage < 100 ? end / 100 * percentage : end
+              translation = percentage < 100 ? transData / 100 * percentage : transData
             }
 
             child.style.transform = `translateY(${translation}px)`
@@ -126,12 +126,20 @@ export default class Section {
           }
         }
 
-        if (pos < outThreshhold) {
-          let dist = outThreshhold - pos
+        if (pos < outThreshold) {
+          let dist = outThreshold - pos
           let percentage = (dist / max) * 100
           let opacity = (100 - percentage) * 0.01
 
           glob.style.opacity = opacity
+        }
+        
+        if (this.isDesktop && pos < outThreshold) {
+          let dist = outThreshold - pos
+          let percentage = (dist / max) * 100
+          let translation = glob === title ? 0 : transData - (window.innerHeight * 0.25 / 100) * percentage
+
+          child.style.transform = `translateY(${translation}px)`
         }
       })
     })
@@ -166,20 +174,7 @@ export default class Section {
     if (!this.isDesktop && min <= max) this.sectionNav.classList.remove('is-fixed')
   }
 
-  handleClick = evt => {
-    const link = evt.target.closest('.js-section-link')
+  handleBackground = () => {
 
-    if (!!link) {
-      evt.preventDefault()
-      const target = Array.from(this.sectionFrames).find(item => `#${item.id}` === link.hash)
-      const offsetTop = this.wrap.offsetTop
-      const offsetLeft = target.offsetLeft
-
-      scrollY = window.innerWidth >= 1024 
-        ? offsetTop + offsetLeft + window.innerWidth 
-        : offsetTop + target.parentElement.offsetTop + target.offsetTop
-
-      window.scrollTo(0, offsetTop + offsetLeft + window.innerWidth)
-    }
   }
 }

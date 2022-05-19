@@ -1,11 +1,9 @@
-import { setOpacity } from "../helpers/scrollHelpers"
 import { getStyleAttribute } from '../helpers/cssHelpers'
 
 export default class ParallaxSection {
   constructor(wrap) {
     this.wrap = wrap
     this.innerEl = this.wrap.firstElementChild
-    this.fixedContent = this.wrap.querySelector('.js-parallax-fixed-content')
     this.items = this.wrap.querySelectorAll('.js-parallax-item')
     this.topOffset = window.innerHeight * 0.15
     this.midOffset = window.innerHeight * 0.5
@@ -16,9 +14,8 @@ export default class ParallaxSection {
 
   init = () => {
     let isDesktop = window.innerWidth >= 1024
-    this.wrap.style.height = isDesktop ? `${this.wrap.offsetHeight + (window.innerHeight / 2)}px` : 'auto'
+    this.wrap.style.height = isDesktop ? `${this.wrap.offsetHeight}px` : 'auto'
     this.innerEl.style.height = isDesktop ? `100vh` : 'auto'
-    this.fixedContent.style.opacity = 0
     this.items.forEach(item => {
       item.style.opacity = 0
       item.setAttribute('data-top', getStyleAttribute(item, 'marginTop'))
@@ -53,7 +50,6 @@ export default class ParallaxSection {
   }
 
   handleScroll = () => {
-    setOpacity(this.fixedContent, this.topOffset)
     this.items.forEach((item, i) => {
       const speedOffset = i === 0 ? 0.6 : 1
       this.handleItemScroll(item, speedOffset)

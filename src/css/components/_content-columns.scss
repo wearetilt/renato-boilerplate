@@ -4,14 +4,9 @@
 
 .content-columns {
   display: grid;
-  margin-top: 40px; 
   gap: var(--grid-gutter);
   align-items: start;
   justify-content: center;
-
-  @media screen and (min-width: breakpoint(medium)) {
-    margin-top: 60px;
-  }
 }
 
 .content-columns[data-columns="2"] {

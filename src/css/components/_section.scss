@@ -6,6 +6,12 @@
   position: relative;
 }
 
+.section--padded {
+  @media screen and (min-width: 1024px) {
+    scroll-padding-top: 80vw;
+  }
+}
+
 .section__inner {
   display: flex;
   width: 100%;
@@ -28,10 +34,18 @@
 
   @media screen and (min-width: 1024px) {
     display: flex;
+    height: 100%;
     flex-flow: row nowrap;
     align-self: flex-start;
     align-items: flex-start;
     will-change: transform;
+  }
+}
+
+.section--padded .section__track {
+
+  @media screen and (min-width: 1024px) {
+    padding: 0 80vw;
   }
 }
 
@@ -56,6 +70,13 @@
 
   @media screen and (max-width: 1023px) {
     padding: var(--spacing-medium) 0;
+  }
+}
+
+.section__frame--glob {
+  @media screen and (min-width: 1024px) {
+    padding: var(--spacing-large);
+    padding-right: 33vw;
   }
 }
 

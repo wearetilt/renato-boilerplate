@@ -12,12 +12,15 @@
 }
 
 .group__nav {
+  @include transition(opacity);
   display: flex;
   position: absolute;
+  opacity: 0;
   z-index: 5;
 
   &.is-fixed {
     position: fixed;
+    opacity: 1;
   }
 
   @media screen and (max-width: 1023px) {
@@ -48,35 +51,33 @@
 }
 
 .group__item {
+  @include transition((opacity, transform));
   margin: 0 4px;
 
   @media screen and (max-width: 1023px) {
     display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
   }
 
   @media screen and (min-width: 1024px) {
-    @include transition((opacity, transform));
     margin: 48px 0;
     opacity: 0;
     transform: translateX(-20px);
+  }
 
-    .group__nav.is-fixed & {
-      opacity: 1;
-      transform: translateX(0);
-    }
+  .group__nav.is-fixed & {
+    opacity: 1;
+    transform: translate(0, 0);
   }
 }
 
 .group__item:nth-child(2) {
-  @media screen and (min-width: 1024px) {
-    transition-delay: 100ms;
-  }
+  transition-delay: 100ms;
 }
 
 .group__item:nth-child(3) {
-  @media screen and (min-width: 1024px) {
-    transition-delay: 200ms;
-  }
+  transition-delay: 200ms;
 }
 
 .group__link {
@@ -99,12 +100,28 @@
 
 .group__nav__marker::after {
   @media screen and (min-width: 1024px) {
+    @include transition((opacity, transform));
     @include absolute-center;
     content: '';
     width: 80px;
     height: 80px;
-    border: 1px solid white;
+    opacity: 0;
+    border: 2px solid var(--brand-pink);
     border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0.5);
+
+    .group__item:nth-child(2) & {
+      border-color: var(--brand-orange);
+    }
+
+    .group__item:nth-child(3) & {
+      border-color: var(--brand-green);
+    }
+
+    .group__link.is-active & {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
   }
 }
 
@@ -116,6 +133,7 @@
   margin-left: 20px;
   font-size: 0.875rem;
   line-height: calc(20 / 14);
+  text-shadow: 0 0 3px rgba(black, 0.8);
   transform: translateY(-50%);
 
   span {
@@ -143,4 +161,30 @@
   &:nth-child(2) {
     transition-delay: 100ms;
   }
+}
+
+.group__background {
+  --size: 20vw;
+  --max-size: 42vw;
+  @include bg-img(contain);
+  @include transition((background-size, opacity));
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../assets/images/sphere-1.png');
+  background-size: var(--size) auto;
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.group__background.is-fixed {
+  position: fixed;
+}
+
+.group__background.is-visible {
+  background-size: var(--max-size) auto;
+  opacity: 1;
 }

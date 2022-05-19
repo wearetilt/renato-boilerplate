@@ -1,3 +1,9 @@
+.globule-section {
+  @media screen and (min-width: 1024px) {
+    padding: var(--spacing-large);
+  }
+}
+
 .globule-wrap {
   display: block;
   width: fit-content;
@@ -15,6 +21,7 @@
   padding: 72px 48px;
   color: black;
   vertical-align: top;
+  z-index: 1;
 
   svg {
     position: absolute;
@@ -35,8 +42,18 @@
   }
 
   @media screen and (min-width: 1024px) {
-    padding: 88px 60px;
+    padding: 74px;
   }
+}
+
+.globule--wide {
+  @media screen and (min-width: 1024px) {
+    padding: 60px 80px;
+  }
+}
+
+.globule--sticky {
+  z-index: 12;
 }
 
 .globule--pink {
@@ -50,6 +67,7 @@
 
   @media screen and (min-width: 1024px) {
     min-width: 340px;
+    transform: translateY(30vh);
   }
 }
 
@@ -93,12 +111,12 @@
 @media screen and (min-width: 768px) {
   @for $i from 2 through 4 {
     .globule-wrap:nth-child(#{$i}) .globule {
-      width: random(100) + 360px;
+      width: random(30) + 420px;
     }
   }
 
   .globule-wrap .globule.globule--wide {
-    width: random(100) + 420px;
+    width: random(100) + 480px;
   }
 }
 
@@ -107,9 +125,13 @@
     .globule-section:nth-child(#{$i}) {
 
       @for $j from 2 through 4 {
-        .globule-wrap:nth-child(#{$j}) .globule {
+        .globule-wrap:nth-child(#{$j}) {
           $marg: random(200) + 200 + px;
           margin-left: $marg;
+
+          .globule {
+            transform: translateY(-100px);
+          }
         }
       }
     }

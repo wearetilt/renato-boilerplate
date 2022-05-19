@@ -70,6 +70,10 @@ module.exports = {
     new SVGSpritemapPlugin(path.resolve(__dirname, "./src/assets/sprites/svgs/*.svg"), {
       output: {
         filename: "assets/sprites/sprite.svg",
+        chunk: {
+          name: 'spritemap',
+          keep: true,
+        },
         svgo: {
           plugins: [{
             name: "removeUselessDefs",

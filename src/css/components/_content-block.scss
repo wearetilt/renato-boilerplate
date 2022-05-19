@@ -23,7 +23,7 @@
 .content-block--wide {
   @media screen and (min-width: 1200px) {
     min-height: 100vh;
-    padding: var(--spacing-large) 0;
+    // padding: var(--spacing-large) 0;
   }
 }
 
@@ -34,6 +34,7 @@
 .content-block--start {
   width: 100%;
   min-height: 100vh;
+  padding: 0;
   align-content: flex-start;
 }
 
@@ -55,4 +56,21 @@
     top: var(--sticky-top);
     left: 0;
   }
+}
+
+.content-block__inner--top {
+  top: 0;
+  height: 100vh;
+  align-content: center;
+}
+
+.content-block__background {
+  @include bg-img(contain);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.6;
+  z-index: -1;
 }
