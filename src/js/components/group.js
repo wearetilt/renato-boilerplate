@@ -7,11 +7,9 @@ export default class Group {
     this.navLinks = this.wrap.querySelectorAll('.js-group-link')
     this.sections = this.wrap.querySelectorAll('.js-group-section')
     this.navObserver = new IntersectionObserver(this.navObseverCallback, { threshold: 0.5 })
-    this.backgroundObserver = new IntersectionObserver(this.backgroundObserverCallback)
+    this.backgroundObserver = new IntersectionObserver(this.backgroundObserverCallback, { trackVisibility: true, delay: 100 })
 
-    this.minId = null
-    this.maxId = null
-    this.debounceTimeout = null
+    this.debounceTimeout = {}
 
     this.handleActiveNav()
     document.addEventListener('click', this.handleClick)
@@ -44,26 +42,17 @@ export default class Group {
     })
   }
 
-  // Fast scroll intersection observer fail fix
-  applyChanges = () => {
-  }
-
   backgroundObserverCallback = entries => {
-    // clearTimeout(this.debounceTimeout)
     entries.forEach(entry => {
-      // const entryId = entry.target.id
+       // The browser doesn't support Intersection Observer v2, falling back to v1 behavior.
+      if (typeof entry.isVisible === 'undefined') entry.isVisible = true
 
-      // if (this.minId === null || this.maxId === null) {
-      //   this.minId = entryId
-      //   this.maxId = entryId
-      // } else {
-      //   this.minId = Math.min(this.minId, entryId)
-      //   this.maxId = Math.max(this.maxId, entryId)
-      // }
-
-      if (entry.isIntersecting) this.background.classList.add('is-fixed')
+      if (entry.isIntersecting && entry.isVisible) {
+        this.background.classList.add('is-fixed')
+      } else {
+        this.background.classList.remove('is-fixed')
+      }
     })
-    // this.debounceTimeout = setTimeout(this.applyChanges, 500)
   }
 
   handleClick = evt => {

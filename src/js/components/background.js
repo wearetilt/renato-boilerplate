@@ -1,12 +1,14 @@
 export default class Background {
   constructor(wrap) {
     this.wrap = wrap
+    this.video = this.wrap.querySelector('video')
     this.introHeight = document.querySelectorAll('[data-background="full"]')[0]?.offsetTop
     this.fadeEl = document.querySelectorAll('[data-background="fade"]')
     this.maskEl = document.querySelector('[data-background="split"]')
     this.growEl = document.querySelector('[data-background="grow"]')
 
     this.instruct = document.querySelector('.js-instruct')
+    this.video.playbackRate = 0.5
 
     window.addEventListener('scroll', this.handleScroll)
   }
