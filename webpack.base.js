@@ -60,6 +60,14 @@ module.exports = {
           filename: 'assets/media/[name][ext]',
         },
       },
+      {
+        test: /\.pdf$/i,
+        exclude: /node_modules/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/documents/[name][ext]',
+        },
+      },
     ]
   },
   plugins: [

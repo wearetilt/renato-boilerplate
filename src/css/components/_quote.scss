@@ -1,0 +1,18 @@
+.quote {
+  width: 100%;
+  max-width: 375px;
+  text-align: center;
+
+  @media screen and (min-width: 1024px) {
+    max-width: 820px;
+  }
+
+  blockquote {
+    @include title-mid;
+  }
+
+  figcaption {
+    margin-top: var(--spacing-large);
+    text-align: center;
+  }
+}

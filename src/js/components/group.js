@@ -6,7 +6,7 @@ export default class Group {
     this.nav = this.wrap.querySelector('.js-group-nav nav')
     this.navLinks = this.wrap.querySelectorAll('.js-group-link')
     this.sections = this.wrap.querySelectorAll('.js-group-section')
-    this.navObserver = new IntersectionObserver(this.navObseverCallback, { threshold: 0.5 })
+    this.navObserver = new IntersectionObserver(this.navObseverCallback, { threshold: 0.5, trackVisibility: true, delay: 100 })
     this.backgroundObserver = new IntersectionObserver(this.backgroundObserverCallback, { trackVisibility: true, delay: 100 })
 
     this.debounceTimeout = {}
@@ -23,12 +23,12 @@ export default class Group {
     entries.forEach(entry => {
       const hash = entry.target.id
       const background = entry.target.dataset.background
-      let intersecting = entry.isIntersecting
       let bgTimeout
 
-      this.background.classList.remove('is-visible')
+      // The browser doesn't support Intersection Observer v2, falling back to v1 behavior.
+      if (typeof entry.isVisible === 'undefined') entry.isVisible = true
 
-      if (intersecting) {
+      if (entry.isIntersecting && entry.isVisible) {
         clearTimeout(bgTimeout)
         this.background.classList.remove('is-visible')
         this.navLinks.forEach(link => {
@@ -47,7 +47,10 @@ export default class Group {
        // The browser doesn't support Intersection Observer v2, falling back to v1 behavior.
       if (typeof entry.isVisible === 'undefined') entry.isVisible = true
 
+      console.log(entry)
+
       if (entry.isIntersecting && entry.isVisible) {
+        console.log('something')
         this.background.classList.add('is-fixed')
       } else {
         this.background.classList.remove('is-fixed')

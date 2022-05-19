@@ -10,7 +10,8 @@ const domReady = function() {
     [".js-staggered-section", require('./components/staggered-section')],
     [".js-section", require('./components/section')],
     [".js-video-dialog", require('./components/video')],
-    [".js-group", require('./components/group')]
+    [".js-group", require('./components/group')],
+    [".js-stat", require('./components/stat')]
   ]
 
   Array.from(inits).map(init => {
