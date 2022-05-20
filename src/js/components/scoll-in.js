@@ -4,7 +4,7 @@ export default class ScrollIn {
   constructor(wrap) {
     this.scrollItems = wrap.querySelectorAll('.js-scroll-item')
 
-    this.init()
+    // this.init()
     this.handleScroll()
     window.addEventListener('scroll', this.handleScroll)
   }

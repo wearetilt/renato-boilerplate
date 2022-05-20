@@ -3,7 +3,7 @@
 .video__placeholder {
   @include aspect-ratio(56%);
   position: relative;
-  width: calc(100% - 80px);
+  width: 100%;
   max-width: 400px;
   margin: auto;
   color: white;
