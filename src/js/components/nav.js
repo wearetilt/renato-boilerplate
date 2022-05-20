@@ -13,7 +13,18 @@ export default class Nav {
     this.navLinks.forEach(link => {
       const section = document.querySelector(link.hash)
       if (!!section) this.observer.observe(section)
+
+      link.addEventListener('click', this.handleClick)
     })
+  }
+  
+  handleClick = evt => {
+    evt.preventDefault()
+
+    const section = document.querySelector(evt.currentTarget.hash)
+    if (!!section) {
+      section.scrollIntoView({block: "start", inline: "start"})
+    }
   }
 
   handleIntersect = (entries) => {
