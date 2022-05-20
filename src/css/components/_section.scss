@@ -1,18 +1,3 @@
-@property --num {
-  syntax: '<integer>';
-  initial-value: 0;
-  inherits: false;
-}
-
-@keyframes counter {
-  from {
-    --num: 0;
-  }
-  to {
-    --num: 50;
-  }
-}
-
 .section {
   position: relative;
 }
@@ -23,7 +8,7 @@
 
 .section--padded {
   @media screen and (min-width: 1024px) {
-    scroll-padding-top: 80vw;
+    scroll-margin-top: -80vw;
   }
 }
 
