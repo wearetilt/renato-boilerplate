@@ -65,7 +65,7 @@
     </header>
     <main id="main" class="js-scroll-in">
       <div class="js-background background">
-        <video class="background__video" playsinline muted autoplay loop poster="<%=require('./assets/images/background-placeholder.jpg')%>">
+        <video class="background__video" preload="none" playsinline muted autoplay loop poster="<%=require('./assets/images/background-placeholder.jpg')%>">
           <source src="<%=require('./assets/media/background.mp4')%>" type="video/mp4">
         </video>
         <div class="background__mask background__mask--left"></div>
@@ -509,7 +509,7 @@
                 <ul class="orb-list">
                   <li class="orb-list__item">
                     <a class="js-section-link js-group-link" href="#disrupts">
-                      <video class="orb-list__orb" playsinline muted autoplay loop poster="<%=require('./assets/images/sphere-1.png')%>">
+                      <video class="orb-list__orb" preload="none" playsinline muted autoplay loop poster="<%=require('./assets/images/sphere-1.png')%>">
                         <source src="<%=require('./assets/media/sphere-1.mp4')%>" type="video/mp4">
                       </video>
                       <h3 class="orb-list__title">
@@ -520,7 +520,7 @@
                   </li>
                   <li class="orb-list__item">
                     <a class="js-section-link js-group-link" href="#shares">
-                      <video class="orb-list__orb" poster="<%=require('./assets/images/sphere-2.png')%>" playsinline muted autoplay loop>
+                      <video class="orb-list__orb" preload="none" poster="<%=require('./assets/images/sphere-2.png')%>" playsinline muted autoplay loop>
                         <source src="<%=require('./assets/media/sphere-2.mp4')%>" type="video/mp4">
                       </video>
                       <h3 class="orb-list__title">
@@ -531,7 +531,7 @@
                   </li>
                   <li class="orb-list__item">
                     <a class="js-section-link js-group-link" href="#improves">
-                      <video class="orb-list__orb" poster="<%=require('./assets/images/sphere-3.png')%>" playsinline muted autoplay loop>
+                      <video class="orb-list__orb" preload="none" poster="<%=require('./assets/images/sphere-3.png')%>" playsinline muted autoplay loop>
                         <source src="<%=require('./assets/media/sphere-3.mp4')%>" type="video/mp4">
                       </video>
                       <h3 class="orb-list__title">
@@ -1132,7 +1132,7 @@
         <span class="ut-screenreader">Close</span>
       </button>
       <div class="video__modal__inner">
-        <video id="player" class="js-video video" playsinline controls poster="<%=require('./assets/images/poster.jpg')%>">
+        <video id="player" class="js-video video" preload="none" playsinline controls poster="<%=require('./assets/images/poster.jpg')%>">
           <source src="<%=require('./assets/media/storybook.mp4')%>" type="video/mp4" />
         </video>
       </div>
