@@ -1,3 +1,13 @@
+const getKeyboardFocusableElements = (element = document) => {
+  return [
+    ...element.querySelectorAll(
+      'a[href], button, input, textarea, select, details,[tabindex]:not([tabindex="-1"])'
+    )
+  ].filter(
+    el => !el.hasAttribute('disabled') && !el.getAttribute('aria-hidden')
+  )
+}
+
 const domReady = function() {
   const inits = [
     [".js-skip-trigger", require('./components/skip_to_content')],
@@ -21,6 +31,8 @@ const domReady = function() {
       new init[1].default(elements[i])
     }
   })
+
+  const focusableElements = getKeyboardFocusableElements()
 }
 
 window.onload = domReady

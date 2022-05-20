@@ -3,7 +3,9 @@ dist
 
 ## Package things ##
 node_modules
+yarn.lock
 yarn-error.log
+package-lock.json
 
 ## Misc ##
 .DS_Store

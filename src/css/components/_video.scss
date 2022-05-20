@@ -128,9 +128,15 @@
 
 .video__modal__inner {
   position: relative;
-  width: var(--grid-width);
-  padding-bottom: calc(9 / 16 * 100%);
+  width: calc(100% - 40px);
+  max-width: 1024px;
   margin: auto;
+}
+
+.video__modal__inner::after {
+  content: '';
+  display: block;
+  padding-bottom: calc(9 /16 * 100%);
 }
 
 .video__modal__dismiss {
