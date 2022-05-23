@@ -20,6 +20,7 @@ const domReady = function() {
     [".js-staggered-section", require('./components/staggered-section')],
     [".js-section", require('./components/section')],
     [".js-video-dialog", require('./components/video')],
+    [".js-inline-video", require('./components/inline-video')],
     [".js-group", require('./components/group')],
     [".js-stat", require('./components/stat')]
   ]
@@ -33,6 +34,10 @@ const domReady = function() {
   })
 
   const focusableElements = getKeyboardFocusableElements()
+
+  focusableElements.forEach(el => el.addEventListener('focus', evt => { 
+    evt.target.scrollIntoView()
+  }))
 }
 
 window.onload = domReady

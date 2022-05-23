@@ -7,6 +7,7 @@
 .globule-wrap {
   display: block;
   width: fit-content;
+  max-width: 100%;
   opacity: 0;
 
   @media screen and (min-width: 1024px) {
@@ -16,6 +17,7 @@
 
 .globule {
   position: relative;
+  width: random(50) + 380px;
   max-width: 100%;
   min-height: 240px;
   padding: 72px 48px;
@@ -98,15 +100,15 @@
   }
 }
 
-@media screen and (max-width: 1023px) {
-  .globule-wrap:nth-child(odd) .globule {
-    margin-right: 20px;
-  }
+// @media screen and (max-width: 1023px) {
+//   .globule-wrap:nth-child(odd) .globule {
+//     margin-right: 20px;
+//   }
 
-  .globule-wrap:nth-child(even) .globule {
-    margin-left: 20px;
-  }
-}
+//   .globule-wrap:nth-child(even) .globule {
+//     margin-left: 20px;
+//   }
+// }
 
 @media screen and (min-width: 768px) {
   @for $i from 2 through 4 {
@@ -138,7 +140,7 @@
   }
 }
 
-@media screen and (min-width: 767px) and (max-width: 1023px) {
+@media screen and (max-width: 1023px) {
   .globule-wrap:nth-child(2) {
     margin-left: auto;
     margin-right: 22%;
@@ -150,6 +152,22 @@
 
   .globule-wrap:nth-child(4) {
     margin-left: 18%;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .globule-wrap:nth-child(2) {
+    margin-left: auto;
+    margin-right: 22%;
+  }
+
+  .globule-wrap:nth-child(3) {
+    margin-left: auto;
+  }
+
+  .globule-wrap:nth-child(4) {
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 

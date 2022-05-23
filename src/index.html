@@ -12,7 +12,7 @@
         Skip to content
       </a>
       <div class="header">
-        <div class="js-nav-label header__logo is-active" data-section="#intro">
+        <div class="js-nav-label header__logo is-active" data-section="#welcome">
           <img src="<%=require('./assets/images/avatar.png')%>" alt="" width="60" height="60" />
           <p>The Artistry of<br><b>Allyship</b></p>
         </div>
@@ -27,7 +27,7 @@
           <li>
             <a class="js-nav-link nav__link is-active" href="#intro" aria-label="Introduction">
               <span class="nav__marker"></span>
-              <span class="nav__label" role="presentation">Introduction</span>
+              <span class="nav__label" role="presentation">Welcome</span>
             </a>
           </li>
           <li>
@@ -49,12 +49,6 @@
             </a>
           </li>
           <li>
-            <a class="js-nav-link nav__link" href="#challenges" aria-label="Allyship Challenges">
-              <span class="nav__marker"></span>
-              <span class="nav__label" role="presentation">Challenges</span>
-            </a>
-          </li>
-          <li>
             <a class="js-nav-link nav__link" href="#gallery" aria-label="The Gallery">
               <span class="nav__marker"></span>
               <span class="nav__label" role="presentation">The Gallery</span>
@@ -65,14 +59,14 @@
     </header>
     <main id="main" class="js-scroll-in">
       <div class="js-background background">
-        <video class="background__video" preload="none" playsinline muted autoplay loop poster="<%=require('./assets/images/background-placeholder.jpg')%>">
-          <source src="<%=require('./assets/media/background.mp4')%>" type="video/mp4">
+        <video class="js-inline-video background__video" preload="none" playsinline muted autoplay loop poster="<%=require('./assets/images/background-placeholder.jpg')%>">
+          <source data-src="<%=require('./assets/media/background.mp4')%>" type="video/mp4">
         </video>
         <div class="background__mask background__mask--left"></div>
         <div class="background__mask background__mask--right"></div>
       </div>
       <!-- Introduction -->
-      <section id="intro" class="js-intro intro section">
+      <section id="welcome" class="js-intro intro section">
         <div class="js-instruct intro__instruct" role="presentation">Scroll down</div>
         <div class="intro__body">
           <div class="js-intro-section content-block content-block--wide">
@@ -488,8 +482,8 @@
         </div>
       </section>
 
-      <!-- Allyship Challenges -->
-      <section id="challenges" class="js-group js-section section section--horizontal" data-background="fade">
+      <!-- The Gallery -->
+      <section id="gallery" class="js-group js-section section section--horizontal" data-background="fade">
         <div class="section__inner">
           <div class="js-group-background group__background"></div>
           <div class="js-section-track section__track">
@@ -510,8 +504,8 @@
                 <ul class="orb-list">
                   <li class="orb-list__item">
                     <a class="js-section-link js-group-link" href="#disrupts">
-                      <video class="orb-list__orb" preload="none" playsinline muted autoplay loop poster="<%=require('./assets/images/sphere-1.png')%>">
-                        <source src="<%=require('./assets/media/sphere-1.mp4')%>" type="video/mp4">
+                      <video class="js-inline-video orb-list__orb" preload="none" playsinline muted autoplay loop poster="<%=require('./assets/images/sphere-1.png')%>">
+                        <source data-src="<%=require('./assets/media/sphere-1.mp4')%>" type="video/mp4">
                       </video>
                       <h3 class="orb-list__title">
                         Disrupts the
@@ -521,8 +515,8 @@
                   </li>
                   <li class="orb-list__item">
                     <a class="js-section-link js-group-link" href="#shares">
-                      <video class="orb-list__orb" preload="none" poster="<%=require('./assets/images/sphere-2.png')%>" playsinline muted autoplay loop>
-                        <source src="<%=require('./assets/media/sphere-2.mp4')%>" type="video/mp4">
+                      <video class="js-inline-video orb-list__orb" preload="none" poster="<%=require('./assets/images/sphere-2.png')%>" playsinline muted autoplay loop>
+                        <source data-src="<%=require('./assets/media/sphere-2.mp4')%>" type="video/mp4">
                       </video>
                       <h3 class="orb-list__title">
                         Shares
@@ -532,8 +526,8 @@
                   </li>
                   <li class="orb-list__item">
                     <a class="js-section-link js-group-link" href="#improves">
-                      <video class="orb-list__orb" preload="none" poster="<%=require('./assets/images/sphere-3.png')%>" playsinline muted autoplay loop>
-                        <source src="<%=require('./assets/media/sphere-3.mp4')%>" type="video/mp4">
+                      <video class="js-inline-video orb-list__orb" preload="none" poster="<%=require('./assets/images/sphere-3.png')%>" playsinline muted autoplay loop>
+                        <source data-src="<%=require('./assets/media/sphere-3.mp4')%>" type="video/mp4">
                       </video>
                       <h3 class="orb-list__title">
                         Continuously
@@ -814,292 +808,6 @@
         </div>
       </section>
 
-      <!-- The Gallery -->
-      <section id="gallery" class="js-section section section--horizontal">
-        <div class="section__inner">
-          <div class="js-section-track section__track">
-            <div class="js-section-frame section__frame section__frame--full">
-              <div class="content-block content-block--wide content-block--center ut-text-center">
-                <h2 class="js-scroll-item title">
-                  The <b>gallery</b>
-                </h2>
-                <div class="js-staggered-section section__text section__text--tight">
-                  <p>
-                    Access tools to advance your artistry of allyship.
-                  </p>
-                </div>
-                <ul class="orb-list">
-                  <li class="orb-list__item">
-                    <a href="">
-                      <span class="orb-list__orb"></span>
-                      <h3 class="orb-list__title">
-                        Disrupts the
-                        <span class="ut-indent-13">Status Quo</span>
-                      </h3>
-                    </a>
-                  </li>
-                  <li class="orb-list__item">
-                    <a href="">
-                      <span class="orb-list__orb"></span>
-                      <h3 class="orb-list__title">
-                        Shares
-                        <span class="ut-indent-13">Power</span>
-                      </h3>
-                    </a>
-                  </li>
-                  <li class="orb-list__item">
-                    <a href="">
-                      <span class="orb-list__orb"></span>
-                      <h3 class="orb-list__title">
-                        Continuously
-                        <span class="ut-indent-13">Improves</span>
-                      </h3>
-                    </a>
-                  </li>
-                </ul>
-                <p class="section__footnote">Not sure which capability to choose? Take a look at the allyship capabilities in <a href="#getting-started">Get Started.</a></p>
-              </div>
-            </div>
-            <div class="group">
-              <nav class="group__nav" aria-label="Allyship Challenges">
-                <ul class="group__list">
-                  <li class="group__item">
-                    <a class="group__link" href="disrupt">
-                      <span class="group__nav__marker"></span>
-                      <span class="group__nav__label" role="presentation">
-                        <span>Disrupt the</span>
-                        <span>Status Quo</span>
-                      </span>
-                    </a>
-                  </li>
-                  <li class="group__item">
-                    <a class="group__link" href="#shares">
-                      <span class="group__nav__marker"></span>
-                      <span class="group__nav__label" role="presentation">
-                        <span>Shares</span>
-                        <span>Power</span>
-                      </span>
-                    </a>
-                  </li>
-                  <li class="group__item">
-                    <a class="group__link" href="#improves">
-                      <span class="group__nav__marker"></span>
-                      <span class="group__nav__label" role="presentation">
-                        <span>Improves</span>
-                        <span>Continuously</span>
-                      </span>
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-              <div class="js-section-frame section__frame section__frame--full">
-                <div class="content-block content-block--wide content-block--start content-block--sticky">
-                  <div class="content-block__inner">
-                    <!-- <p class="js-parallax-fixed-content section__intro">
-                      Choose to lean in, dive in, or lead the way where you’d like to accelerate your allyship capabilities:
-                    </p> -->
-                    <div class="content-columns" data-columns="3" data-theme="pink">
-                      <a 
-                        class="js-parallax-item content-columns__item content-columns__item--alt ut-self-bottom"
-                        href=""
-                        target="_blank"
-                        rel="noopener noreferrer nofollow"
-                      >
-                        <p><b>Lean in to allyship by asking questions</b> to increase awareness, taking actions that hold yourself and other accountable, and amplifying allyship by boldly intervening on behalf of others.</p>
-                        <div>
-                          <span class="content-columns__link link">Read infographic</span>
-                          <span class="content_columns__icon">
-                            <i class="icon icon--external" role="presentation">
-                              <svg>
-                                <use xlink:href="./assets/sprites/sprite.svg#external"></use>
-                              </svg>
-                            </i>
-                          </span>
-                        </div>
-                      </a>
-                      <a
-                        class="js-parallax-item content-columns__item content-columns__item--alt"
-                        href=""
-                        target="_blank"
-                        rel="noopener noreferrer nofollow"
-                      >
-                        <p><b>Dive in to allyship with a short micro-learning</b> to discover additional practices to share power on your journey as an ally.</p>
-                        <p>Explore ways to reshape inequitable situations, elevate the ideas and voice of others, and build a deeper awareness of how rupples of sharing power can turn into waves, Take the challenge to conduct a power analysis.</p>
-                        <div>
-                          <span class="content-columns__link link" >Access micro-learning</span>
-                          <span class="content_columns__icon">
-                            <i class="icon icon--external" role="presentation">
-                              <svg>
-                                <use xlink:href="./assets/sprites/sprite.svg#external"></use>
-                              </svg>
-                            </i>
-                          </span>
-                        </div>
-                      </a>
-                      <a
-                        class="js-parallax-item content-columns__item content-columns__item--alt ut-self-center"
-                        href=""
-                        target="_blank"
-                        rel="noopener noreferrer nofollow"
-                      >
-                        <p><b>Lead the way on allyship with challenges</b> issued by our leaders to identifying inequity and take action to share power..</p>
-                        <div>
-                          <span class="content-columns__link link">Watch video</span>
-                          <span class="content_columns__icon">
-                            <i class="icon icon--external" role="presentation">
-                              <svg>
-                                <use xlink:href="./assets/sprites/sprite.svg#external"></use>
-                              </svg>
-                            </i>
-                          </span>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="js-section-frame section__frame section__frame--full">
-                <div class="content-block content-block--wide content-block--start content-block--sticky">
-                  <div class="content-block__inner">
-                    <p class="js-parallax-fixed-content section__intro">
-                      Choose to lean in, dive in, or lead the way where you’d like to accelerate your allyship capabilities:
-                    </p>
-                    <div class="content-columns" data-columns="3" data-theme="orange">
-                      <a 
-                        class="js-parallax-item content-columns__item content-columns__item--alt ut-self-bottom"
-                        href=""
-                        target="_blank"
-                        rel="noopener noreferrer nofollow"
-                      >
-                        <p><b>Lean in to allyship by asking questions</b> to increase awareness, taking actions that hold yourself and other accountable, and amplifying allyship by boldly intervening on behalf of others.</p>
-                        <div>
-                          <span class="content-columns__link link">Read infographic</span>
-                          <span class="content-columns__info">(5 mins)</span>
-                          <span class="content_columns__icon">
-                            <i class="icon icon--external" role="presentation">
-                              <svg>
-                                <use xlink:href="./assets/sprites/sprite.svg#external"></use>
-                              </svg>
-                            </i>
-                          </span>
-                        </div>
-                      </a>
-                      <a
-                        class="js-parallax-item content-columns__item content-columns__item--alt"
-                        href=""
-                        target="_blank"
-                        rel="noopener noreferrer nofollow"
-                      >
-                        <p>Dive in to allyship with a short micro-learning to discover additional practices to share power on your journey as an ally.</p>
-                        <p>Explore ways to reshape inequitable situations, elevate the ideas and voice of others, and build a deeper awareness of how rupples of sharing power can turn into waves, Take the challenge to conduct a power analysis.</p>
-                        <div>
-                          <span class="content-columns__link link" >Access micro-learning</span>
-                          <span class="content-columns__info">(15 mins)</span>
-                          <span class="content_columns__icon">
-                            <i class="icon icon--external" role="presentation">
-                              <svg>
-                                <use xlink:href="./assets/sprites/sprite.svg#external"></use>
-                              </svg>
-                            </i>
-                          </span>
-                        </div>
-                      </a>
-                      <a
-                        class="js-parallax-item content-columns__item content-columns__item--alt ut-self-center"
-                        href=""
-                        target="_blank"
-                        rel="noopener noreferrer nofollow"
-                      >
-                        <p><b>Lead the way on allyship with challenges</b> issued by our leaders to identifying inequity and take action to share power..</p>
-                        <div>
-                          <span class="content-columns__link link">Watch video</span>
-                          <span class="content-columns__info">(5 mins)</span>
-                          <span class="content_columns__icon">
-                            <i class="icon icon--external" role="presentation">
-                              <svg>
-                                <use xlink:href="./assets/sprites/sprite.svg#external"></use>
-                              </svg>
-                            </i>
-                          </span>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                  </div>
-                </div>
-              </div>
-              <div class="js-section-frame section__frame section__frame--full">
-                <div class="content-block content-block--wide content-block--start content-block--sticky">
-                  <div class="content-block__inner">
-                    <p class="js-parallax-fixed-content section__intro">
-                      Choose to lean in, dive in, or lead the way where you’d like to accelerate your allyship capabilities:
-                    </p>
-                    <div class="content-columns" data-columns="3" data-theme="green">
-                      <a 
-                        class="js-parallax-item content-columns__item content-columns__item--alt ut-self-bottom"
-                        href=""
-                        target="_blank"
-                        rel="noopener noreferrer nofollow"
-                      >
-                        <p><b>Lean in to allyship by asking questions</b> to increase awareness, taking actions that hold yourself and other accountable, and amplifying allyship by boldly intervening on behalf of others.</p>
-                        <div>
-                          <span class="content-columns__link link">Read infographic</span>
-                          <span class="content_columns__icon">
-                            <i class="icon icon--external" role="presentation">
-                              <svg>
-                                <use xlink:href="./assets/sprites/sprite.svg#external"></use>
-                              </svg>
-                            </i>
-                          </span>
-                        </div>
-                      </a>
-                      <a
-                        class="js-parallax-item content-columns__item content-columns__item--alt"
-                        href=""
-                        target="_blank"
-                        rel="noopener noreferrer nofollow"
-                      >
-                        <p><b>Dive in to allyship with a short micro-learning</b> to discover additional practices to share power on your journey as an ally.</p>
-                        <p>Explore ways to reshape inequitable situations, elevate the ideas and voice of others, and build a deeper awareness of how rupples of sharing power can turn into waves, Take the challenge to conduct a power analysis.</p>
-                        <div>
-                          <span class="content-columns__link link" >Access micro-learning</span>
-                          <span class="content_columns__icon">
-                            <i class="icon icon--external" role="presentation">
-                              <svg>
-                                <use xlink:href="./assets/sprites/sprite.svg#external"></use>
-                              </svg>
-                            </i>
-                          </span>
-                        </div>
-                      </a>
-                      <a
-                        class="js-parallax-item content-columns__item content-columns__item--alt ut-self-center"
-                        href=""
-                        target="_blank"
-                        rel="noopener noreferrer nofollow"
-                      >
-                        <p><b>Lead the way on allyship with challenges</b> issued by our leaders to identifying inequity and take action to share power..</p>
-                        <div>
-                          <span class="content-columns__link link">Watch video</span>
-                          <span class="content_columns__icon">
-                            <i class="icon icon--external" role="presentation">
-                              <svg>
-                                <use xlink:href="./assets/sprites/sprite.svg#external"></use>
-                              </svg>
-                            </i>
-                          </span>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!-- Outro -->
       <section id="outro" class="section" data-background="grow">
         <div class="content-block content-block--wide">
@@ -1115,7 +823,7 @@
             Together as allies, we can make an impact that matters to one another, our teams, our firm, our clients, and our community.
           </h2>
         </div>
-        <a class="section__link link link--vertical link--reverse" href="#intro">
+        <a class="section__link link link--vertical link--reverse" href="#welcome">
           Back to the top
           <span class="link__icon">
             <i class="icon icon--arrow" role="presentation">
