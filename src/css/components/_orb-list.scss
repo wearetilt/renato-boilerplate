@@ -1,7 +1,7 @@
 .orb-list {
   display: grid;
   width: 100%;
-  margin-top: var(--spacing-large);
+  margin-top: var(--spacing-medium);
   column-gap: var(--grid-gutter);
 
   @media screen and (min-width: 768px) {
@@ -10,6 +10,7 @@
 }
 
 .orb-list__item a {
+  display: block;
 
   @media screen and (max-width: 1023px) {
     display: flex;

@@ -4,7 +4,7 @@ export default class ScrollIn {
   constructor(wrap) {
     this.scrollItems = wrap.querySelectorAll('.js-scroll-item')
 
-    // this.init()
+    this.init()
     this.handleScroll()
     window.addEventListener('scroll', this.handleScroll)
   }
@@ -30,8 +30,6 @@ export default class ScrollIn {
         // Remove animation trigger once item above top 25% or below bottom 25%
         if (top < (topOffset / 3) || top > bottomOffset) item.classList.remove('anim-in')
       } else if (dataType === 'video') {
-        if (top < window.innerHeight * 0.25) {}
-
         if (top < window.innerHeight) {
           let dist = Math.abs(top - window.innerHeight)
           let opacity = dist / (window.innerHeight * 0.5)

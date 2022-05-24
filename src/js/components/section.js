@@ -6,6 +6,7 @@ export default class Section {
     this.sectionFrames = this.wrap.querySelectorAll('.js-section-frame')
     this.sectionNavArea = this.wrap.querySelector('.js-section-nav')
     this.sectionNav = this.wrap.querySelector('.js-section-nav nav')
+    this.sectionNavLinks = this.wrap.querySelectorAll('.js-section-nav nav .js-section-link')
     this.sectionLinks = this.wrap.querySelectorAll('.js-section-link')
     this.sectionBackground = this.wrap.querySelector('.js-section-bg')
     this.sectionType = this.wrap.dataset.section
@@ -30,6 +31,7 @@ export default class Section {
       this.resetGlobs()
     }
 
+    if (!!this.sectionNavArea) this.deactivateNav()
     document.addEventListener('scroll', this.handleScroll)
   }
 
@@ -64,6 +66,8 @@ export default class Section {
     const { top, bottom } = this.wrap.getBoundingClientRect()
     const height = this.wrap.offsetHeight
     let dist = window.pageYOffset - this.wrap.offsetTop
+
+    console.log(window.pageYOffset)
 
     // Determine the distance scrolled and translate wrap
     if (top <= 0 && bottom > window.innerHeight) this.sectionTrack.style.transform = `translateX(-${dist}px)`
@@ -154,27 +158,38 @@ export default class Section {
 
     if (pos > max * 0.1) {
       this.sectionNav.classList.remove('is-fixed')
+      this.sectionNav.setAttribute('aria-hidden', 'true')
       this.sectionNav.style[posString] = `0`
     }
 
     if (this.isDesktop && pos < max * 0.1 && min > 0) {
       let dist = window.pageYOffset - this.wrap.offsetTop
-      this.sectionNav.classList.add('is-fixed')
+      this.activateNav()
       this.sectionNav.style[posString] = `${dist}px`
     }
 
-    if (!this.isDesktop && pos < max) this.sectionNav.classList.add('is-fixed')
+    if (!this.isDesktop && pos < max) this.activateNav()
 
     if (this.isDesktop && min === max) {
-      this.sectionNav.classList.remove('is-fixed')
+      this.deactivateNav()
       this.sectionNav.style.top = `${height - window.innerHeight}px`
       this.sectionNav.style.left = `${width - window.innerWidth}px`
     }
 
-    if (!this.isDesktop && min <= max) this.sectionNav.classList.remove('is-fixed')
+    if (!this.isDesktop && min <= max) this.deactivateNav()
   }
 
-  handleBackground = () => {
+  activateNav = () => {
+    this.sectionNav.classList.add('is-fixed')
+    this.sectionNav.setAttribute('aria-hidden', 'false')
 
+    this.sectionNavLinks.forEach(link => link.setAttribute('tabindex', '0'))
+  }
+
+  deactivateNav = () => {
+    this.sectionNav.classList.remove('is-fixed')
+    this.sectionNav.setAttribute('aria-hidden', 'true')
+
+    this.sectionNavLinks.forEach(link => link.setAttribute('tabindex', '-1'))
   }
 }

@@ -18,14 +18,14 @@
         </div>
         <p class="js-nav-label header__label" data-section="#get-started">Get <b>Started</b></p>
         <p class="js-nav-label header__label" data-section="#capabilities">Allyship <b>Capabilities</b></p>
-        <p class="js-nav-label header__label" data-section="#sessions">Studio <b>Sessions</b></p>
+        <p class="js-nav-label header__label" data-section="#sessions">Virtual <b>Sessions</b></p>
         <p class="js-nav-label header__label" data-section="#challenges">Allyship <b>Challenges</b></p>
         <p class="js-nav-label header__label" data-section="#gallery">The <b>Gallery</b></p>
       </div>
       <nav class="js-nav nav" aria-label="Main">
         <ul class="nav__list">
           <li>
-            <a class="js-nav-link nav__link is-active" href="#intro" aria-label="Introduction">
+            <a class="js-nav-link nav__link is-active" href="#welcome" aria-label="Introduction">
               <span class="nav__marker"></span>
               <span class="nav__label" role="presentation">Welcome</span>
             </a>
@@ -57,7 +57,7 @@
         </ul>
       </nav>
     </header>
-    <main id="main" class="js-scroll-in">
+    <main id="main" class="js-scroll-in" tabindex=”-1”>
       <div class="js-background background">
         <video class="js-inline-video background__video" preload="none" playsinline muted autoplay loop poster="<%=require('./assets/images/background-placeholder.jpg')%>">
           <source data-src="<%=require('./assets/media/background.mp4')%>" type="video/mp4">
@@ -65,6 +65,7 @@
         <div class="background__mask background__mask--left"></div>
         <div class="background__mask background__mask--right"></div>
       </div>
+
       <!-- Introduction -->
       <section id="welcome" class="js-intro intro section">
         <div class="js-instruct intro__instruct" role="presentation">Scroll down</div>
@@ -118,25 +119,27 @@
               </h2>
               <ul class="js-list js-split-text list" data-split-by="items">
                 <li class="list__item">What allyship is and is not</li>
+                <li class="list__item">The allyship capability model</li>
                 <li class="list__item">How to identify inequity</li>
                 <li class="list__item">Strategies for sharing power</li>
                 <li class="list__item">Techniques to respectfully intervene</li>
-                <li class="list__item">Approaches to connect through conversation</li>
                 <li class="list__item">Tips to overcome allyship stumbling blocks</li>
+                <li class="list__item">The importance of continuous learning</li>
               </ul>
             </div>
           </div>
 
           <div class="content-block content-block--wide" data-background="fade">
-            <div class="js-scroll-item js-video-trigger video__placeholder" data-type="video">
+            <div class="js-scroll-item video__placeholder" data-type="video">
               <div class="video__content">
-                <h3 class="video__title">Video Title</h3>
+                <h3 class="video__title">DEI Chats</h3>
+                <p class="video__description"><b>Lara Abrash speaks on Allyship</b></p>
                 <p class="video__description">Art paints a picture of deeper understanding. Allyship connects us with others.</p>
-                <span class="video__play"></span>
+                <button class="js-video-trigger video__play" aria-label="Play Lara Abrash’s allyship DEI Chats video in pop up"></button>
               </div>
               <div class="js-video-poster video__poster">
                 <img src="<%=require('./assets/images/poster.gif')%>" alt="" loading="lazy" />
-                <span class="video__play--mobile"></span>
+                <button class="js-video-trigger video__play--mobile" aria-label="Play Lara Abrash’s allyship DEI Chats video in pop up"></button>
               </div>
             </div>
           </div>
@@ -165,27 +168,45 @@
             <span class="title__right ut-indent-18"><b>get started</b></span>
           </h2>
         </div>
-        <div class="js-parallax-section content-block content-block--wide content-block--start content-block--sticky">
-          <div class="content-block__inner">
-            <div class="content-columns content-columns--async" data-columns="2">
-              <div class="js-parallax-item content-columns__item" data-type="download">
+        <div class="js-parallax-section content-block content-block--wide content-block--start">
+          <div class="content-columns content-columns--async" data-columns="2">
+            <div class="js-parallax-item content-columns__item">
+              <a 
+                class="content-columns__item__inner" 
+                href=""
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+                data-type="download"
+              >
                 <span class="content_columns__icon">
                   <svg class="icon icon--download" role="presentation">
                     <use xlink:href="./assets/sprites/sprite.svg#download"></use>
                   </svg>
                 </span>
-                <p>Read about the <b>Artistry of Allyship</b> and our allyship capabilities offering.</p>
-                <a class="content-columns__link link" href="" target="_blank" rel="noopener noreferrer nofollow">Download PDF</a>
-              </div>
-              <div class="js-parallax-item content-columns__item" data-type="quiz">
+                <div class="content-columns__content">
+                  <p>Read about the <b>Artistry of Allyship</b> and our allyship capabilities offering.</p>
+                  <span class="content-columns__link link">Download PDF</span>
+                </div>
+              </a>
+            </div>
+            <div class="js-parallax-item content-columns__item">
+              <a
+                class="content-columns__item__inner"
+                href="" 
+                target="_blank" 
+                rel="noopener noreferrer nofollow"
+                data-type="quiz"
+              >
                 <span class="content_columns__icon">
                   <svg class="icon icon--download" role="presentation">
                     <use xlink:href="./assets/sprites/sprite.svg#question"></use>
                   </svg>
                 </span>
-                <p>Take this quick survey on allyship actions you’ve experienced at Deloitte.</p>
-                <a class="content-columns__link link" href="" target="_blank" rel="noopener noreferrer nofollow">Take survey</a>
-              </div>
+                <div class="content-columns__content">
+                  <p>Take this 2 question survey on allyship actions you’ve experienced at Deloitte.</p>
+                  <span class="content-columns__link link" >Take survey</span>
+                </div>
+              </a>
             </div>
           </div>
         </div>
@@ -223,11 +244,6 @@
           </div>
           <p class="js-scroll-item section__footnote"><a href="">2021 study from Bentley University ​​Gloria Larson Center for Women and Business (page 8)</a></p>
         </div>
-        <div class="content-block">
-          <h2 class="js-scroll-item title">
-            It is important to remember that Allyship is not a destination or a self-assessed title.
-          </h2>
-        </div>
         <div class="content-block content-block--wide">
           <figure class="js-scroll-item quote">
             <blockquote>
@@ -238,7 +254,12 @@
         </div>
         <div class="content-block">
           <h2 class="js-scroll-item title">
-            Discover what it means to practice allyship, and consider how comfortable you are with these allyship behaviors.
+            Deloitte’s allyship capability model was designed to help you discover what it means to practice allyship.
+          </h2>
+        </div>
+        <div class="content-block">
+          <h2 class="js-scroll-item title">
+            Continue scrolling to learn more about each capability and the everyday behaviors that support them.
           </h2>
         </div>
       </section>
@@ -449,26 +470,44 @@
         </div>
       </section>
 
-      <!-- In-person Sessions -->
-      <section id="sessions" class="section">
+      <!-- Sessions -->
+      <section id="sessions" class="section" data-background="fade">
         <div class="content-block content-block--wide content-block--center ut-text-center">
-          <h2 class="js-scroll-item title ut-desktop-only">
-            Become an <b>active ally</b>
-          </h2>
-          <h2 class="js-scroll-item title ut-text-left ut-mobile-only">
-            <span class="ut-indent-13">Become an</span>
-            <span class="ut-indent-32"><b>active ally</b></span>
+          <h2 class="js-scroll-item title">
+            Artistry of Allyship Part 1 – <b class="ut-block">Discovering our capabilities</b>
           </h2>
           <div class="js-staggered-section section__text section__text--wide">
             <p>
-              In this 2-hour virtual learning experience, you’ll learn how to be an active ally that shares power, disrupts the status quo, and improves continuously.
-            </p>
-            <p>
-              Practice research-based skills to engage as an ally every day, explore how to overcome stumbling blocks to allyship, and set your sights on the journey ahead.
+              In this 2-hour virtual learning experience you’ll learn how Deloitte defines Allyship through our Allyship capability model. You will learn what allyship is and is not, and your responsibility to practice active allyship regardless of level.
             </p>
             <p>
               <a class="link" href="">
-                Register for the experience
+                Register for Artistry of Allyship part 1
+                <span class="link__icon">
+                  <i class="icon icon--arrow" role="presentation">
+                    <svg>
+                      <use xlink:href="./assets/sprites/sprite.svg#arrow"></use>
+                    </svg>
+                  </i>
+                </span>
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <div class="content-block content-block--wide content-block--center ut-text-center">
+          <h2 class="js-scroll-item title">
+            Artistry of Allyship Part 2 – 
+            <b class="ut-block">Everyday behaviors</b>
+          </h2>
+          <div class="js-staggered-section section__text section__text--wide">
+            <p>
+              Through the power of human-centered storytelling, this 2-hour virtual learning experience will challenge your thinking and provide ample opportunity to hone your allyship skillset. 
+            </p>
+            <p class="ut-italic">Note: Part 1 is a pre-requisite for Part 2.</p>
+            <p>
+              <a class="link" href="">
+                Register for Artistry of Allyship part 2
                 <span class="link__icon">
                   <i class="icon icon--arrow" role="presentation">
                     <svg>
@@ -483,22 +522,24 @@
       </section>
 
       <!-- The Gallery -->
-      <section id="gallery" class="js-group js-section section section--horizontal" data-background="fade">
+      <section id="gallery" class="js-group js-section section section--horizontal">
         <div class="section__inner">
           <div class="js-group-background group__background"></div>
           <div class="js-section-track section__track">
-            <div class="js-section-frame section__frame section__frame--full">
+            <div class="js-section-frame js-group-list section__frame section__frame--full">
               <div class="content-block content-block--wide content-block--center ut-text-center">
-                <h2 class="js-scroll-item title ut-desktop-only">
-                  Personalize <b>your artistry</b>
-                </h2>
-                <h2 class="js-scroll-item title ut-mobile-only">
-                  Personalize 
-                  <b class="ut-block">your artistry</b>
-                </h2>
+                <div class="title-wrap">
+                  <h2 class="js-scroll-item title--reduced ut-desktop-only">
+                    Define your own <b>learning journey</b>
+                  </h2>
+                  <h2 class="js-scroll-item title ut-mobile-only">
+                    Define your own
+                    <b class="ut-block">learning journey</b>
+                  </h2>
+                </div>
                 <div class="js-staggered-section section__text section__text--tight">
                   <p>
-                    To personalize your artistry click on an allyship capability you’d like to accelerate below:
+                    Click on an allyship capability you'd like to explore below.
                   </p>
                 </div>
                 <ul class="orb-list">
@@ -536,7 +577,7 @@
                     </a>
                   </li>
                 </ul>
-                <p class="section__footnote">Not sure which capability to choose? Take a look at the allyship capabilities in <a href="#getting-started">Get Started.</a></p>
+                <p class="section__footnote">Not sure which capability to choose? Take a look at the <a href="#capabilities">allyship capabilities</a></p>
               </div>
             </div>
             <div class="js-section-nav js-group-nav group">
@@ -579,71 +620,74 @@
                 <div class="content-block content-block--wide content-block--start content-block--sticky">
                   <div class="content-block__inner content-block__inner--top">
                     <div class="js-section-bg content-block__background"></div>
-                    <!-- <p class="js-parallax-fixed-content section__intro">
-                      Choose to lean in, dive in, or lead the way where you’d like to accelerate your allyship capabilities:
-                    </p> -->
                     <div class="content-columns" data-columns="3" data-theme="pink">
-                      <a 
-                        class="js-parallax-item content-columns__item content-columns__item--alt ut-self-bottom"
-                        href="<%=require('./assets/documents/Allyship-LeanIn-DisrupttheStatusQuo.pdf')%>"
-                        target="_blank"
-                        rel="noopener noreferrer nofollow"
-                        data-type="chart"
-                      >
-                        <p><b>Lean in to allyship by asking questions</b> to become more power cognizant, taking actions to empower others on a daily basis, and amplifying your influence to advance equity?</p>
-                        <div class="content-columns__footer">
-                          <span class="content-columns__link link">Read infographic</span>
-                          <span class="content-columns__info">(5 mins)</span>
-                          <span class="content_columns__icon">
-                            <i class="icon icon--chart" role="presentation">
-                              <svg>
-                                <use xlink:href="./assets/sprites/sprite.svg#chart"></use>
-                              </svg>
-                            </i>
-                          </span>
-                        </div>
-                      </a>
-                      <a
-                        class="js-parallax-item content-columns__item content-columns__item--alt"
-                        href=""
-                        target="_blank"
-                        rel="noopener noreferrer nofollow"
-                        data-type="link"
-                      >
-                        <p><b>Dive in to allyship with a short micro-learning</b> to discover additional practices to disrupt the status quo on your journey as an ally.</p>
-                        <p>Explore ways to identify inequities and hold ourselves and others accountable. Take the challenge to respectfully intervene and challenge behaviors that maintain the status quo.</p>
-                        <div class="content-columns__footer">
-                          <span class="content-columns__link link" >Access micro-learning</span>
-                          <span class="content-columns__info">(15 mins)</span>
-                          <span class="content_columns__icon">
-                            <i class="icon icon--link" role="presentation">
-                              <svg>
-                                <use xlink:href="./assets/sprites/sprite.svg#link"></use>
-                              </svg>
-                            </i>
-                          </span>
-                        </div>
-                      </a>
-                      <a
-                        class="js-parallax-item content-columns__item content-columns__item--alt ut-self-center"
-                        href=""
-                        target="_blank"
-                        rel="noopener noreferrer nofollow"
-                        data-type="play"
-                      >
-                        <p><b>Lead the way on allyship with challenges</b> issued by our leaders to accelerate your allyship today and disrupt the status quo.</p>
-                        <div class="content-columns__footer">
-                          <span class="content-columns__link link">Watch video</span>
-                          <span class="content-columns__info">(5 mins)</span>
-                          <span class="content_columns__icon">
-                            <i class="icon icon--play" role="presentation">
-                              <svg>
-                                <use xlink:href="./assets/sprites/sprite.svg#play"></use>
-                              </svg>
-                            </i>
-                          </span>
-                        </div>
-                      </a>
+                      <div class="content-columns__item content-columns__item--alt ut-self-bottom">
+                        <a
+                          class="content-columns__item__inner" 
+                          href="<%=require('./assets/documents/Allyship-LeanIn-DisrupttheStatusQuo.pdf')%>"
+                          target="_blank"
+                          rel="noopener noreferrer nofollow"
+                          data-type="chart"
+                        >
+                          <p><b>Lean in to allyship by asking questions</b> to become more power cognizant, taking actions to empower others on a daily basis, and amplifying your influence to advance equity?</p>
+                          <div class="content-columns__footer">
+                            <span class="content-columns__link link">Read infographic</span>
+                            <span class="content-columns__info">(5 mins)</span>
+                            <span class="content_columns__icon">
+                              <i class="icon icon--chart" role="presentation">
+                                <svg>
+                                  <use xlink:href="./assets/sprites/sprite.svg#chart"></use>
+                                </svg>
+                              </i>
+                            </span>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="content-columns__item content-columns__item--alt">
+                        <a
+                          class="content-columns__item__inner"
+                          href=""
+                          target="_blank"
+                          rel="noopener noreferrer nofollow"
+                          data-type="link"
+                        >
+                          <p><b>Dive in to allyship with a short micro-learning</b> to discover additional practices to disrupt the status quo on your journey as an ally.</p>
+                          <p>Explore ways to identify inequities and hold ourselves and others accountable. Take the challenge to respectfully intervene and challenge behaviors that maintain the status quo.</p>
+                          <div class="content-columns__footer">
+                            <span class="content-columns__link link" >Access micro-learning</span>
+                            <span class="content-columns__info">(15 mins)</span>
+                            <span class="content_columns__icon">
+                              <i class="icon icon--link" role="presentation">
+                                <svg>
+                                  <use xlink:href="./assets/sprites/sprite.svg#link"></use>
+                                </svg>
+                              </i>
+                            </span>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="content-columns__item content-columns__item--alt ut-self-center">
+                        <a 
+                          class="content-columns__item__inner"
+                          href=""
+                          target="_blank"
+                          rel="noopener noreferrer nofollow"
+                          data-type="play"
+                        >
+                          <p><b>Lead the way on allyship with challenges</b> issued by our leaders to accelerate your allyship today and disrupt the status quo.</p>
+                          <div class="content-columns__footer">
+                            <span class="content-columns__link link">Watch video</span>
+                            <span class="content-columns__info">(5 mins)</span>
+                            <span class="content_columns__icon">
+                              <i class="icon icon--play" role="presentation">
+                                <svg>
+                                  <use xlink:href="./assets/sprites/sprite.svg#play"></use>
+                                </svg>
+                              </i>
+                            </span>
+                          </div>
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -656,72 +700,75 @@
                 <div class="content-block content-block--wide content-block--start content-block--sticky">
                   <div class="content-block__inner content-block__inner--top">
                     <div class="js-section-bg content-block__background"></div>
-                    <!-- <p class="js-parallax-fixed-content section__intro">
-                      Choose to lean in, dive in, or lead the way where you’d like to accelerate your allyship capabilities:
-                    </p> -->
                     <div class="content-columns" data-columns="3" data-theme="orange">
-                      <a 
-                        class="js-parallax-item content-columns__item content-columns__item--alt ut-self-bottom"
-                        href=""
-                        target="_blank"
-                        rel="noopener noreferrer nofollow"
-                        data-type="chart"
-                      >
-                        <p><b>Lean in to allyship by asking questions</b> to increase awareness, taking actions that hold yourself and other accountable, and amplifying allyship by boldly intervening on behalf of others.
-                        </p>
-                        <div class="content-columns__footer">
-                          <span class="content-columns__link link">Read infographic</span>
-                          <span class="content-columns__info">(5 mins)</span>
-                          <span class="content_columns__icon">
-                            <i class="icon icon--chart" role="presentation">
-                              <svg>
-                                <use xlink:href="./assets/sprites/sprite.svg#chart"></use>
-                              </svg>
-                            </i>
-                          </span>
-                        </div>
-                      </a>
-                      <a
-                        class="js-parallax-item content-columns__item content-columns__item--alt"
-                        href=""
-                        target="_blank"
-                        rel="noopener noreferrer nofollow"
-                        data-type="link"
-                      >
-                        <p><b>Dive in to allyship with a short micro-learning</b> to discover additional practices to share power on your journey as an ally.</p>
-                        <p>Explore ways to reshape inequitable situations, elevate the ideas and voice of others, and build a deeper awareness of how rupples of sharing power can turn into waves, Take the challenge to conduct a power analysis.</p>
-                        <div class="content-columns__footer">
-                          <span class="content-columns__link link">Access micro-learning</span>
-                          <span class="content-columns__info">(15 mins)</span>
-                          <span class="content_columns__icon">
-                            <i class="icon icon--link" role="presentation">
-                              <svg>
-                                <use xlink:href="./assets/sprites/sprite.svg#link"></use>
-                              </svg>
-                            </i>
-                          </span>
-                        </div>
-                      </a>
-                      <a
-                        class="js-parallax-item content-columns__item content-columns__item--alt ut-self-center"
-                        href=""
-                        target="_blank"
-                        rel="noopener noreferrer nofollow"
-                        data-type="play"
-                      >
-                        <p><b>Lead the way on allyship with challenges</b> issued by our leaders to identifying inequity and take action to share power.</p>
-                        <div class="content-columns__footer">
-                          <span class="content-columns__link link">Watch video</span>
-                          <span class="content-columns__info">(5 mins)</span>
-                          <span class="content_columns__icon">
-                            <i class="icon icon--play" role="presentation">
-                              <svg>
-                                <use xlink:href="./assets/sprites/sprite.svg#play"></use>
-                              </svg>
-                            </i>
-                          </span>
-                        </div>
-                      </a>
+                      <div class="content-columns__item content-columns__item--alt ut-self-bottom">
+                        <a
+                          class="content-columns__item__inner"
+                          href="<%=require('./assets/documents/Allyship-LeanIn-SharePower.pdf')%>"
+                          target="_blank"
+                          rel="noopener noreferrer nofollow"
+                          data-type="chart"
+                        >
+                          <p><b>Lean in to allyship by asking questions</b> to increase awareness, taking actions that hold yourself and other accountable, and amplifying allyship by boldly intervening on behalf of others.
+                          </p>
+                          <div class="content-columns__footer">
+                            <span class="content-columns__link link">Read infographic</span>
+                            <span class="content-columns__info">(5 mins)</span>
+                            <span class="content_columns__icon">
+                              <i class="icon icon--chart" role="presentation">
+                                <svg>
+                                  <use xlink:href="./assets/sprites/sprite.svg#chart"></use>
+                                </svg>
+                              </i>
+                            </span>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="content-columns__item content-columns__item--alt">
+                        <a
+                          class="content-columns__item__inner"
+                          href=""
+                          target="_blank"
+                          rel="noopener noreferrer nofollow"
+                          data-type="link"
+                        >
+                          <p><b>Dive in to allyship with a short micro-learning</b> to discover additional practices to share power on your journey as an ally.</p>
+                          <p>Explore ways to reshape inequitable situations, elevate the ideas and voice of others, and build a deeper awareness of how rupples of sharing power can turn into waves, Take the challenge to conduct a power analysis.</p>
+                          <div class="content-columns__footer">
+                            <span class="content-columns__link link">Access micro-learning</span>
+                            <span class="content-columns__info">(15 mins)</span>
+                            <span class="content_columns__icon">
+                              <i class="icon icon--link" role="presentation">
+                                <svg>
+                                  <use xlink:href="./assets/sprites/sprite.svg#link"></use>
+                                </svg>
+                              </i>
+                            </span>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="content-columns__item content-columns__item--alt ut-self-center">
+                        <a
+                          class="content-columns__item__inner"
+                          href=""
+                          target="_blank"
+                          rel="noopener noreferrer nofollow"
+                          data-type="play"
+                        >
+                          <p><b>Lead the way on allyship with challenges</b> issued by our leaders to identifying inequity and take action to share power.</p>
+                          <div class="content-columns__footer">
+                            <span class="content-columns__link link">Watch video</span>
+                            <span class="content-columns__info">(5 mins)</span>
+                            <span class="content_columns__icon">
+                              <i class="icon icon--play" role="presentation">
+                                <svg>
+                                  <use xlink:href="./assets/sprites/sprite.svg#play"></use>
+                                </svg>
+                              </i>
+                            </span>
+                          </div>
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -734,71 +781,74 @@
                 <div class="content-block content-block--wide content-block--start content-block--sticky">
                   <div class="content-block__inner content-block__inner--top">
                     <div class="js-section-bg content-block__background"></div>
-                    <!-- <p class="js-parallax-fixed-content section__intro">
-                      Choose to lean in, dive in, or lead the way where you’d like to accelerate your allyship capabilities:
-                    </p> -->
                     <div class="content-columns" data-columns="3" data-theme="green">
-                      <a 
-                        class="js-parallax-item content-columns__item content-columns__item--alt ut-self-bottom"
-                        href=""
-                        target="_blank"
-                        rel="noopener noreferrer nofollow"
-                        data-type="chart"
-                      >
-                        <p><b>Lean in to allyship by asking questions</b> to broaden your perspective, taking actions to improve continuously, and amplifying allyship to help others to improve continuously?</p>
-                        <div class="content-columns__footer">
-                          <span class="content-columns__link link">Read infographic</span>
-                          <span class="content-columns__info">(5 mins)</span>
-                          <span class="content_columns__icon">
-                            <i class="icon icon--chart" role="presentation">
-                              <svg>
-                                <use xlink:href="./assets/sprites/sprite.svg#chart"></use>
-                              </svg>
-                            </i>
-                          </span>
-                        </div>
-                      </a>
-                      <a
-                        class="js-parallax-item content-columns__item content-columns__item--alt"
-                        href=""
-                        target="_blank"
-                        rel="noopener noreferrer nofollow"
-                        data-type="link"
-                      >
-                        <p><b>Dive in to allyship with a short micro-learning</b> to discover additional practices to improve continuously on your journey as an ally.</p>
-                        <p>Explore ways to become a lifelong learner who seeks new information to broaden your perspective. Commit to an ongoing journey of learning and unlearning. Take the challenge to empathetically connect with others and grow from your mistakes.</p>
-                        <div class="content-columns__footer">
-                          <span class="content-columns__link link" >Access micro-learning</span>
-                          <span class="content-columns__info">(15 mins)</span>
-                          <span class="content_columns__icon">
-                            <i class="icon icon--link" role="presentation">
-                              <svg>
-                                <use xlink:href="./assets/sprites/sprite.svg#link"></use>
-                              </svg>
-                            </i>
-                          </span>
-                        </div>
-                      </a>
-                      <a
-                        class="js-parallax-item content-columns__item content-columns__item--alt ut-self-center"
-                        href=""
-                        target="_blank"
-                        rel="noopener noreferrer nofollow"
-                        data-type="play"
-                      >
-                        <p><b>Lead the way on allyship with challenges</b> issued by our leaders to accelerate our continuous learning around allyship.</p>
-                        <div class="content-columns__footer">
-                          <span class="content-columns__link link">Watch video</span>
-                          <span class="content-columns__info">(5 mins)</span>
-                          <span class="content_columns__icon">
-                            <i class="icon icon--play" role="presentation">
-                              <svg>
-                                <use xlink:href="./assets/sprites/sprite.svg#play"></use>
-                              </svg>
-                            </i>
-                          </span>
-                        </div>
-                      </a>
+                      <div class="content-columns__item content-columns__item--alt ut-self-bottom">
+                        <a
+                          class="content-columns__item__inner"
+                          href="<%=require('./assets/documents/Allyship-LeanIn-ImproveContinuously.pdf')%>"
+                          target="_blank"
+                          rel="noopener noreferrer nofollow"
+                          data-type="chart"
+                        >
+                          <p><b>Lean in to allyship by asking questions</b> to broaden your perspective, taking actions to improve continuously, and amplifying allyship to help others to improve continuously?</p>
+                          <div class="content-columns__footer">
+                            <span class="content-columns__link link">Read infographic</span>
+                            <span class="content-columns__info">(5 mins)</span>
+                            <span class="content_columns__icon">
+                              <i class="icon icon--chart" role="presentation">
+                                <svg>
+                                  <use xlink:href="./assets/sprites/sprite.svg#chart"></use>
+                                </svg>
+                              </i>
+                            </span>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="content-columns__item content-columns__item--alt">
+                        <a
+                          class="content-columns__item__inner"
+                          href=""
+                          target="_blank"
+                          rel="noopener noreferrer nofollow"
+                          data-type="link"
+                        >
+                          <p><b>Dive in to allyship with a short micro-learning</b> to discover additional practices to improve continuously on your journey as an ally.</p>
+                          <p>Explore ways to become a lifelong learner who seeks new information to broaden your perspective. Commit to an ongoing journey of learning and unlearning. Take the challenge to empathetically connect with others and grow from your mistakes.</p>
+                          <div class="content-columns__footer">
+                            <span class="content-columns__link link" >Access micro-learning</span>
+                            <span class="content-columns__info">(15 mins)</span>
+                            <span class="content_columns__icon">
+                              <i class="icon icon--link" role="presentation">
+                                <svg>
+                                  <use xlink:href="./assets/sprites/sprite.svg#link"></use>
+                                </svg>
+                              </i>
+                            </span>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="content-columns__item content-columns__item--alt ut-self-center">
+                        <a
+                          class="content-columns__item__inner"
+                          href=""
+                          target="_blank"
+                          rel="noopener noreferrer nofollow"
+                          data-type="play"
+                        >
+                          <p><b>Lead the way on allyship with challenges</b> issued by our leaders to accelerate our continuous learning around allyship.</p>
+                          <div class="content-columns__footer">
+                            <span class="content-columns__link link">Watch video</span>
+                            <span class="content-columns__info">(5 mins)</span>
+                            <span class="content_columns__icon">
+                              <i class="icon icon--play" role="presentation">
+                                <svg>
+                                  <use xlink:href="./assets/sprites/sprite.svg#play"></use>
+                                </svg>
+                              </i>
+                            </span>
+                          </div>
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -835,17 +885,21 @@
         </a>
       </section>
     </main>
-    <dialog class="js-video-dialog video__modal">
-      <button class="js-video-dismiss video__modal__dismiss" type="button">
-        &times;
-        <span class="ut-screenreader">Close</span>
-      </button>
+
+    <aside class="js-video-dialog video__modal">
       <div class="video__modal__inner">
-        <video id="player" class="js-video video" preload="none" playsinline controls poster="<%=require('./assets/images/poster.jpg')%>">
-          <source src="<%=require('./assets/media/storybook.mp4')%>" type="video/mp4" />
-        </video>
+        <button class="js-video-dismiss video__modal__dismiss" type="button">
+          &times;
+          <span class="ut-screenreader">Close</span>
+        </button>
+        <div class="video__modal__content">
+          <video id="player" class="js-video video" preload="none" playsinline controls poster="<%=require('./assets/images/poster.jpg')%>">
+            <source src="" type="video/mp4" />
+          </video>
+        </div>
       </div>
-    </dialog>
+    </aside>
+
     <footer class="footer">
       <img class="footer__logo" src="<%=require('./assets/images/deloitte.svg')%>" alt="Deloitte logo" />
       <p class="footer__text">Copyright © 2022 Deloitte Development LLC. All rights reserved.</p>

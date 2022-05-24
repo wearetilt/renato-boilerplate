@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "author": "We Are Tilt",
   "license": "MIT",
-  "engines" : {
-    "node" : ">=14.0.0"
+  "engines": {
+    "node": ">=14.0.0"
   },
   "scripts": {
     "dev": "webpack-dev-server --config webpack.dev.js --stats-children",
