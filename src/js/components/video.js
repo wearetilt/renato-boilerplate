@@ -40,7 +40,6 @@ export default class Video {
 
     if(!evt.shiftKey) {
       const i = focusableElements.indexOf(activeItem)
-      console.log(focusableElements)
       // If not the last element in focusableElements carry on as you were
       if (i + 1 < focusableElements.length) return
 

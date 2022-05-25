@@ -67,8 +67,6 @@ export default class Section {
     const height = this.wrap.offsetHeight
     let dist = window.pageYOffset - this.wrap.offsetTop
 
-    console.log(window.pageYOffset)
-
     // Determine the distance scrolled and translate wrap
     if (top <= 0 && bottom > window.innerHeight) this.sectionTrack.style.transform = `translateX(-${dist}px)`
     // Section is not yet at top of viewport so ensure no tranform
