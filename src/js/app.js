@@ -1,16 +1,5 @@
-const getKeyboardFocusableElements = (element = document) => {
-  return [
-    ...element.querySelectorAll(
-      'a[href], button, input, textarea, select, details,[tabindex]:not([tabindex="-1"])'
-    )
-  ].filter(
-    el => !el.hasAttribute('disabled') && !el.getAttribute('aria-hidden')
-  )
-}
-
 const domReady = function() {
   const inits = [
-    [".js-skip-trigger", require('./components/skip_to_content')],
     [".js-nav", require('./components/nav')],
     [".js-background", require('./components/background')],
     [".js-scroll-in", require('./components/scoll-in')],
@@ -32,12 +21,6 @@ const domReady = function() {
       new init[1].default(elements[i])
     }
   })
-
-  const focusableElements = getKeyboardFocusableElements()
-
-  focusableElements.forEach(el => el.addEventListener('focus', evt => { 
-    evt.target.scrollIntoView()
-  }))
 }
 
 window.onload = domReady

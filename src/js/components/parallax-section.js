@@ -10,37 +10,53 @@ export default class ParallaxSection {
 
     this.init()
     window.addEventListener('resize', this.init)
+
+    this.items.forEach(item => item.addEventListener('focusin', this.handleItemFocus))
   }
 
   init = () => {
-    let isDesktop = window.innerWidth >= 1024
-    this.wrap.style.height = isDesktop ? `${this.wrap.offsetHeight}px` : 'auto'
-    this.innerEl.style.height = isDesktop ? `100vh` : 'auto'
     this.items.forEach(item => {
       item.style.opacity = 0
-      item.setAttribute('data-top', getStyleAttribute(item, 'marginTop'))
+      item.setAttribute('data-top', getStyleAttribute(item, 'paddingTop'))
     })
 
     window.addEventListener('scroll', this.handleScroll)
+  }
+
+  handleItemFocus = evt => {
+    evt.preventDefault()
+
+    const item = evt.target.closest('.js-parallax-item')
+    const scrollY = this.wrap.offsetTop + this.wrap.parentElement.offsetTop + (item.dataset.top / 3)
+
+    window.scrollTo(0, scrollY)
   }
 
   handleItemScroll = (item, speedOffset = 1) => {
     const wrapTop = this.wrap.getBoundingClientRect().top
     const { top, height } = item.getBoundingClientRect()
     let opacity
-    let margin
+    let translate
 
-    if (wrapTop < this.topOffset) {
+    if (wrapTop + this.wrap.offsetHeight < this.topOffset)
+      item.style.transform = `translateY(-${item.dataset.top}px)`
+
+    if (wrapTop < this.topOffset && wrapTop + this.wrap.offsetHeight > this.topOffset) {
       let dist = window.scrollY - this.wrap.parentElement.offsetTop - this.wrap.offsetTop + - this.topOffset
 
-      let percentage = (dist / item.dataset.top) * 100 * speedOffset
-      margin = item.dataset.top - (item.dataset.top / 100) * percentage
+      let percentage = (dist / item.dataset.top) * 100 * speedOffset > 0 ? (dist / item.dataset.top) * 100 * speedOffset : 0
+      translate = (item.dataset.top / 100) * percentage * -1
 
-      item.style.marginTop = `${margin > 0 ? margin : 0}px`
+      item.style.transform = `translateY(${translate}px)`
     }
 
+    if (wrapTop > this.topOffset) item.style.transform = `translateY(0)`
+
+    if (top < this.midOffset) opacity = 1
+
     // Fade out item once scrolled above middle of viewport
-    if (top + (height * 0.75) < this.topOffset) opacity = (top + (height * 0.75)) / this.topOffset
+    if (top + (height * 0.75) < this.topOffset && top > this.midOffset)
+      opacity = (top + (height * 0.75)) / this.topOffset
 
     // Fade in item once scrolled above bottom of viewport but below middle
     if (top > this.midOffset && top < window.innerHeight)
@@ -51,7 +67,7 @@ export default class ParallaxSection {
 
   handleScroll = () => {
     this.items.forEach((item, i) => {
-      const speedOffset = i === 0 ? 0.6 : 1
+      const speedOffset = i === 0 ? 0.4 : 1
       this.handleItemScroll(item, speedOffset)
     })
   }

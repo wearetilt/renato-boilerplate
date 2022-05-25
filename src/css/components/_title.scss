@@ -1,7 +1,13 @@
+.title-wrap {
+  width: 100%;
+}
+
 .title {
   @include title;
   width: 100%;
   max-width: 375px;
+  margin-right: auto;
+  margin-left: auto;
   text-align: center;
 
   @media screen and (min-width: 560px) {
@@ -13,6 +19,10 @@
   }
 }
 
+.title--reduced {
+  @include title-mid;
+}
+
 .title--extra {
   @include title-extra;
 
@@ -22,7 +32,6 @@
 }
 
 .title--wide {
-  max-width: 400px;
 
   @media screen and (min-width: 1024px) {
     max-width: 1024px;
@@ -31,7 +40,7 @@
 
 .title:not([data-type="split"]) {
   opacity: 0;
-  margin-top: 160px;
+  margin-top: 10vh;
 }
 
 .title__left,

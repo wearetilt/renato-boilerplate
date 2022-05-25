@@ -1,6 +1,6 @@
 export const setOpacity = (
   el,
-  topOffset = window.innerHeight * 0.25,
+  topOffset = window.innerHeight * 0.1,
 ) => {
   const { top } = el.getBoundingClientRect()
   const midOffset = window.innerHeight * 0.5
@@ -11,11 +11,13 @@ export const setOpacity = (
   // Fade out item once scrolled above middle of viewport
   if (top < topOffset) opacity = top / topOffset
 
+  if (top < midOffset && top > topOffset) opacity = 1
+
   // Fade in item once scrolled above bottom of viewport but below middle
   if (top > midOffset && top < window.innerHeight)
     opacity = (window.innerHeight - top) / midOffset
 
-  if (top > window.innerHeight) el.style.opacity = 1
+  if (top > window.innerHeight) opacity = 1
 
   el.style.opacity = opacity
 }

@@ -21,6 +21,15 @@ body * {
   box-sizing: border-box;
 }
 
+body *:focus {
+  outline: none;
+}
+
+body *:focus-visible {
+  outline: 1px dotted var(--deloitte-green);
+  outline-offset: 4px;
+}
+
 ul {
   all: unset;
   list-style-type: none;

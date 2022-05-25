@@ -4,7 +4,6 @@ export default class Nav {
     this.labels =  Array.from(document.querySelectorAll('.js-nav-label'))
     this.navLinks = this.wrap.querySelectorAll('.js-nav-link')
     const options = {
-      root: null,
       rootMargin: '-100px 0px',
       threshold: 0
     }
@@ -12,6 +11,7 @@ export default class Nav {
 
     this.navLinks.forEach(link => {
       const section = document.querySelector(link.hash)
+
       if (!!section) this.observer.observe(section)
 
       link.addEventListener('click', this.handleClick)

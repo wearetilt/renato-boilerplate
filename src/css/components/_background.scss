@@ -30,7 +30,7 @@
   height: 100%;
   opacity: var(--split-mask-opacity);
 
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 768px) {
     width: 50%;
   }
 }
@@ -43,10 +43,16 @@
   width: 100%;
   height: 100%;
   background-color: black;
-  -webkit-mask: url(../assets/images/blob.svg) 0/80% auto no-repeat, linear-gradient(white, white);
-  -webkit-mask-composite: destination-out;
-  mask: url(../assets/images/blob.svg) 0/80% auto no-repeat, linear-gradient(white, white);
-  mask-composite: exclude;
+
+  @supports (-webkit-mask-composite: destination-out) {
+    -webkit-mask: url(../assets/images/blob.svg) 0/80% auto no-repeat, linear-gradient(white, white);
+    -webkit-mask-composite: destination-out;
+  }
+
+  @supports (mask-composite: exclude) {
+    mask: url(../assets/images/blob.svg) 0/80% auto no-repeat, linear-gradient(white, white);
+    mask-composite: exclude;
+  }
 }
 
 .background__mask--left {
@@ -66,7 +72,11 @@
     mask-position: 10% var(--position-2);
   }
 
-  @media screen and (min-width: 1024px) {
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+
+  @media screen and (min-width: 768px) {
     left: 50%;
   }
 }

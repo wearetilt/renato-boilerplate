@@ -56,7 +56,7 @@ export default class Background {
 
     if (fadeRect.top < window.innerHeight) {
       const dist = window.pageYOffset - (this.fadeEl[1].offsetTop - window.innerHeight)
-      const fadePercentage = dist /  window.innerHeight * 2
+      const fadePercentage = dist /  window.innerHeight
       this.wrap.style.setProperty('--opacity', 1 - fadePercentage)
     }
 
