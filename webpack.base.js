@@ -4,6 +4,7 @@ const globImporter = require("node-sass-glob-importer")
 const { WebpackManifestPlugin } = require("webpack-manifest-plugin")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin')
+const CopyPlugin = require("copy-webpack-plugin")
 
 module.exports = {
   entry: {
@@ -67,7 +68,7 @@ module.exports = {
         generator: {
           filename: 'assets/documents/[name][ext]',
         },
-      },
+      }
     ]
   },
   plugins: [
@@ -104,6 +105,11 @@ module.exports = {
       styles: {
         filename: "./src/assets/sprites/tmpl.scss"
       }
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: "src/static", to: "" },
+      ],
     }),
     new WebpackManifestPlugin({
       writeToFileEmit: true,
