@@ -82,9 +82,13 @@
 
 .section__intro {
   @include body-lg;
-  max-width: 500px;
+  max-width: calc(100% - 80px);
   margin: auto;
   text-align: center;
+
+  @media screen and (min-width: 640px) {
+    max-width: 500px;
+  }
 }
 
 .section__nav {
@@ -96,12 +100,16 @@
 
 .section__text {
   @include body-extra;
-  max-width: 560px;
+  max-width: calc(100% - 80px);
   margin-top: 20px;
 
   p {
     padding-top: 40px;
     margin-top: 100px;
+  }
+
+  @media screen and (min-width: 640px) {
+    max-width: 560px;
   }
 
   @media screen and (min-width: 1024px) {
@@ -132,14 +140,18 @@
 }
 
 .section__footnote {
+  max-width: calc(100% - 80px);
   padding-top: var(--spacing-medium);
 
   a {
     @include inline-link;
   }
 
-  @media screen and (max-width: 1023px) {
+  @media screen and (min-width: 640px) {
     max-width: 560px;
+  }
+
+  @media screen and (max-width: 1023px) {
     text-align: center;
   }
 }

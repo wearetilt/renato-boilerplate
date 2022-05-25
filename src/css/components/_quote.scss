@@ -1,6 +1,6 @@
 .quote {
   width: 100%;
-  max-width: 375px;
+  max-width: calc(100% - 80px);
   text-align: center;
 
   @media screen and (min-width: 560px) {

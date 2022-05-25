@@ -1,6 +1,6 @@
 .orb-list {
   display: grid;
-  width: 100%;
+  width: calc(100% - 80px);
   margin-top: var(--spacing-medium);
   column-gap: var(--grid-gutter);
 

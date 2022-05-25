@@ -26,7 +26,12 @@
 
 .content-columns__item {
   width: 100%;
-  max-width: 350px;
+  max-width: calc(100% - 80px);
+  margin: auto;
+
+  @media screen and (min-width: 400px) {
+    max-width: 350px;
+  }
 
   .content-columns[data-columns="2"] & {
     height: 100%;

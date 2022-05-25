@@ -4,7 +4,7 @@
   @include aspect-ratio(56%);
   position: relative;
   width: 100%;
-  max-width: 400px;
+  max-width: calc(100% - 80px);
   margin: auto;
   color: white;
   border: none;
