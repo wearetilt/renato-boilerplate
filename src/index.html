@@ -165,11 +165,19 @@
                 <h3 class="video__title">DEI Chats</h3>
                 <p class="video__description"><b>Lara Abrash speaks on Allyship</b></p>
                 <p class="video__description">Art paints a picture of deeper understanding. Allyship connects us with others.</p>
-                <button class="js-video-trigger video__play" aria-label="Play Lara Abrash’s allyship DEI Chats video in pop up"></button>
+                <button 
+                  class="js-video-trigger video__play"
+                  aria-label="Play Lara Abrash’s allyship DEI Chats video in pop up"
+                  data-src="<%=require('./assets/media/storybook.mp4')%>"
+                ></button>
               </div>
               <div class="js-video-poster video__poster">
                 <img src="<%=require('./assets/images/poster.gif')%>" alt="" loading="lazy" />
-                <button class="js-video-trigger video__play--mobile" aria-label="Play Lara Abrash’s allyship DEI Chats video in pop up"></button>
+                <button 
+                  class="js-video-trigger video__play--mobile"
+                  aria-label="Play Lara Abrash’s allyship DEI Chats video in pop up"
+                  data-src="<%=require('./assets/media/storybook.mp4')%>"
+                ></button>
               </div>
             </div>
           </div>
@@ -923,7 +931,7 @@
           <span class="ut-screenreader">Close</span>
         </button>
         <div class="video__modal__content">
-          <video id="player" class="js-video video" preload="none" playsinline controls poster="<%=require('./assets/images/poster.jpg')%>">
+          <video id="player" class="js-video video video-js" preload="none" playsinline controls poster="<%=require('./assets/images/poster.jpg')%>">
             <source src="<%=require('./assets/media/storybook.mp4')%>" type="video/mp4" />
           </video>
         </div>

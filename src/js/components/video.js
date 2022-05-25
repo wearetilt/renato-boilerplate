@@ -1,5 +1,11 @@
-import Plyr from 'plyr'
+import VideoJS from 'video.js'
 import { getKeyboardFocusableElements } from '../helpers/keyboardHelpers'
+
+const options = {
+  controls: true,
+  preload: "auto",
+  restoreEl: '<video class="js-video video video-js" preload="none" playsinline controls></video>'
+}
 export default class Video {
   constructor(wrap) {
     this.wrap = wrap
@@ -13,10 +19,10 @@ export default class Video {
     this.videoDismiss.addEventListener('click', this.destroyPlayer)
   }
 
-  initPlayer = () => {
+  initPlayer = evt => {
     this.activeElement = document.activeElement // cache currently active element
   
-    this.player = new Plyr(this.video)
+    this.player = VideoJS(this.video, options)
     this.wrap.setAttribute('aria-hidden', 'false')
     this.player.play()
 
@@ -28,7 +34,7 @@ export default class Video {
 
   destroyPlayer = () => {
     this.wrap.setAttribute('aria-hidden', 'true')
-    this.player.destroy()
+    this.player.initChildren()
 
     this.wrap.removeEventListener('keydown', this.handleKeydown)
     this.activeElement.focus()
@@ -37,6 +43,10 @@ export default class Video {
   handleKeydown = evt => {
     const focusableElements = getKeyboardFocusableElements(this.wrap)
     const activeItem = document.activeElement
+
+    focusableElements.forEach(el => {
+      console.log(el, el.offsetWidth)
+    })
 
     if(!evt.shiftKey) {
       const i = focusableElements.indexOf(activeItem)
