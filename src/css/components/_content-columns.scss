@@ -95,6 +95,10 @@
   }
 }
 
+.content-columns__item__inner:focus-visible {
+  outline-offset: 6px;
+}
+
 .content_columns__icon {
   display: block;
   width: 40px;

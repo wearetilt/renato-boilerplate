@@ -20,7 +20,12 @@
 .nav__link {
   display: flex;
   padding: 12px;
+  border-radius: 50%;
   align-items: center;
+}
+
+.nav__link:focus-visible {
+  outline-offset: -2px;
 }
 
 .nav__marker {
@@ -61,6 +66,7 @@
   position: absolute;
   right: 100%;
   opacity: 0;
+  margin-right: 2px;
   transform: translateX(10px);
   transition-duration: var(--transition-dur);
   transition-property: opacity, transform;
