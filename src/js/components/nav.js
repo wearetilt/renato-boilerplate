@@ -3,6 +3,7 @@ export default class Nav {
     this.wrap = wrap
     this.labels =  Array.from(document.querySelectorAll('.js-nav-label'))
     this.navLinks = this.wrap.querySelectorAll('.js-nav-link')
+    this.offset = window.innerWidth >= 1024 ? window.innerWidth * 0.8 : 0
     const options = {
       rootMargin: '-100px 0px',
       threshold: 0
@@ -22,9 +23,7 @@ export default class Nav {
     evt.preventDefault()
 
     const section = document.querySelector(evt.currentTarget.hash)
-    if (!!section) {
-      section.scrollIntoView({block: "start", inline: "start"})
-    }
+    if (!!section) window.scrollTo(0, section.offsetTop + offset)
   }
 
   handleIntersect = (entries) => {
