@@ -3,9 +3,12 @@ export default class Background {
     this.wrap = wrap
     this.video = this.wrap.querySelector('video')
     this.introHeight = document.querySelectorAll('[data-background="full"]')[0]?.offsetTop
+    this.fullEl = document.querySelectorAll('[data-background="full"]')[1]
     this.fadeEl = document.querySelectorAll('[data-background="fade"]')
     this.maskEl = document.querySelector('[data-background="split"]')
     this.growEl = document.querySelector('[data-background="grow"]')
+    this.innerWidth = window.innerWidth
+    this.innerHeight = window.innerHeight
 
     this.instruct = document.querySelector('.js-instruct')
     this.video.playbackRate = 0.5
@@ -13,10 +16,16 @@ export default class Background {
     window.addEventListener('scroll', this.handleScroll)
   }
 
+  handleResize = () => {
+    this.innerWidth = window.innerWidth
+    this.innerHeight = window.innerHeight
+  }
+
   handleScroll = () => {
     const introFadeRect = this.fadeEl[0].getBoundingClientRect()
     const maskRect = this.maskEl.getBoundingClientRect()
     const fadeRect = this.fadeEl[1].getBoundingClientRect()
+    const fullRect = this.fullEl.getBoundingClientRect()
     const growRect = this.growEl.getBoundingClientRect()
     const introScrollPercentage = (window.pageYOffset / this.introHeight) * 100
     const revealPercentage = window.innerWidth / 100 * introScrollPercentage < window.innerWidth ? window.innerWidth / 100 * introScrollPercentage : window.innerWidth
@@ -28,17 +37,17 @@ export default class Background {
     this.wrap.style.setProperty('--opacity', bgOpacityPercentage * 0.75)
     this.instruct.style.opacity = instOpacityPercentage
 
-    if (introFadeRect.top < window.innerHeight) {
-      const dist = window.pageYOffset - (this.fadeEl[0].offsetTop - window.innerHeight)
+    if (introFadeRect.top < this.innerHeight) {
+      const dist = window.pageYOffset - (this.fadeEl[0].offsetTop - this.innerHeight)
       const fadePercentage = dist / this.fadeEl[0].offsetHeight
       this.wrap.style.setProperty('--opacity', 0.75 - fadePercentage)
     }
 
-    if (maskRect.top > window.innerHeight) this.wrap.style.setProperty('--split-mask-opacity', 0)
+    if (maskRect.top > this.innerHeight) this.wrap.style.setProperty('--split-mask-opacity', 0)
 
-    if (maskRect.top < window.innerHeight) {
-      const dist = window.pageYOffset - (this.maskEl.offsetTop - window.innerHeight)
-      const opacity = dist / window.innerHeight < 1 ? dist / window.innerHeight : 1
+    if (maskRect.top < this.innerHeight) {
+      const dist = window.pageYOffset - (this.maskEl.offsetTop - this.innerHeight)
+      const opacity = dist / this.innerHeight < 1 ? dist / this.innerHeight : 1
       const posPercentage = (dist / this.maskEl.offsetHeight) * 100
       const pos = (400 / 100) * posPercentage
 
@@ -48,25 +57,33 @@ export default class Background {
       this.wrap.style.setProperty('--position-2', `${300 - pos * 0.80}%`)
     }
 
-    if (maskRect.bottom < window.innerHeight * 0.5) {
-      const dist = window.pageYOffset - (this.maskEl.offsetTop + this.maskEl.offsetHeight - (window.innerHeight * 0.5))
+    if (maskRect.bottom < this.innerHeight * 0.5) {
+      const dist = window.pageYOffset - (this.maskEl.offsetTop + this.maskEl.offsetHeight - (this.innerHeight * 0.5))
       const opacity = dist / (window.innerHeight * 0.5) < 1 ? dist / (window.innerHeight * 0.5) : 1
-      this.wrap.style.setProperty('--split-mask-opacity', 1 - opacity)
+      this.wrap.style.setProperty('--opacity', 1 - opacity)
     }
 
-    if (fadeRect.top < window.innerHeight) {
-      const dist = window.pageYOffset - (this.fadeEl[1].offsetTop - window.innerHeight)
-      const fadePercentage = dist /  window.innerHeight
-      this.wrap.style.setProperty('--opacity', 1 - fadePercentage)
+    if (maskRect.bottom < 0) {
+      this.wrap.style.setProperty('--split-mask-opacity', 0)
     }
 
-    if (fadeRect.top < 0) this.wrap.style.setProperty('--mask-size', `0`)
+    if (fullRect.top < this.innerHeight && fullRect.bottom > this.innerHeight * 2) {
+      const dist = this.innerHeight - fullRect.top < this.innerHeight ? this.innerHeight - fullRect.top : this.innerHeight
+      const opacity = dist / this.innerHeight
+      this.wrap.style.setProperty('--opacity', opacity)
+    }
 
-    if (growRect.top < window.innerHeight * 0.5) {
-      const dist = window.pageYOffset - (this.growEl.offsetTop - window.innerHeight * 0.5)
+    if (fullRect.bottom < this.innerHeight * 2 && fullRect.bottom > this.innerHeight) {
+      const dist =  this.innerHeight - (fullRect.bottom - this.innerHeight) < this.innerHeight ?  this.innerHeight - (fullRect.bottom - this.innerHeight) : this.innerHeight
+      const opacity = dist / this.innerHeight < 1 ? dist / this.innerHeight : 1
+      this.wrap.style.setProperty('--opacity', 1 - opacity)
+    }
+
+    if (growRect.top < this.innerHeight * 0.5) {
+      const dist = window.pageYOffset - (this.growEl.offsetTop - this.innerHeight * 0.5)
       const percentage = (dist / this.growEl.offsetHeight) * 100 < 100 ? (dist / this.growEl.offsetHeight) * 100 : 100
       const opacity = percentage / 100 < 1 ? percentage / 100 : 1
-      const reveal = window.innerWidth / 100 * percentage
+      const reveal = this.innerWidth / 100 * percentage
 
       this.wrap.style.setProperty('--mask-size', `${reveal}px`)
       this.wrap.style.setProperty('--opacity', opacity)
