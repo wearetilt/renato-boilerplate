@@ -9,18 +9,22 @@ export default class Group {
     this.nav = this.wrap.querySelector('.js-group-nav nav')
     this.navLinks = this.wrap.querySelectorAll('.js-group-link')
     this.sections = this.wrap.querySelectorAll('.js-group-section')
-    this.navObserver = new IntersectionObserver(this.navObseverCallback, { threshold: 0.1, trackVisibility: true, delay: 100 })
-    this.backgroundObserver = new IntersectionObserver(this.backgroundObserverCallback, { trackVisibility: true, delay: 100 })
+    this.navObserver = new IntersectionObserver(this.navObseverCallback, { root: this.wrap, threshold: 0.5 })
+    this.mainObserver = new IntersectionObserver(this.mainObserverCallback, { rootMargin: `-1000px 0px 0px 0px`, trackVisibility: true, delay: 100 })
+    this.innerWidth = window.innerWidth
 
     this.handleActiveNav()
     document.addEventListener('click', this.handleClick)
+    window.addEventListener('resize', this.handleResize)
 
-    this.backgroundObserver.observe(this.background)
+    this.mainObserver.observe(this.wrap)
 
     const focusableElements = getKeyboardFocusableElements(this.wrap)
 
     focusableElements.forEach(el => el.addEventListener('focus', this.handleFocus))
   }
+
+  handleResize = () => this.innerWidth = window.innerWidth
 
   handleActiveNav = () => this.sections.forEach(section => this.navObserver.observe(section))
 
@@ -30,12 +34,7 @@ export default class Group {
       const background = entry.target.dataset.background
       let bgTimeout
 
-      // The browser doesn't support Intersection Observer v2, falling back to v1 behavior.
-      if (typeof entry.isVisible === 'undefined') entry.isVisible = true
-      console.log(entry)
-
-      if (entry.isIntersecting && entry.isVisible) {
-        console.log('anything')
+      if (entry.isIntersecting) {
         clearTimeout(bgTimeout)
         this.background.classList.remove('is-visible')
         this.navLinks.forEach(link => {
@@ -51,15 +50,16 @@ export default class Group {
     })
   }
 
-  backgroundObserverCallback = entries => {
+  mainObserverCallback = entries => {
     entries.forEach(entry => {
        // The browser doesn't support Intersection Observer v2, falling back to v1 behavior.
       if (typeof entry.isVisible === 'undefined') entry.isVisible = true
 
-      if (entry.isIntersecting && entry.isVisible) {
-        this.background.classList.add('is-fixed')
+      if (entry.isIntersecting) {
+        console.log('intersecting')
+        this.wrap.classList.add('is-visible')
       } else {
-        this.background.classList.remove('is-fixed')
+        this.wrap.classList.remove('is-visible')
       }
     })
   }
@@ -72,7 +72,7 @@ export default class Group {
       const target = Array.from(this.sections).find(item => `#${item.id}` === link.hash)
       const rect = target.getBoundingClientRect()
 
-      scrollY = window.innerWidth >= 1024 
+      scrollY = this.innerWidth >= 1024 
         ? window.pageYOffset + rect.left
         : window.pageYOffset + rect.top
 
@@ -81,7 +81,7 @@ export default class Group {
   }
 
   handleFocus = evt => {
-    if (window.innerWidth >= 1024 ) {
+    if (this.innerWidth >= 1024 ) {
       evt.preventDefault()
 
       const groupSection = evt.target.closest('.js-group-section')

@@ -58,6 +58,13 @@
   margin-right: 32px;
   aspect-ratio: 1;
   flex-grow: 0;
+  opacity: 0;
+  transform: scale(0.5);
+
+  .is-visible & {
+    opacity: 1;
+    transform: scale(1);
+  }
 
   @media screen and (min-width: 768px) {
     margin: auto;

@@ -4,7 +4,6 @@ import { getKeyboardFocusableElements } from '../helpers/keyboardHelpers'
 const options = {
   controls: true,
   preload: "auto",
-  restoreEl: '<video class="js-video video video-js" preload="none" playsinline controls></video>'
 }
 export default class Video {
   constructor(wrap) {

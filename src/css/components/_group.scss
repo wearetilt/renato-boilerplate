@@ -178,13 +178,14 @@
   opacity: 0;
   pointer-events: none;
   z-index: -1;
-}
 
-.group__background.is-fixed {
-  position: fixed;
+  .group.is-visible & {
+    position: fixed;
+  }
 }
 
 .group__background.is-visible {
+  
   background-size: var(--max-size) auto;
   opacity: 1;
 }
