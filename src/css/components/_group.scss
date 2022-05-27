@@ -179,7 +179,7 @@
   pointer-events: none;
   z-index: -1;
 
-  .group.is-visible & {
+  &.is-fixed {
     position: fixed;
   }
 }

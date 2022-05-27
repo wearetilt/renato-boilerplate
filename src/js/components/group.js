@@ -9,15 +9,15 @@ export default class Group {
     this.nav = this.wrap.querySelector('.js-group-nav nav')
     this.navLinks = this.wrap.querySelectorAll('.js-group-link')
     this.sections = this.wrap.querySelectorAll('.js-group-section')
-    this.navObserver = new IntersectionObserver(this.navObseverCallback, { root: this.wrap, threshold: 0.5 })
-    this.mainObserver = new IntersectionObserver(this.mainObserverCallback, { rootMargin: `-1000px 0px 0px 0px`, trackVisibility: true, delay: 100 })
+    // this.navObserver = new IntersectionObserver(this.navObseverCallback, { root: this.wrap, threshold: 0.5 })
+    // this.mainObserver = new IntersectionObserver(this.mainObserverCallback, { rootMargin: `-1000px 0px 0px 0px`, trackVisibility: true, delay: 100 })
     this.innerWidth = window.innerWidth
 
-    this.handleActiveNav()
+    // this.handleActiveNav()
     document.addEventListener('click', this.handleClick)
     window.addEventListener('resize', this.handleResize)
 
-    this.mainObserver.observe(this.wrap)
+    // this.mainObserver.observe(this.wrap)
 
     const focusableElements = getKeyboardFocusableElements(this.wrap)
 

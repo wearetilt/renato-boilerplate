@@ -39,9 +39,9 @@
 }
 
 @media (hover: hover) {
-  [data-theme="pink"] .content-columns__item,
-  [data-theme="orange"] .content-columns__item,
-  [data-theme="green"] .content-columns__item {
+  [data-theme="pink"] .content-columns__item a,
+  [data-theme="orange"] .content-columns__item a,
+  [data-theme="green"] .content-columns__item a {
     cursor: url('../assets/images/cursor-external.png'), auto;
   }
 }

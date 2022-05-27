@@ -23,7 +23,10 @@ export default class Nav {
     evt.preventDefault()
 
     const section = document.querySelector(evt.currentTarget.hash)
-    if (!!section) window.scrollTo(0, section.offsetTop + offset)
+    if (!!section) {
+      const offset = section.id === 'capabilities' ? this.offset : 0
+      window.scrollTo(0, section.offsetTop + offset)
+    }
   }
 
   handleIntersect = (entries) => {

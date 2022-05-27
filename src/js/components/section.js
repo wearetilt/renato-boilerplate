@@ -8,9 +8,13 @@ export default class Section {
     this.sectionNav = this.wrap.querySelector('.js-section-nav nav')
     this.sectionNavLinks = this.wrap.querySelectorAll('.js-section-nav nav .js-section-link')
     this.sectionLinks = this.wrap.querySelectorAll('.js-section-link')
-    this.sectionBackground = this.wrap.querySelector('.js-section-bg')
+    this.sectionBackground = this.wrap.querySelector('.js-section-background')
+    this.sectionBackgroundChange = this.wrap.querySelectorAll('[data-background]')
     this.sectionType = this.wrap.dataset.section
     this.isDesktop = window.innerWidth >= 1024
+    this.innerWidth = window.innerWidth
+    this.innerHeight = window.innerHeight
+    this.isSet = []
 
     this.wrap.addEventListener('click', this.handleClick)
 
@@ -60,6 +64,7 @@ export default class Section {
     }
     if (this.sectionType === "glob") this.handleGlobs()
     if (!!this.sectionNavArea) this.handleNav()
+    if (!!this.sectionBackground) this.handleBackground()
   }
 
   handleHorizontalSection = () => {
@@ -144,6 +149,46 @@ export default class Section {
           child.style.transform = `translateY(${translation}px)`
         }
       })
+    })
+  }
+
+  handleBackground = () => {
+    const { top, bottom } =  this.wrap.getBoundingClientRect()
+    let bgTimeout
+
+    if (top < 0 && bottom > this.innerHeight 
+        && !this.sectionBackground.classList.contains('is-fixed')) {
+      this.sectionBackground.classList.add('is-fixed')
+    } 
+    
+    if (this.sectionBackground.classList.contains('is-fixed') && (top > 0 || bottom < this.innerHeight)) {
+      this.sectionBackground.classList.remove('is-fixed')
+    }
+
+    this.sectionBackgroundChange.forEach(el => {
+      const rect = el.getBoundingClientRect()
+      const pos = this.isDesktop ? rect.left : rect.top
+      const end = this.isDesktop ? rect.left + rect.width : rect.top + rect.height
+      const max = this.isDesktop ? this.innerWidth : this.innerHeight
+
+      if (pos < max * 0.3 && end > max * 0.3 && !this.isSet[el.id]) {
+        this.isSet[el.id] = true // stop transition from retriggering
+        clearTimeout(bgTimeout) // clear existing timeout
+
+        // update active nav item
+        this.sectionNavLinks.forEach(link =>  
+          link.hash === `#${el.id}` ? link.classList.add('is-active') : link.classList.remove('is-active')
+        )
+
+        // Set timeout to 
+        bgTimeout = setTimeout(() => {
+          this.sectionBackground.style.backgroundImage = `url(${el.dataset.background}`
+          this.sectionBackground.classList.add('is-visible')
+        }, 300)
+      } else if ((pos > max * 0.3 || end < max * 0.3) && this.isSet[el.id]) {
+        this.isSet[el.id] = false // reset isSet variable
+        this.sectionBackground.classList.remove('is-visible') // remove class to enable transition into new bg
+      }
     })
   }
 

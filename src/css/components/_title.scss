@@ -34,6 +34,10 @@
 .title--wide {
 
   @media screen and (min-width: 1024px) {
+    max-width: 860px;
+  }
+
+  @media screen and (min-width: 1200px) {
     max-width: 1024px;
   }
 }
