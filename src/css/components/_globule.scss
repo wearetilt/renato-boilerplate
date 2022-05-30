@@ -20,7 +20,7 @@
   width: random(50) + 380px;
   max-width: 100%;
   min-height: 240px;
-  padding: 72px 48px;
+  padding: 80px 48px;
   color: black;
   vertical-align: top;
   z-index: 1;
@@ -174,6 +174,7 @@
 
 .globule__title {
   @include title;
+  line-height: 1;
 
   @media screen and (min-width: 1024px) {
     min-width: 354px;
@@ -186,7 +187,6 @@
 
 .globule__subtitle {
   @include title-small;
-  margin-bottom: 1rem;
 }
 
 .globule__text {

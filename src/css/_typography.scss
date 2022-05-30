@@ -28,7 +28,7 @@
 }
 
 @mixin title-small {
-  @include font-opensans(800, italic);
+  @include font-opensans(700, italic);
   @include font-size(1.5rem, 2.5rem);
   letter-spacing: -0.03em;
   line-height: calc(60 / 40);
