@@ -3,7 +3,7 @@ const domReady = function() {
     [".js-nav", require('./components/nav')],
     [".js-background", require('./components/background')],
     [".js-scroll-in", require('./components/scoll-in')],
-    [".js-split-text", require('./components/split-text')],
+    [".js-split-list", require('./components/split-list')],
     [".js-parallax-section", require('./components/parallax-section')],
     [".js-staggered-section", require('./components/staggered-section')],
     [".js-section", require('./components/section')],

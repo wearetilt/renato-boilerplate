@@ -49,6 +49,7 @@
   border-radius: 16px;
   opacity: 0;
   text-transform: uppercase;
+  transform: translateY(20px);
   animation: split-list-fade-anim var(--transition-dur) var(--transition-ease) both;
 
   @media screen and (max-width: 767px) {
@@ -66,11 +67,15 @@
 }
 
 .list__item:nth-child(odd) {
-  transform: translateY(60px) rotate(12deg);
+  @media screen and (min-width: 768px) {
+    transform: translateY(60px) rotate(12deg);
+  }
 }
 
 .list__item:nth-child(even) {
-  transform: translateY(60px) rotate(-12deg);
+  @media screen and (min-width: 768px) {
+    transform: translateY(60px) rotate(-12deg);
+  }
 }
 
 .list__item:nth-child(odd),
@@ -99,7 +104,8 @@
   }
 }
 
-.list.is-intersecting .list__item {
+.list.is-intersecting .list__item,
+.list__item.is-intersecting {
   animation: split-list-anim var(--transition-dur) var(--transition-ease) both;
   animation-delay: calc(100ms * var(--item-index) + 200ms);
 }
