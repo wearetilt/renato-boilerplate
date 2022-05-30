@@ -4,14 +4,14 @@ const domReady = function() {
     [".js-background", require('./components/background')],
     [".js-scroll-in", require('./components/scoll-in')],
     [".js-split-text", require('./components/split-text')],
-    // [".js-list-section", require('./components/list-section')],
     [".js-parallax-section", require('./components/parallax-section')],
     [".js-staggered-section", require('./components/staggered-section')],
     [".js-section", require('./components/section')],
     [".js-video-dialog", require('./components/video')],
     [".js-inline-video", require('./components/inline-video')],
     [".js-group", require('./components/group')],
-    [".js-stat", require('./components/stat')]
+    [".js-stat", require('./components/stat')],
+    [".js-alert", require('./components/alert')],
   ]
 
   Array.from(inits).map(init => {

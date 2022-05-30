@@ -1,49 +1,47 @@
-import VideoJS from 'video.js'
 import { getKeyboardFocusableElements } from '../helpers/keyboardHelpers'
 
-const options = {
-  controls: true,
-  preload: "auto",
-}
-export default class Video {
+export default class Alert {
   constructor(wrap) {
     this.wrap = wrap
-    this.video = wrap.querySelector('.js-video')
-    this.videoDismiss = this.wrap.querySelector('.js-video-dismiss')
-    this.playTrigger = document.querySelectorAll('.js-video-trigger')
-    this.player
+    this.triggers = document.querySelectorAll('.js-alert-trigger')
+    this.dismiss = wrap.querySelector('.js-alert-dismiss')
     this.activeElement
 
-    this.playTrigger.forEach(trigger => trigger.addEventListener('click', this.initPlayer))
-    this.videoDismiss.addEventListener('click', this.destroyPlayer)
+    this.triggers.forEach(trigger => trigger.addEventListener('click', this.handleTriggerClick))
   }
 
-  initPlayer = evt => {
+  handleTriggerClick = evt => {
+    evt.preventDefault()
+
     this.activeElement = document.activeElement // cache currently active element
-  
-    this.player = VideoJS(this.video, options)
     this.wrap.setAttribute('aria-hidden', 'false')
-    this.player.play()
 
     const focusableElements = getKeyboardFocusableElements(this.wrap)
     this.wrap.addEventListener('keydown', this.handleKeydown)
 
-    this.videoDismiss.focus()
+    focusableElements[0].focus()
+    this.wrap.addEventListener('click', this.handleBgClick)
+    this.dismiss.addEventListener('click', this.handleDismiss)
   }
 
-  destroyPlayer = () => {
+  handleDismiss = () => {
     this.wrap.setAttribute('aria-hidden', 'true')
-    this.player.initChildren()
 
     this.wrap.removeEventListener('keydown', this.handleKeydown)
     this.activeElement.focus()
   }
 
-  handleKeydown = evt => {
+  handleBgClick = evt => {
+    const content = evt.target.closest('.js-alert-inner')
+
+    if (!content) this.handleDismiss()
+  }
+
+  handleKeydown = evt  => {
     const focusableElements = getKeyboardFocusableElements(this.wrap)
     const activeItem = document.activeElement
 
-    if (evt.keyCode === 27) this.destroyPlayer()
+    if (evt.keyCode === 27) this.handleDismiss()        
 
     if(!evt.shiftKey) {
       const i = focusableElements.indexOf(activeItem)
