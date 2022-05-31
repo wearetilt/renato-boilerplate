@@ -184,6 +184,8 @@ export default class Section {
           link.hash === `#${el.id}` ? link.classList.add('is-active') : link.classList.remove('is-active')
         )
 
+        el.classList.add('is-visible') // update section class
+
         // Set timeout to 
         bgTimeout = setTimeout(() => {
           this.sectionBackground.style.backgroundImage = `url(${el.dataset.background}`
@@ -192,6 +194,7 @@ export default class Section {
       } else if ((pos > max * 0.3 || end < max * 0.3) && this.isSet[el.id]) {
         this.isSet[el.id] = false // reset isSet variable
         this.sectionBackground.classList.remove('is-visible') // remove class to enable transition into new bg
+        el.classList.remove('is-visible') // remove section class
       }
     })
   }
