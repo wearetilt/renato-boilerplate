@@ -1,5 +1,6 @@
 ## Compiled Assets ##
 dist
+*.zip
 
 ## Package things ##
 node_modules
