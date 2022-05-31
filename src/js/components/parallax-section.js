@@ -67,7 +67,7 @@ export default class ParallaxSection {
 
   handleScroll = () => {
     this.items.forEach((item, i) => {
-      const speedOffset = i === 0 ? 0.4 : 1
+      const speedOffset = i === 0 ? 0 : 0.5
       this.handleItemScroll(item, speedOffset)
     })
   }
