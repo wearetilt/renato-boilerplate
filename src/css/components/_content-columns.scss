@@ -20,7 +20,8 @@
 .content-columns[data-columns="3"] {
 
   @media screen and (min-width: 1024px) {
-    height: calc(100% - 80px);
+    min-height: 640px;
+    max-height: fit-content;
     grid-template-columns: repeat(3, 350px);
   }
 }
