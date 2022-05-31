@@ -10,7 +10,7 @@ module.exports = merge(base, {
   devtool: 'source-map',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/',
+    publicPath: './',
     filename: "[name].[hash].js",
     assetModuleFilename: 'assets/*/[name].[hash][ext]',
     clean: true,
