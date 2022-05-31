@@ -14,7 +14,7 @@ export default class SplitList {
 
   initAnim = () => {
     if (this.height < window.innerHeight * 0.66) {
-      this.items.forEach(li => this.observer.unobserve(li))
+      // this.items.forEach(li => this.observer.unobserve(li))
       this.initSplitAnim()
     } else {
       this.observer.unobserve(this.wrap)

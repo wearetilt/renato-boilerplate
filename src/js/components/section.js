@@ -2,6 +2,7 @@ import { getTranslate } from '../helpers/cssHelpers'
 export default class Section {
   constructor(wrap) {
     this.wrap = wrap
+    this.body = document.body
     this.sectionTrack = this.wrap.querySelector('.js-section-track')
     this.sectionFrames = this.wrap.querySelectorAll('.js-section-frame')
     this.sectionNavArea = this.wrap.querySelector('.js-section-nav')
@@ -57,6 +58,9 @@ export default class Section {
   }
 
   handleScroll = () => {
+    const scrolled = window.pageYOffset > 50
+    this.body.classList.toggle('is-scrolled', scrolled)
+
     if (this.isDesktop) {
       this.handleHorizontalSection()
     } else {
