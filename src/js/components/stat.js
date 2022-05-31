@@ -25,9 +25,7 @@ export default class Stat {
 
   observerCallback = entries => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        this.count()
-      }
+      if (entry.isIntersecting) this.count()
     })
   }
 }

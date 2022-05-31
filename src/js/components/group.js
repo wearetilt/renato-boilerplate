@@ -9,60 +9,18 @@ export default class Group {
     this.nav = this.wrap.querySelector('.js-group-nav nav')
     this.navLinks = this.wrap.querySelectorAll('.js-group-link')
     this.sections = this.wrap.querySelectorAll('.js-group-section')
-    // this.navObserver = new IntersectionObserver(this.navObseverCallback, { root: this.wrap, threshold: 0.5 })
-    // this.mainObserver = new IntersectionObserver(this.mainObserverCallback, { rootMargin: `-1000px 0px 0px 0px`, trackVisibility: true, delay: 100 })
     this.innerWidth = window.innerWidth
 
-    // this.handleActiveNav()
     document.addEventListener('click', this.handleClick)
     window.addEventListener('resize', this.handleResize)
 
-    // this.mainObserver.observe(this.wrap)
-
     const focusableElements = getKeyboardFocusableElements(this.wrap)
-
     focusableElements.forEach(el => el.addEventListener('focus', this.handleFocus))
   }
 
   handleResize = () => this.innerWidth = window.innerWidth
 
   handleActiveNav = () => this.sections.forEach(section => this.navObserver.observe(section))
-
-  navObseverCallback = entries => {
-    entries.forEach(entry => {
-      const hash = entry.target.id
-      const background = entry.target.dataset.background
-      let bgTimeout
-
-      if (entry.isIntersecting) {
-        clearTimeout(bgTimeout)
-        this.background.classList.remove('is-visible')
-        this.navLinks.forEach(link => {
-          link.hash === `#${hash}` ? link.classList.add('is-active') : link.classList.remove('is-active')
-        })
-        bgTimeout = setTimeout(() => {
-          this.background.style.backgroundImage = `url(${background})`
-          this.background.classList.add('is-visible')
-        }, 500)
-      } else {
-        this.background.classList.remove('is-visible')
-      }
-    })
-  }
-
-  mainObserverCallback = entries => {
-    entries.forEach(entry => {
-       // The browser doesn't support Intersection Observer v2, falling back to v1 behavior.
-      if (typeof entry.isVisible === 'undefined') entry.isVisible = true
-
-      if (entry.isIntersecting) {
-        console.log('intersecting')
-        this.wrap.classList.add('is-visible')
-      } else {
-        this.wrap.classList.remove('is-visible')
-      }
-    })
-  }
 
   handleClick = evt => {
     const link = evt.target.closest('.js-group-link')
