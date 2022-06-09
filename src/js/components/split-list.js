@@ -6,7 +6,7 @@ export default class SplitList {
     this.wrap = wrap
     this.items = this.wrap.querySelectorAll('li')
     this.height = wrap.offsetHeight
-    this.observer = createObserver()
+    this.observer = createObserver('0px', 0.5)
 
     this.initAnim()
     window.addEventListener('resize', this.initAnim)

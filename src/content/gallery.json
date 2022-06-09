@@ -1,0 +1,50 @@
+{
+  "gallery-title": "Define your own <b>learning journey</b>",
+  "gallery-intro": "Click on the allyship capability you'd like to explore below.",
+  "gallery-footnote": "Not sure which capability to choose? Take a look at the <a href='#capabilities'>allyship capabilities</a>",
+
+  "gallery-section-1-module-1-text": "<p><b>Lean in to disrupting the status quo by asking questions</b> to increase awareness, taking actions that hold yourself and others accountable, and amplifying allyship by boldly intervening on behalf of others.<p>",
+  "gallery-section-1-module-1-button": "Read infographic",
+  "gallery-section-1-module-1-info": "(5 mins)",
+  "gallery-section-1-module-1-link": "./documents/Allyship-LeanIn-DisrupttheStatusQuo.pdf",
+  
+  "gallery-section-1-module-2-text": "<p><b>Dive in to disrupting the status quo with a short micro-learning</b> to discover additional practices to disrupt the status quo on your journey as an ally.</p><p>Explore ways to identify inequities and hold ourselves and others accountable. Take the challenge to intervene and challenge behaviors that maintain the status quo respectfully.</p>",
+  "gallery-section-1-module-2-button": "Access micro-learning",
+  "gallery-section-1-module-2-info": "(15 mins)",
+  "gallery-section-1-module-2-link": "",
+  
+  "gallery-section-1-module-3-text": "<p><b>Lead the way on disrupting the status quo with challenges</b> issued by our leaders.</p>",
+  "gallery-section-1-module-3-button": "Watch video",
+  "gallery-section-1-module-3-info": "(5 mins)",
+  "gallery-section-1-module-3-link": "",
+
+  "gallery-section-2-module-1-text": "<p><b>Lean in to allyship by asking questions</b> to become more power cognizant, taking actions to empower others daily, and amplifying your influence to advance equity?</p>",
+  "gallery-section-2-module-1-button": "Read infographic",
+  "gallery-section-2-module-1-info": "(5 mins)",
+  "gallery-section-2-module-1-link": "./documents/Allyship-LeanIn-SharePower.pdf",
+  
+  "gallery-section-2-module-2-text": "<p><b>Dive in to allyship with a short micro-learning</b> that will help you discover additional practices focused on sharing your power with others.</p>",
+  "gallery-section-2-module-2-button": "Access micro-learning",
+  "gallery-section-2-module-2-info": "(15 mins)",
+  "gallery-section-2-module-2-link": "",
+  
+  "gallery-section-2-module-3-text": "<b>Lead the way on allyship with challenges</b> issued by our leaders to identify inequity and take action to share power.",
+  "gallery-section-2-module-3-button": "Watch video",
+  "gallery-section-2-module-3-info": "(5 mins)",
+  "gallery-section-2-module-3-link": "",
+
+  "gallery-section-3-module-1-text": "<p><b>Lean in to allyship by asking questions</b> to broaden your perspective and taking simple actions to continue to deepen your allyship skill set.",
+  "gallery-section-3-module-1-button": "Read infographic",
+  "gallery-section-3-module-1-info": "(5 mins)",
+  "gallery-section-3-module-1-link": "./documents/Allyship-LeanIn-ImproveContinuously.pdf",
+
+  "gallery-section-3-module-2-text": "<p><b>Dive in to allyship with a short micro-learning</b> in which you will explore the importance of being committed to learning and unlearning on your allyship journey.</p>",
+  "gallery-section-3-module-2-button": "Access micro-learning",
+  "gallery-section-3-module-2-info": "(15 mins)",
+  "gallery-section-3-module-2-link": "",
+
+  "gallery-section-3-module-3-text": "<p><b>Lead the way on allyship with challenges</b> issued by our leaders to accelerate our continuous learning around allyship.</p>",
+  "gallery-section-3-module-3-button": "Watch video",
+  "gallery-section-3-module-3-info": "(5 mins)",
+  "gallery-section-3-module-3-link": ""
+}

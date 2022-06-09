@@ -176,6 +176,11 @@
   @include title;
   line-height: 1;
 
+  b {
+    display: block;
+    text-indent: 13%  
+  }
+
   @media screen and (min-width: 1024px) {
     min-width: 354px;
 

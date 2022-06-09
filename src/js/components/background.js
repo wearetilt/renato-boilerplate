@@ -34,13 +34,13 @@ export default class Background {
     const instOpacityPercentage = 1 - (introScrollPercentage * 4 / 100)
 
     this.wrap.style.setProperty('--mask-size', `${revealPercentage}px`)
-    this.wrap.style.setProperty('--opacity', bgOpacityPercentage * 0.75)
+    this.wrap.style.setProperty('--opacity', bgOpacityPercentage * 0.5)
     this.instruct.style.opacity = instOpacityPercentage
 
     if (introFadeRect.top < this.innerHeight) {
       const dist = window.pageYOffset - (this.fadeEl[0].offsetTop - this.innerHeight)
       const fadePercentage = dist / this.fadeEl[0].offsetHeight
-      this.wrap.style.setProperty('--opacity', 0.75 - fadePercentage)
+      this.wrap.style.setProperty('--opacity', 0.5 - fadePercentage)
     }
 
     if (maskRect.top > this.innerHeight) this.wrap.style.setProperty('--split-mask-opacity', 0)

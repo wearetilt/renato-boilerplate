@@ -35,26 +35,12 @@
   }
 }
 
-.ut-block,
-[class^="ut-indent-"],
-[class^="ut-sm-indent-"] {
-  display: block;
-}
-
 .ut-text-left {
   text-align: left;
 }
 
 .ut-text-center {
   text-align: center;
-}
-
-.ut-text-right {
-  text-align: right;
-}
-
-.ut-text-left {
-  text-align: left;
 }
 
 @media screen and (min-width: 1024px) {
@@ -67,80 +53,10 @@
   font-style: italic;
 }
 
-.ut-no-padding {
-  padding: 0;
-}
-
-.ut-no-marg {
-  margin: 0;
-}
-
-.ut-no-marg--bottom {
-  margin-bottom: 0;
-}
-
 .ut-self-center {
   align-self: center;
 }
 
 .ut-self-bottom {
   align-self: end;
-}
-
-.ut-indent-4 {
-  text-indent: 4%;
-}
-
-.ut-indent-8 {
-  text-indent: 8%;
-}
-
-.ut-indent-13 {
-  text-indent: 13%;
-}
-
-.ut-indent-18 {
-  text-indent: 18%;
-}
-
-.ut-indent-25 {
-  text-indent: 25%;
-}
-
-.ut-indent-32 {
-  text-indent: 32%;
-}
-
-.ut-indent-neg-8 {
-  text-indent: -8%;
-}
-
-.ut-indent-neg-20 {
-  text-indent: -20%;
-}
-
-.ut-indent-neg-22 {
-  text-indent: -22%;
-}
-
-.ut-indent-neg-25 {
-  text-indent: -25%;
-}
-
-.ut-indent-40 {
-  text-indent: 40%
-}
-
-.ut-indent-neg-50 {
-  text-indent: -50%
-}
-
-@media screen and (max-width: 1023px) {
-  .ut-sm-indent-8 {
-    text-indent: 8%;
-  }
-  
-  .ut-sm-indent-45 {
-    text-indent: 45%;
-  }
 }

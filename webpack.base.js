@@ -12,6 +12,7 @@ module.exports = {
       "./src/js/app.js",
       "./src/css/app.scss"
     ],
+    content: "./src/js/content.js"
   },
   module: {
     rules: [
@@ -109,6 +110,7 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         { from: "src/static", to: "" },
+        { from: "src/content", to: "content" },
       ],
     }),
     new WebpackManifestPlugin({

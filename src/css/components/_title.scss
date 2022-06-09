@@ -10,6 +10,10 @@
   margin-left: auto;
   text-align: center;
 
+  span {
+    display: block;
+  }
+
   @media screen and (min-width: 560px) {
     max-width: 500px;
   }
@@ -47,42 +51,52 @@
   margin-top: 10vh;
 }
 
+.title[data-type="split"] span,
 .title__left,
 .title__right,
 .title__fade {
   display: block;
   opacity: 1;
-
-  .title.anim-in & {
-    opacity: 0;
-    animation: slide-in 400ms both;
-  }
 }
 
+.title.anim-in .title__left,
+.title.anim-in .title__right,
+.title.anim-in .title__fade,
+.title[data-type="split"].anim-in span {
+  opacity: 0;
+}
+
+.title[data-type="split"] span:first-child,
 .title__left {
   animation: slide-out-left 400ms both;
-
-  .title.anim-in & {
-    transform: translateX(-360px);
-  }
 }
 
+.title[data-type="split"].anim-in span:first-child,
+.title.anim-in .title__left {
+  transform: translateX(-360px);
+  animation: slide-in 400ms both;
+}
+
+.title[data-type="split"] span:nth-child(2),
 .title__right {
   animation: slide-out-right 400ms both;
-
-  .title.anim-in & {
-    transform: translateX(360px);
-    animation: slide-in 400ms both;
-  }
 }
 
+.title[data-type="split"].anim-in span:nth-child(2),
+.title.anim-in .title__right {
+  transform: translateX(360px);
+  animation: slide-in 400ms both;
+}
+
+.title[data-type="split"] span:nth-child(3),
 .title__fade {
   animation: fade-out 400ms both;
+}
 
-  .title.anim-in & {
-    opacity: 0;
-    animation: fade-in 400ms both;
-  }
+.title[data-type="split"].anim-in span:nth-child(3),
+.title.anim-in .title__fade  {
+  opacity: 0;
+  animation: fade-in 400ms both;
 }
 
 
@@ -96,4 +110,130 @@
 
 .title.anim-in span:nth-child(4) {
   animation-delay: 400ms;
+}
+
+.title--main {
+  @media screen and (max-width: 1023px) {
+    span:nth-child(odd) {
+      text-align: left;
+    }
+
+    span:nth-child(even) {
+      text-align: right;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    span:nth-child(2) {
+      text-indent: 25%;
+    }
+  }
+}
+
+.title--welcome {
+  @media screen and (max-width: 1023px) {
+    span:nth-child(2) {
+      text-indent: 45%;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    span:nth-child(2) {
+      text-indent: 13%;
+    }
+  }
+}
+
+.title--discover {
+  @media screen and (max-width: 1023px) {
+    span:last-child {
+      text-indent: 8%;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    span:last-child {
+      text-indent: 32%;
+    }
+  }
+}
+
+.title--responsibility {
+  @media screen and (max-width: 1023px) {
+    span:nth-child(odd) {
+      text-align: left;
+    }
+
+    span:nth-child(even) {
+      text-align: right;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    span:first-child {
+      text-indent: -50%;
+    }
+
+    span:nth-child(2) {
+      text-indent: 13%;
+    }
+
+    span:last-child {
+      text-indent: -22%;
+    }
+  }
+}
+
+.title--success {
+  @media screen and (max-width: 1023px) {
+    span:nth-child(2) {
+      text-align: right;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    span:first-child {
+      text-indent: 4%;
+    }
+
+    span:last-child {
+      text-align: right;
+    }
+  }
+}
+
+.title--get-started {
+  @media screen and (max-width: 1023px) {
+    text-align: left;
+
+    span:first-child {
+      text-indent: 8%;
+    }
+
+    span:last-child {
+      text-indent: 18%;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    span:first-child {
+      text-indent: -25%;
+    }
+
+    span:last-child {
+      text-indent: 13%;
+    }
+  }
+}
+
+.title--registration b {
+  display: block;
+}
+
+.title--gallery {
+  @media screen and (max-width: 1023px) {
+    b {
+      display: block;
+    }
+  }
 }

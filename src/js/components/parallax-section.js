@@ -32,25 +32,25 @@ export default class ParallaxSection {
     window.scrollTo(0, scrollY)
   }
 
-  handleItemScroll = (item, speedOffset = 1) => {
+  handleItemScroll = (item, speedOffset = 0) => {
     const wrapTop = this.wrap.getBoundingClientRect().top
     const { top, height } = item.getBoundingClientRect()
     let opacity
     let translate
 
-    if (wrapTop + this.wrap.offsetHeight < this.topOffset)
-      item.style.transform = `translateY(-${item.dataset.top}px)`
+    // if (wrapTop + this.wrap.offsetHeight < this.topOffset)
+    //   item.style.transform = `translateY(-${item.dataset.top}px)`
 
-    if (wrapTop < this.topOffset && wrapTop + this.wrap.offsetHeight > this.topOffset) {
-      let dist = window.scrollY - this.wrap.parentElement.offsetTop - this.wrap.offsetTop + - this.topOffset
+    // if (wrapTop < this.topOffset && wrapTop + this.wrap.offsetHeight > this.topOffset) {
+    //   let dist = window.scrollY - this.wrap.parentElement.offsetTop - this.wrap.offsetTop + - this.topOffset
 
-      let percentage = (dist / item.dataset.top) * 100 * speedOffset > 0 ? (dist / item.dataset.top) * 100 * speedOffset : 0
-      translate = (item.dataset.top / 100) * percentage * -1
+    //   let percentage = (dist / item.dataset.top) * 100 * speedOffset > 0 ? (dist / item.dataset.top) * 100 * speedOffset : 0
+    //   translate = (item.dataset.top / 100) * percentage * -1
 
-      item.style.transform = `translateY(${translate}px)`
-    }
+    //   item.style.transform = `translateY(${translate}px)`
+    // }
 
-    if (wrapTop > this.topOffset) item.style.transform = `translateY(0)`
+    // if (wrapTop > this.topOffset) item.style.transform = `translateY(0)`
 
     if (top < this.midOffset) opacity = 1
 

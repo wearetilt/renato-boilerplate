@@ -15,6 +15,14 @@
     @include title-mid;
   }
 
+  blockquote::before {
+    content: open-quote;
+  }
+
+  blockquote::after {
+    content: close-quote;
+  }
+
   figcaption {
     margin-top: var(--spacing-large);
     text-align: center;

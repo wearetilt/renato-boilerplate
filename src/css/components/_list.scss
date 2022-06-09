@@ -36,7 +36,7 @@
   }
 }
 
-.list__item {
+.list li {
   @include font-opensans(500);
   @include font-size(1rem, 1.5rem);
   position: relative;
@@ -47,6 +47,7 @@
   line-height: calc(42px / 24px);
   border: 1px solid;
   border-radius: 16px;
+  backdrop-filter: blur(12px);
   opacity: 0;
   text-transform: uppercase;
   transform: translateY(20px);
@@ -66,26 +67,26 @@
   }
 }
 
-.list__item:nth-child(odd) {
+.list li:nth-child(odd) {
   @media screen and (min-width: 768px) {
     transform: translateY(60px) rotate(12deg);
   }
 }
 
-.list__item:nth-child(even) {
+.list li:nth-child(even) {
   @media screen and (min-width: 768px) {
     transform: translateY(60px) rotate(-12deg);
   }
 }
 
-.list__item:nth-child(odd),
-.list__item:nth-child(even) {
+.list li:nth-child(odd),
+.list li:nth-child(even) {
   @media (prefers-reduced-motion) {
     transform: translateY(0) rotate(0);
   }
 }
 
-.list__item::before {
+.list li::before {
   content: "";
   position: absolute;
   left: 14px;
@@ -104,8 +105,8 @@
   }
 }
 
-.list.is-intersecting .list__item,
-.list__item.is-intersecting {
+.list.is-intersecting li,
+.list li.is-intersecting {
   animation: split-list-anim var(--transition-dur) var(--transition-ease) both;
   animation-delay: calc(100ms * var(--item-index) + 200ms);
 }

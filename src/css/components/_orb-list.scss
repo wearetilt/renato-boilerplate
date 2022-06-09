@@ -71,7 +71,6 @@
   }
 
   @media screen and (min-width: 1200px) {
-    width: 260px;
 
     .orb-list:hover & {
       filter: grayscale(100%);
@@ -82,5 +81,13 @@
       filter: grayscale(0);
       transform: scale(1.1);
     }
+  }
+
+  @media screen and (min-height: 600px) {
+    width: 180px;
+  }
+
+  @media screen and (min-height: 720px) {
+    width: 260px;
   }
 }
