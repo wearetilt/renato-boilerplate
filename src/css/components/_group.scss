@@ -84,13 +84,12 @@
   @include transition(background-color);
   display: block;
   position: relative;
-  border-top-left-radius: 50%;
-  border-bottom-left-radius: 50%;
+  border-radius: 50%;
 }
 
-.group__link:hover {
-  background-color: var(--deloitte-green);
-}
+// .group__link:hover {
+//   background-color: var(--deloitte-green);
+// }
 
 .group__nav__marker {
   @include bg-img(contain);
@@ -116,7 +115,6 @@
     border: 2px solid var(--brand-pink);
     border-radius: 50%;
     transform: translate(-50%, -50%) scale(0.5);
-    z-index: 1;
 
     .group__item:nth-child(2) & {
       border-color: var(--brand-orange);
@@ -138,15 +136,14 @@
   display: flex;
   position: absolute;
   top: 50%;
-  left: 100%;
+  left: 0;
   width: 112px;
   height: 60px;
   padding-right: 16px;
-  padding-left: 20px;
+  padding-left: 16px;
   font-size: 0.875rem;
   line-height: calc(20 / 14);
-  border-top-right-radius: 32px;
-  border-bottom-right-radius: 32px;
+  border-radius: 32px;
   align-content: center;
   flex-wrap: wrap;
   transform: translateY(-50%);
@@ -166,7 +163,8 @@
 
   @media screen and (min-width: 1024px) {
     @media (hover: hover) {
-      .group__link:hover & {
+      .group__link:hover &,
+      .group__link:focus-visible & {
         background-color: var(--deloitte-green);
       }
     }
@@ -177,7 +175,8 @@
   }
 }
 
-.group__link:hover .group__nav__label span {
+.group__link:hover .group__nav__label span,
+.group__link:focus-visible .group__nav__label span {
   opacity: 1;
   transform: translateX(0);
   transition-delay: 0ms;

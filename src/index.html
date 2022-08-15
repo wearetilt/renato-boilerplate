@@ -60,9 +60,8 @@
         </div>
         <p class="js-nav-label header__label" data-section="#get-started">Get <b>Started</b></p>
         <p class="js-nav-label header__label" data-section="#registration">Program <b>Registration</b></p>
-        <p class="js-nav-label header__label" data-section="#capabilities">Allyship <b>Capabilities</b></p>
-        <p class="js-nav-label header__label" data-section="#challenges">Allyship <b>Challenges</b></p>
-        <p class="js-nav-label header__label" data-section="#gallery">The <b>Gallery</b></p>
+        <p class="js-nav-label header__label" data-section="#journey">BYO <b>Journey</b></p>
+        <p class="js-nav-label header__label" data-section="#outro">The <b>Last Word</b></p>
       </div>
       <nav class="js-nav nav" aria-label="Main">
         <ul class="nav__list">
@@ -85,15 +84,16 @@
             </a>
           </li>
           <li>
-            <a class="js-nav-link nav__link" href="#capabilities" aria-label="Allyship Capabilities">
+          <li>
+            <a class="js-nav-link nav__link" href="#journey" aria-label="The Gallery">
               <span class="nav__marker"></span>
-              <span class="nav__label" role="presentation">Capabilities</span>
+              <span class="nav__label" role="presentation">BYO Journey</span>
             </a>
           </li>
           <li>
-            <a class="js-nav-link nav__link" href="#gallery" aria-label="The Gallery">
+            <a class="js-nav-link nav__link" href="#outro" aria-label="The Last Word">
               <span class="nav__marker"></span>
-              <span class="nav__label" role="presentation">The Gallery</span>
+              <span class="nav__label" role="presentation">Last Word</span>
             </a>
           </li>
         </ul>
@@ -104,15 +104,13 @@
         <video class="js-inline-video background__video" preload="none" playsinline muted autoplay loop poster="<%=require('./assets/images/background.jpg')%>">
           <source data-src="<%=require('./assets/media/background.mp4')%>" type="video/mp4">
         </video>
-        <div class="background__mask background__mask--left"></div>
-        <div class="background__mask background__mask--right"></div>
       </div>
 
       <!-- Introduction -->
-      <section id="welcome" class="js-intro intro section">
+      <section id="welcome" class="intro section">
         <div class="js-instruct intro__instruct" role="presentation">Scroll down</div>
         <div class="intro__body">
-          <div class="js-intro-section content-block content-block--wide">
+          <div class="content-block content-block--wide">
             <!-- Desktop title, hidden on mobile -->
             <h1
               class="js-scroll-item title title--main anim-in ut-desktop-only"
@@ -122,7 +120,7 @@
             </h1>
 
             <!-- Mobile title, hidden on desktop -->
-            <h1 
+            <h1
               class="js-scroll-item title title--main anim-in ut-mobile-only"
               data-type="split"
               data-content="welcome-title-mobile"
@@ -130,114 +128,75 @@
             </h1>
           </div>
 
-          <div class="js-intro-section content-block">
+          <div class="content-block">
             <h2 class="js-scroll-item title ut-desktop-only" data-content="welcome-screen-2_1"></h2>
             <h2 class="js-scroll-item title ut-mobile-only" data-content="welcome-screen-2-mobile"></h2>
           </div>
 
-          <div class="js-intro-section content-block ut-desktop-only">
+          <div class="content-block ut-desktop-only">
             <h2 class="js-scroll-item title" data-content="welcome-screen-2_2"></h2>
           </div>
 
-          <div class="js-intro-section content-block">
-            <h2 class="js-scroll-item title" data-content="welcome-screen-3"></h2>
-          </div>
-
-          <div class="js-intro-section content-block content-block--wide" data-background="full">
+          <div class="content-block content-block--wide content-block--center">
             <h2
-              class="js-scroll-item title title--welcome title--extra ut-text-left"
+              class="js-scroll-item title title--responsibility"
               data-type="split"
-              data-content="welcome-screen-4"
+              data-content="welcome-screen-3"
             >
             </h2>
           </div>
 
-          <div class="js-intro-section content-block content-block--wide">
-            <div class="content-block__inner">
-              <h2 class="js-scroll-item title title--discover ut-text-left" data-content="welcome-screen-5-title"></h2>
-              <ul class="js-split-list list" data-content="welcome-screen-5-list"></ul>
-            </div>
+          <div class="content-block" data-background="full">
+            <h2
+              class="js-scroll-item title title--wide"
+              data-content="welcome-screen-4-title"
+            >
+            </h2>
           </div>
+
           <div class="content-block content-block--wide content-block--center">
-            <h2 
-              class="js-scroll-item title title--responsibility"
+            </h2>
+            <div class="js-staggered-section section__text ut-text-center">
+              <p data-content="welcome-screen-4-text"></p>
+              <div class="section__text__stat">
+                <p>
+                  <span class="js-stat" data-content="welcome-stat-1-figure">50%</span> <span data-content="welcome-stat-1-text"></span>
+                </p>
+              </div>
+              <div class="section__text__stat">
+                <p>And <span class="js-stat">56%</span> <span data-content="welcome-stat-2-text"></span></p>
+              </div>
+            </div>
+            <p class="js-scroll-item section__footnote">
+              <a href="https://bentleydownloads.s3.amazonaws.com/cwb/CWB+Elevating+Allyship+Report.pdf" target="_blank" rel="noopener noreferrer nofollow">
+                2021 study from Bentley University Gloria Larson Center for Women and Business (page 8)
+              </a>
+            </p>
+          </div>
+
+          <div class="content-block">
+            <h2 class="js-scroll-item title" data-content="welcome-screen-5"></h2>
+          </div>
+
+          <div class="content-block content-block--wide">
+            <h2
+              class="js-scroll-item title title--welcome title--extra ut-text-left"
               data-type="split"
               data-content="welcome-screen-6"
             >
             </h2>
           </div>
 
-          <!-- <div class="content-block content-block--wide">
-            <div class="js-scroll-item video__placeholder" data-type="video">
-              <div class="video__content">
-                <h3 class="video__title">Who is expected to be an Ally?</h3>
-                <button 
-                  class="js-video-trigger video__play"
-                  aria-label="Play Lara Abrash’s allyship DEI Chats video in pop up"
-                  data-src="<%=require('./assets/media/storybook.mp4')%>"
-                ></button>
-              </div>
-              <div class="js-video-poster video__poster">
-                <img src="<%=require('./assets/images/poster.gif')%>" alt="" loading="lazy" />
-                <button 
-                  class="js-video-trigger video__play--mobile"
-                  aria-label="Play Lara Abrash’s allyship DEI Chats video in pop up"
-                  data-src="<%=require('./assets/media/storybook.mp4')%>"
-                ></button>
-              </div>
+          <div class="content-block content-block--wide">
+            <div class="content-block__inner">
+              <h2 class="js-scroll-item title title--discover ut-text-left" data-content="welcome-screen-7-title"></h2>
+              <ul class="js-split-list list" data-content="welcome-screen-7-list"></ul>
             </div>
           </div>
-        </div> -->
-        <div class="content-block content-block--wide content-block--center" data-background="fade">
-          <h2
-            class="js-scroll-item title title--success title--wide ut-text-left ut-desktop-only"
-            data-type="split"
-            data-content="welcome-screen-7-title"
-          >
-          </h2>
-          <h2
-            class="js-scroll-item title title--success title--wide ut-text-left ut-mobile-only"
-            data-type="split"
-            data-content="welcome-screen-7-title-mobile"
-          >
-          </h2>
-          <div class="js-staggered-section section__text ut-text-center ut-lg-text-left">
-            <p data-content="welcome-screen-7-text"></p>
-            <div class="section__text__stat">
-              <p>
-                <span class="js-stat">50%</span> less likely to leave their companies.
-              </p>
-            </div>
-            <div class="section__text__stat">
-              <p>Up to <span class="js-stat">167%</span> more likely to recommend their company as a great place to work.</p>
-            </div>
-          </div>
-          <p class="js-scroll-item section__footnote">
-            <a href="https://bentleydownloads.s3.amazonaws.com/cwb/CWB+Elevating+Allyship+Report.pdf" target="_blank" rel="noopener noreferrer nofollow">
-              2021 study from Bentley University Gloria Larson Center for Women and Business (page 8)
-            </a>
-          </p>
-        </div>
-        <!-- <a class="section__link link link--vertical"" href="#get-started">
-          Get Started
-          <span class="link__icon">
-            <i class="icon icon--arrow" role="presentation">
-              <svg>
-                <use xlink:href="./assets/sprites/sprite.svg#arrow"></use>
-              </svg>
-            </i>
-          </span>
-        </a> -->
-        <div class="content-block content-block--wide">
-          <figure class="js-scroll-item quote">
-            <blockquote data-content="welcome-screen-8-quote"></blockquote>
-            <figcaption data-content="welcome-screen-8-caption"></figcaption>
-          </figure>
-        </div>
       </section>
 
       <!-- Get Started -->
-      <section id="get-started" class="js-getting-started section gettting-started" data-background="split">
+      <section id="get-started" class="js-getting-started section gettting-started">
         <div class="content-block content-block--wide">
           <h2 
             class="js-scroll-item title title--get-started title--extra"
@@ -245,54 +204,6 @@
             data-content="get-started-title"
           >
           </h2>
-        </div>
-        <div class="js-parallax-section content-block content-block--wide content-block--start">
-          <div class="content-columns content-columns--async" data-columns="2">
-            <div class="js-parallax-item content-columns__item">
-              <a 
-                class="content-columns__item__inner" 
-                href=""
-                target="_blank"
-                rel="noopener noreferrer nofollow"
-                data-type="download"
-                data-content="get-started-bubble-1-link"
-              >
-                <div class="content-columns__content">
-                  <p data-content="get-started-bubble-1-text"></p>
-                </div>
-                <div class="content-columns__footer">
-                  <span class="content-columns__link link" data-content="get-started-bubble-1-button"></span>
-                  <span class="content_columns__icon">
-                    <svg class="icon icon--download" role="presentation">
-                      <use xlink:href="./assets/sprites/sprite.svg#download"></use>
-                    </svg>
-                  </span>
-                </div>
-              </a>
-            </div>
-            <div class="js-parallax-item content-columns__item">
-              <a
-                class="content-columns__item__inner"
-                href="" 
-                target="_blank" 
-                rel="noopener noreferrer nofollow"
-                data-type="quiz"
-                data-content="get-started-bubble-2-link"
-              >
-                <div class="content-columns__content">
-                  <p data-content="get-started-bubble-2-text"></p>
-                </div>
-                <div class="content-columns__footer">
-                  <span class="content-columns__link link" data-content="get-started-bubble-2-button"></span>
-                  <span class="content_columns__icon">
-                    <svg class="icon icon--download" role="presentation">
-                      <use xlink:href="./assets/sprites/sprite.svg#question"></use>
-                    </svg>
-                  </span>
-                </div>
-              </a>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -313,11 +224,21 @@
                   </i>
                 </span>
               </a>
+              <a class="link link--icon" href="" target="_blank" rel="noopener noreferrer nofollow" data-content="registration-part-1-ppmds-link">
+                <span data-content="registration-part-1-ppmds-button"></span>
+                <span class="link__icon">
+                  <i class="icon icon--arrow" role="presentation">
+                    <svg>
+                      <use xlink:href="./assets/sprites/sprite.svg#arrow"></use>
+                    </svg>
+                  </i>
+                </span>
+              </a>
             </p>
           </div>
         </div>
 
-        <div class="content-block content-block--wide content-block--center ut-text-center" data-background="fade">
+        <div class="content-block content-block--wide content-block--center ut-text-center">
           <h2 class="js-scroll-item title title--registration" data-content="registration-part-2-title"></h2>
           <div class="js-staggered-section section__text section__text--wide">
             <p data-content="registration-part-2-description"></p>
@@ -325,6 +246,16 @@
             <p>
               <a class="js-alert-trigger link link--icon" href="" target="_blank" rel="noopener noreferrer nofollow" data-content="registration-part-2-link">
                 <span data-content="registration-part-2-button"></span>
+                <span class="link__icon">
+                  <i class="icon icon--arrow" role="presentation">
+                    <svg>
+                      <use xlink:href="./assets/sprites/sprite.svg#arrow"></use>
+                    </svg>
+                  </i>
+                </span>
+              </a>
+              <a class="link link--icon" href="" target="_blank" rel="noopener noreferrer nofollow" data-content="registration-part-2-ppmds-link">
+                <span data-content="registration-part-2-ppmds-button"></span>
                 <span class="link__icon">
                   <i class="icon icon--arrow" role="presentation">
                     <svg>
@@ -345,8 +276,8 @@
                 <h3>Have you completed Part 1 yet?</h3>
                 <p class="ut-italic">Please note that Part 1 is a pre-requisite for Part 2.</p>
                 <div>
-                  <a href="" target="_blank" rel="noopener noreferrer nofollow">Yes, register for <b>Part 2</b></a>
-                  <a href=""target="_blank" rel="noopener noreferrer nofollow">No, register for <b>Part 1</b></a>
+                  <a data-content="registration-part-2-link" href="" target="_blank" rel="noopener noreferrer nofollow">Yes, register for <b>Part 2</b></a>
+                  <a data-content="registration-part-1-link" href="" target="_blank" rel="noopener noreferrer nofollow">No, register for <b>Part 1</b></a>
                 </div>
               </div>
             </div>
@@ -356,156 +287,13 @@
           <h2 class="js-scroll-item title" data-content="registration-model-intro"></h2>
         </div>
 
-        <div class="content-block">
+        <div class="content-block content-block--wide">
           <h2 class="js-scroll-item title" data-content="registration-model-intro-continued"></h2>
         </div>
       </section>
 
-      <!-- Allyship Capabilities -->
-      <section id="capabilities" class="js-section section section--horizontal section--padded" data-background="full" data-section="glob">
-        <div class="section__inner">
-          <div class="js-section-track section__track">
-            <div class="js-section-frame section__frame section__frame--glob globule-section">
-              <div class="js-section-title globule-wrap">
-                <div class="globule globule--pink globule--sticky">
-                  <h3 class="globule__title" data-content="capability-1-title"></h3>
-                  <svg x="0px" y="0px" viewBox="0 0 730.36 483.6" preserveAspectRatio="none">
-                    <path class="top" d="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z">
-                      <animate repeatCount="indefinite" attributeName="d" dur="10s" values="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z; M602.55,65.03c95.4,74.3,122,238,83,308-46.3,83.1-144,107-291,95-133.65-10.91-311,37-376-172C-28.1,146.03,111.87,63.49,228.55,32.03c89-24,270-48,374,33Z; M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z" />
-                    </path>
-                  </svg>
-                </div>
-              </div>
-              <div class="globule-wrap">
-                <div class="globule">
-                  <h4 class="globule__subtitle" data-content="capability-1-module-1-title"></h4>
-                  <p class="globule__text" data-content="capability-1-module-1-text"></p>
-                  <svg x="0px" y="0px" viewBox="0 0 730.36 483.6" preserveAspectRatio="none">
-                    <path class="top" d="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z">
-                      <animate repeatCount="indefinite" attributeName="d" dur="10s" values="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z; M602.55,65.03c95.4,74.3,122,238,83,308-46.3,83.1-144,107-291,95-133.65-10.91-311,37-376-172C-28.1,146.03,111.87,63.49,228.55,32.03c89-24,270-48,374,33Z; M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z" />
-                    </path>
-                  </svg>
-                </div>
-              </div>
-              <div class="globule-wrap">
-                <div class="globule">
-                  <h4 class="globule__subtitle" data-content="capability-1-module-2-title"></h4>
-                  <p class="globule__text" data-content="capability-1-module-2-text"></p>
-                  <svg x="0px" y="0px" viewBox="0 0 730.36 483.6" preserveAspectRatio="none">
-                    <path class="top" d="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z">
-                      <animate repeatCount="indefinite" attributeName="d" dur="10s" values="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z; M602.55,65.03c95.4,74.3,122,238,83,308-46.3,83.1-144,107-291,95-133.65-10.91-311,37-376-172C-28.1,146.03,111.87,63.49,228.55,32.03c89-24,270-48,374,33Z; M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z" />
-                    </path>
-                  </svg>
-                </div>
-              </div>
-              <div class="globule-wrap">
-                <div class="globule">
-                  <h4 class="globule__subtitle" data-content="capability-1-module-3-title"></h4>
-                  <p class="globule__text" data-content="capability-1-module-3-text"></p>
-                  <svg x="0px" y="0px" viewBox="0 0 730.36 483.6" preserveAspectRatio="none">
-                    <path class="top" d="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z">
-                      <animate repeatCount="indefinite" attributeName="d" dur="10s" values="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z; M602.55,65.03c95.4,74.3,122,238,83,308-46.3,83.1-144,107-291,95-133.65-10.91-311,37-376-172C-28.1,146.03,111.87,63.49,228.55,32.03c89-24,270-48,374,33Z; M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z" />
-                    </path>
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div class="js-section-frame section__frame section__frame--glob globule-section">
-              <div class="js-section-title globule-wrap">
-                <div class="globule globule--orange globule--sticky">
-                  <h3 class="globule__title" data-content="capability-2-title"></h3>
-                  <svg x="0px" y="0px" viewBox="0 0 730.36 483.6" preserveAspectRatio="none">
-                    <path class="top" d="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z">
-                      <animate repeatCount="indefinite" attributeName="d" dur="10s" values="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z; M602.55,65.03c95.4,74.3,122,238,83,308-46.3,83.1-144,107-291,95-133.65-10.91-311,37-376-172C-28.1,146.03,111.87,63.49,228.55,32.03c89-24,270-48,374,33Z; M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z" />
-                    </path>
-                  </svg>
-                </div>
-              </div>
-              <div class="globule-wrap">
-                <div class="globule globule--wide">
-                  <h4 class="globule__subtitle" data-content="capability-2-module-1-title"></h4>
-                  <p class="globule__text" data-content="capability-2-module-1-text"></p>
-                  <svg x="0px" y="0px" viewBox="0 0 730.36 483.6" preserveAspectRatio="none">
-                    <path class="top" d="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z">
-                      <animate repeatCount="indefinite" attributeName="d" dur="10s" values="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z; M602.55,65.03c95.4,74.3,122,238,83,308-46.3,83.1-144,107-291,95-133.65-10.91-311,37-376-172C-28.1,146.03,111.87,63.49,228.55,32.03c89-24,270-48,374,33Z; M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z" />
-                    </path>
-                  </svg>
-                </div>
-              </div>
-              <div class="globule-wrap">
-                <div class="globule globule--wide">
-                  <h4 class="globule__subtitle" data-content="capability-2-module-2-title"></h4>
-                  <p class="globule__text" data-content="capability-2-module-2-text"></p>
-                  <svg x="0px" y="0px" viewBox="0 0 730.36 483.6" preserveAspectRatio="none">
-                    <path class="top" d="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z">
-                      <animate repeatCount="indefinite" attributeName="d" dur="10s" values="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z; M602.55,65.03c95.4,74.3,122,238,83,308-46.3,83.1-144,107-291,95-133.65-10.91-311,37-376-172C-28.1,146.03,111.87,63.49,228.55,32.03c89-24,270-48,374,33Z; M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z" />
-                    </path>
-                  </svg>
-                </div>
-              </div>
-              <div class="globule-wrap">
-                <div class="globule globule--wide">
-                  <h4 class="globule__subtitle" data-content="capability-2-module-3-title"></h4>
-                  <p class="globule__text" data-content="capability-2-module-3-text"></p>
-                  <svg x="0px" y="0px" viewBox="0 0 730.36 483.6" preserveAspectRatio="none">
-                    <path class="top" d="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z">
-                      <animate repeatCount="indefinite" attributeName="d" dur="10s" values="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z; M602.55,65.03c95.4,74.3,122,238,83,308-46.3,83.1-144,107-291,95-133.65-10.91-311,37-376-172C-28.1,146.03,111.87,63.49,228.55,32.03c89-24,270-48,374,33Z; M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z" />
-                    </path>
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div class="js-section-frame section__frame section__frame--glob globule-section">
-              <div class="js-section-title globule-wrap">
-                <div class="globule globule--green globule--sticky">
-                  <h3 class="globule__title" data-content="capability-3-title"></h3>
-                  <svg x="0px" y="0px" viewBox="0 0 730.36 483.6" preserveAspectRatio="none">
-                    <path class="top" d="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z">
-                      <animate repeatCount="indefinite" attributeName="d" dur="10s" values="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z; M602.55,65.03c95.4,74.3,122,238,83,308-46.3,83.1-144,107-291,95-133.65-10.91-311,37-376-172C-28.1,146.03,111.87,63.49,228.55,32.03c89-24,270-48,374,33Z; M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z" />
-                    </path>
-                  </svg>
-                </div>
-              </div>
-              <div class="globule-wrap">
-                <div class="globule globule--wide">
-                  <h4 class="globule__subtitle" data-content="capability-3-module-1-title"></h4>
-                  <p class="globule__text" data-content="capability-3-module-1-text"></p>
-                  <svg x="0px" y="0px" viewBox="0 0 730.36 483.6" preserveAspectRatio="none">
-                    <path class="top" d="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z">
-                      <animate repeatCount="indefinite" attributeName="d" dur="10s" values="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z; M602.55,65.03c95.4,74.3,122,238,83,308-46.3,83.1-144,107-291,95-133.65-10.91-311,37-376-172C-28.1,146.03,111.87,63.49,228.55,32.03c89-24,270-48,374,33Z; M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z" />
-                    </path>
-                  </svg>
-                </div>
-              </div>
-              <div class="globule-wrap">
-                <div class="globule globule--wide">
-                  <h4 class="globule__subtitle" data-content="capability-3-module-2-title"></h4>
-                  <p class="globule__text" data-content="capability-3-module-2-text"></p>
-                  <svg x="0px" y="0px" viewBox="0 0 730.36 483.6" preserveAspectRatio="none">
-                    <path class="top" d="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z">
-                      <animate repeatCount="indefinite" attributeName="d" dur="10s" values="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z; M602.55,65.03c95.4,74.3,122,238,83,308-46.3,83.1-144,107-291,95-133.65-10.91-311,37-376-172C-28.1,146.03,111.87,63.49,228.55,32.03c89-24,270-48,374,33Z; M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z" />
-                    </path>
-                  </svg>
-                </div>
-              </div>
-              <div class="globule-wrap">
-                <div class="globule">
-                  <h4 class="globule__subtitle" data-content="capability-3-module-3-title"></h4>
-                  <p class="globule__text" data-content="capability-3-module-3-text"></p>
-                  <svg x="0px" y="0px" viewBox="0 0 730.36 483.6" preserveAspectRatio="none">
-                    <path class="top" d="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z">
-                      <animate repeatCount="indefinite" attributeName="d" dur="10s" values="M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z; M602.55,65.03c95.4,74.3,122,238,83,308-46.3,83.1-144,107-291,95-133.65-10.91-311,37-376-172C-28.1,146.03,111.87,63.49,228.55,32.03c89-24,270-48,374,33Z; M591.47,91.97c94.66,73.01,127.5,140.47,122,228.93-5.91,94.94-109.73,137.98-212.71,148.49-133.4,13.61-388.43,12.9-468.45-151.98C-35.79,177.1,136.34,21.62,256.76,11.53c126.06-10.56,260.5,23.21,334.71,80.44Z" />
-                    </path>
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!-- The Gallery -->
-      <section id="gallery" class="js-group js-section section section--horizontal">
+      <section id="journey" class="js-group js-section section section--horizontal" data-background="fade">
         <div class="section__inner">
           <div class="js-section-background group__background"></div>
           <div class="js-section-track section__track">
@@ -596,18 +384,19 @@
                   <div class="content-block__inner content-block__inner--top">
                     <div class="js-section-bg content-block__background"></div>
                     <div class="content-columns content-columns--alt" data-columns="3" data-theme="pink">
-                      <div class="content-columns__item content-columns__item--alt ut-self-bottom">
+                      <div class="content-columns__item content-columns__item--alt ut-self-center">
                         <a
                           class="content-columns__item__inner" 
-                          href="./documents/Allyship-LeanIn-DisrupttheStatusQuo.pdf"
+                          href=""
                           target="_blank"
                           rel="noopener noreferrer nofollow"
                           data-type="chart"
+                          data-content="gallery-section-1-module-1-link"
                         >
-                          <p><b>Lean in to disrupting the status quo by asking questions</b> to become more power cognizant, taking actions to empower others daily, and amplifying your influence to advance equity?</p>
+                          <p data-content="gallery-section-1-module-1-text"></p>
                           <div class="content-columns__footer">
-                            <span class="content-columns__link link">Read infographic</span>
-                            <span class="content-columns__info">(5 mins)</span>
+                            <span class="content-columns__link link" data-content="gallery-section-1-module-1-button"></span>
+                            <span class="content-columns__info" data-content="gallery-section-1-module-1-info"></span>
                             <span class="content_columns__icon">
                               <i class="icon icon--chart" role="presentation">
                                 <svg>
@@ -625,12 +414,12 @@
                           target="_blank"
                           rel="noopener noreferrer nofollow"
                           data-type="link"
+                          data-content="gallery-section-1-module-2-link"
                         >
-                          <p><b>Dive in to disrupting the status quo with a short micro-learning</b> to discover additional practices to disrupt the status quo on your journey as an ally.</p>
-                          <p>Explore ways to identify inequities and hold ourselves and others accountable. Take the challenge to intervene and challenge behaviors that maintain the status quo respectfully.</p>
+                          <p data-content="gallery-section-1-module-2-text"></p>
                           <div class="content-columns__footer">
-                            <span class="content-columns__link link" >Access micro-learning</span>
-                            <span class="content-columns__info">(15 mins)</span>
+                            <span class="content-columns__link link" data-content="gallery-section-1-module-2-button"></span>
+                            <span class="content-columns__info" data-content="gallery-section-1-module-2-info"></span>
                             <span class="content_columns__icon">
                               <i class="icon icon--link" role="presentation">
                                 <svg>
@@ -648,11 +437,12 @@
                           target="_blank"
                           rel="noopener noreferrer nofollow"
                           data-type="play"
+                          data-content="gallery-section-1-module-3-link"
                         >
-                          <p><b>Lead the way on allyship with challenges</b> issued by our leaders to accelerate your allyship today and disrupt the status quo.</p>
+                          <p data-content="gallery-section-1-module-3-text"></p>
                           <div class="content-columns__footer">
-                            <span class="content-columns__link link">Watch video</span>
-                            <span class="content-columns__info">(5 mins)</span>
+                            <span class="content-columns__link link" data-content="gallery-section-1-module-3-button"></span>
+                            <span class="content-columns__info" data-content="gallery-section-1-module-3-info"></span>
                             <span class="content_columns__icon">
                               <i class="icon icon--play" role="presentation" style="margin-left: 4px;">
                                 <svg>
@@ -676,7 +466,7 @@
                   <div class="content-block__inner content-block__inner--top">
                     <div class="js-section-bg content-block__background"></div>
                     <div class="content-columns content-columns--alt" data-columns="3" data-theme="orange">
-                      <div class="content-columns__item content-columns__item--alt ut-self-bottom">
+                      <div class="content-columns__item content-columns__item--alt ut-self-center">
                         <a
                           class="content-columns__item__inner"
                           href=""
@@ -685,7 +475,7 @@
                           data-type="chart"
                           data-content="gallery-section-2-module-1-link"
                         >
-                          <div data-content="gallery-section-2-module-1-text"></div>
+                          <p data-content="gallery-section-2-module-1-text"></p>
                           <div class="content-columns__footer">
                             <span class="content-columns__link link" data-content="gallery-section-2-module-1-button"></span>
                             <span class="content-columns__info" data-content="gallery-section-2-module-1-info"></span>
@@ -706,7 +496,7 @@
                           data-type="link"
                           data-content="gallery-section-2-module-2-link"
                         >
-                          <div data-content="gallery-section-2-module-2-text"></div>
+                          <p data-content="gallery-section-2-module-2-text"></p>
                           <div class="content-columns__footer">
                             <span class="content-columns__link link" data-content="gallery-section-2-module-2-button"></span>
                             <span class="content-columns__info" data-content="gallery-section-2-module-2-info"></span>
@@ -727,7 +517,7 @@
                           data-type="play"
                           data-content="gallery-section-2-module-3-link"
                         >
-                          <div data-content="gallery-section-2-module-3-text"></div>
+                          <p data-content="gallery-section-2-module-3-text"></p>
                           <div class="content-columns__footer">
                             <span class="content-columns__link link" data-content="gallery-section-2-module-3-button"></span>
                             <span class="content-columns__info" data-content="gallery-section-2-module-3-info"></span>
@@ -752,7 +542,7 @@
                   <div class="content-block__inner content-block__inner--top">
                     <div class="js-section-bg content-block__background"></div>
                     <div class="content-columns content-columns--alt" data-columns="3" data-theme="green">
-                      <div class="content-columns__item content-columns__item--alt ut-self-bottom">
+                      <div class="content-columns__item content-columns__item--alt ut-self-center">
                         <a
                           class="content-columns__item__inner"
                           href=""
@@ -761,7 +551,7 @@
                           data-type="chart"
                           data-content="gallery-section-3-module-1-link"
                         >
-                          <div data-content="gallery-section-3-module-1-text"></div>
+                          <p data-content="gallery-section-3-module-1-text"></p>
                           <div class="content-columns__footer">
                             <span class="content-columns__link link" data-content="gallery-section-3-module-1-button"></span>
                             <span class="content-columns__info" data-content="gallery-section-3-module-1-info"></span>
@@ -782,7 +572,7 @@
                           data-type="link"
                           data-content="gallery-section-3-module-2-link"
                         >
-                          <div data-content="gallery-section-3-module-2-text"></div>
+                          <p data-content="gallery-section-3-module-2-text"></p>
                           <div class="content-columns__footer">
                             <span class="content-columns__link link" data-content="gallery-section-3-module-2-button"></span>
                             <span class="content-columns__info" data-content="gallery-section-3-module-2-info"></span>
@@ -803,7 +593,7 @@
                           data-type="play"
                           data-content="gallery-section-3-module-3-link"
                         >
-                          <div data-content="gallery-section-3-module-3-text"></div>
+                          <p data-content="gallery-section-3-module-3-text"></p>
                           <div class="content-columns__footer">
                             <span class="content-columns__link link" data-content="gallery-section-3-module-3-button"></span>
                             <span class="content-columns__info" data-content="gallery-section-3-module-3-info"></span>

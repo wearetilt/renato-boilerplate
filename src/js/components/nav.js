@@ -3,20 +3,17 @@ export default class Nav {
     this.wrap = wrap
     this.labels =  Array.from(document.querySelectorAll('.js-nav-label'))
     this.navLinks = this.wrap.querySelectorAll('.js-nav-link')
-    this.offset = window.innerWidth >= 1024 ? window.innerWidth * 0.8 : 0
-    const options = {
-      rootMargin: '-100px 0px',
-      threshold: 0
-    }
-    this.observer = new IntersectionObserver(this.handleIntersect, options)
+    this.sections = []
+    this.innerHeight = window.innerHeight
 
     this.navLinks.forEach(link => {
       const section = document.querySelector(link.hash)
-
-      if (!!section) this.observer.observe(section)
-
+      this.sections.push(section)
       link.addEventListener('click', this.handleClick)
     })
+
+    this.handleScroll()
+    document.addEventListener('scroll', this.handleScroll)
   }
   
   handleClick = evt => {
@@ -29,20 +26,21 @@ export default class Nav {
     }
   }
 
-  handleIntersect = (entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        // Update active link
-        this.navLinks.forEach(link => link.classList.remove('is-active'))
-        const activeLink = Array.from(this.navLinks).find(link => link.hash === `#${entry.target.id}`)
-        activeLink.classList.add('is-active')
-        // Update section label
-        this.labels.map(label => {
-          const activeLabel = this.labels.find(l => l.dataset.section === activeLink.hash) ?? this.labels[0]
-          label === activeLabel
-            ? label.classList.add('is-active') 
-            : label.classList.remove('is-active')
+  handleScroll = () => {
+    this.sections.forEach((sec, i) => {
+      const { top, bottom } = sec.getBoundingClientRect()
+
+      if (top < this.innerHeight / 2 && bottom >  this.innerHeight / 2 && !sec.classList.contains('is-active')) {
+        this.navLinks.forEach(link => {
+          link.hash === `#${sec.id}` ? link.classList.add('is-active') : link.classList.remove('is-active')
         })
+
+        this.labels.forEach(label => {
+          label.dataset.section === `#${sec.id}` ? label.classList.add('is-active') : label.classList.remove('is-active')
+        })
+
+        this.sections.forEach(section => section.classList.remove('is-active'))
+        sec.classList.add('is-active')
       }
     })
   }

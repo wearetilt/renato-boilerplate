@@ -28,6 +28,7 @@ $breakpoints: (
   --font-small: 15px;
 
   /* block spacing */
+  --spacing-small: 1.5rem;
   --spacing-medium: 2rem;
   --spacing-large: 3rem;
 
@@ -48,9 +49,9 @@ $breakpoints: (
     --grid-gutter: 2.5rem;
     --grid-width: calc(1200px - 4rem);
 
-      /* block spacing */
-  --spacing-medium: 3rem;
-  --spacing-large: 5rem;
+    /* block spacing */
+    --spacing-medium: 3rem;
+    --spacing-large: 5rem;
   }
 }
 

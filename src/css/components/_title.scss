@@ -139,7 +139,7 @@
 
   @media screen and (min-width: 1024px) {
     span:nth-child(2) {
-      text-indent: 13%;
+      text-indent: 23%;
     }
   }
 }
@@ -175,11 +175,11 @@
     }
 
     span:nth-child(2) {
-      text-indent: 13%;
+      text-align: right;
     }
 
     span:last-child {
-      text-indent: -22%;
+      text-align: center;
     }
   }
 }

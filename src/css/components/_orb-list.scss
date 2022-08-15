@@ -12,22 +12,24 @@
 .orb-list__item a {
   display: block;
 
-  @media screen and (max-width: 1023px) {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
+  // @media screen and (max-width: 1023px) {
+  //   display: flex;
+  //   align-items: center;
+  //   flex-direction: column;
+  // }
 
-  @media screen and (max-width: 759px) {
+  @media screen and (max-width: 767px) {
+    display: flex;
     margin-bottom: 40px;
     align-items: center;
-    justify-content: start;
+    justify-content: center;
     flex-direction: row;
   }
 }
 
 .orb-list__title {
   @include title-xsmall;
+  width: 124px;
   flex-shrink: 0;
   text-align: left;
 
@@ -83,11 +85,11 @@
     }
   }
 
-  @media screen and (min-height: 600px) {
+  @media screen and (min-width: 768px) and (min-height: 600px) {
     width: 180px;
   }
 
-  @media screen and (min-height: 720px) {
+  @media screen and (min-width: 1024px) and (min-height: 720px) {
     width: 260px;
   }
 }

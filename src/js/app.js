@@ -4,7 +4,6 @@ const domReady = function() {
     [".js-background", require('./components/background')],
     [".js-scroll-in", require('./components/scoll-in')],
     [".js-split-list", require('./components/split-list')],
-    [".js-parallax-section", require('./components/parallax-section')],
     [".js-staggered-section", require('./components/staggered-section')],
     [".js-section", require('./components/section')],
     [".js-video-dialog", require('./components/video')],

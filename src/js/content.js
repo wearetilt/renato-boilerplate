@@ -22,10 +22,10 @@ export default class ContentHydration {
       const keys = Object.keys(content)
 
       keys.forEach(key => {
-        const el = section.querySelector([`[data-content="${key}"]`])
+        const els = section.querySelectorAll([`[data-content="${key}"]`])
 
-        if (!!el) {
-          key.includes('link') ? el.href = content[`${key}`] : el.innerHTML = content[`${key}`]
+        if (!!els) {
+          els.forEach(el => key.includes('link') ? el.href = content[`${key}`] : el.innerHTML = content[`${key}`])
         }
       })
     }

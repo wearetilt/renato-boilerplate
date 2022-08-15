@@ -29,32 +29,13 @@ export default class Section {
     if (this.isDesktop) {
       // Set height on wrap to ensure enough scroll space
       this.wrap.style.height = `${this.sectionTrack.offsetWidth - window.innerWidth + window.innerHeight}px`
-      if (this.sectionType === "glob") this.initGlobs()
     } else {
       this.wrap.style.height = 'auto'
       this.sectionTrack.style.transform = `none`
-      this.resetGlobs()
     }
 
     if (!!this.sectionNavArea) this.deactivateNav()
     document.addEventListener('scroll', this.handleScroll)
-  }
-
-  initGlobs = () => {
-    this.sectionFrames.forEach(frame => {
-      Array.from(frame.children).map(glob => {
-        let translate = (window.innerHeight / 100) * 45
-        glob.classList.contains('js-section-title')
-          ? glob.firstElementChild.setAttribute('data-translate', getTranslate(glob.firstElementChild).y)
-          : glob.firstElementChild.setAttribute('data-translate', translate)
-      })
-    })
-  }
-
-  resetGlobs = () => {
-    this.sectionFrames.forEach(frame => {
-      Array.from(frame.children).map(glob => glob.firstElementChild.removeAttribute('data-translate'))
-    })
   }
 
   handleScroll = () => {
@@ -66,7 +47,6 @@ export default class Section {
     } else {
       this.sectionTrack.style.transform = `none`
     }
-    if (this.sectionType === "glob") this.handleGlobs()
     if (!!this.sectionNavArea) this.handleNav()
     if (!!this.sectionBackground) this.handleBackground()
   }
@@ -82,78 +62,6 @@ export default class Section {
     if (top > 0) this.sectionTrack.style.transform = `translateX(0)`
     // Section has passed so ensure transformed all the way
     if (bottom < window.innerHeight) this.sectionTrack.style.transform = `translateX(-${height - window.innerHeight}px)`
-  }
-
-  handleGlobs = () => {
-    this.sectionFrames.forEach(frame => {
-      const title = frame.querySelector('.js-section-title')
-      const globs = Array.from(frame.children)
-
-      if (this.isDesktop) {
-        const { left, right, width } = frame.getBoundingClientRect()
-        // If frame has not reached the left edge of viewport title should have no translate value
-        if (left >= 0) title.style.transform = `translateX(0)`
-        // If frame is active translate title by distance travelled to keep in view
-        if (left < 0 && right > (window.innerWidth / 2)) title.style.transform = `translateX(${Math.abs(left)}px)`
-        // if frame has passed fully translate title
-        if (right < (window.innerWidth / 2)) title.style.transform = `translateX(${width - (window.innerWidth / 2)}px)`
-      } else {
-        title.style.transform = `none`
-      }
-      
-      globs.map(glob => {
-        const child = glob.firstElementChild
-        const { left, top } = glob.getBoundingClientRect()
-        const max = this.isDesktop ? window.innerWidth : window.innerHeight
-        const pos = this.isDesktop ? left : top
-        const inThreshold = max * 0.33
-        const outThreshold = max * 0.15
-        const transData = child.dataset.translate
-
-        // // If glob more than 2/3 across the viewport ensure fully visible
-        // if (pos < inThreshhold) glob.style.opacity = 1
-        // If glob has entered viewport from the right and less 2/3 across
-        if (pos >= inThreshold && pos > outThreshold && pos < max) {
-          // Calculate the distance scrolled
-          let dist = max - pos
-          // Use the distance to calculate the percentage
-          let percentage = (dist / max) * 100 * 1.5
-          let opacity = percentage * 1.33 < 100 ? 1 / 100 * percentage * 1.25 : 1
-          let translation
-
-          glob.style.opacity = opacity
-
-          if (this.isDesktop) {
-            if (glob === title) {
-              // console.log((transData / 100), percentage)
-              translation = percentage < 100 ? transData - (transData / 100 * percentage) : 0
-            } else {
-              translation = percentage < 100 ? transData / 100 * percentage : transData
-            }
-
-            child.style.transform = `translateY(${translation}px)`
-          } else {
-            child.style.transform = `translateY(0px)`
-          }
-        }
-
-        if (pos < outThreshold) {
-          let dist = outThreshold - pos
-          let percentage = (dist / max) * 100
-          let opacity = (100 - percentage) * 0.01
-
-          glob.style.opacity = opacity
-        }
-        
-        if (this.isDesktop && pos < outThreshold) {
-          let dist = outThreshold - pos
-          let percentage = (dist / max) * 100
-          let translation = glob === title ? 0 : transData - (window.innerHeight * 0.25 / 100) * percentage
-
-          child.style.transform = `translateY(${translation}px)`
-        }
-      })
-    })
   }
 
   handleBackground = () => {
