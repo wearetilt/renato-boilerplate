@@ -57,7 +57,7 @@ export default class Section {
     let dist = window.pageYOffset - this.wrap.offsetTop
 
     // Determine the distance scrolled and translate wrap
-    if (top <= 0 && bottom > window.innerHeight) this.sectionTrack.style.transform = `translateX(-${dist}px)`
+    if (top <= 0 && bottom >= window.innerHeight) this.sectionTrack.style.transform = `translateX(-${dist}px)`
     // Section is not yet at top of viewport so ensure no tranform
     if (top > 0) this.sectionTrack.style.transform = `translateX(0)`
     // Section has passed so ensure transformed all the way
@@ -111,7 +111,7 @@ export default class Section {
     const { top, left, right, bottom, width, height } = this.sectionNavArea.getBoundingClientRect()
     const pos = this.isDesktop ? left : top
     const posString = this.isDesktop ? 'left' : 'bottom'
-    const max = this.isDesktop ? window.innerWidth : window.innerHeight
+    const max = this.isDesktop ? window.innerWidth: window.innerHeight
     const min = this.isDesktop ? right : bottom
 
     if (pos > max * 0.1) {
@@ -128,7 +128,7 @@ export default class Section {
 
     if (!this.isDesktop && pos < max) this.activateNav()
 
-    if (this.isDesktop && min === max) {
+    if (this.isDesktop && bottom < window.innerHeight) {
       this.deactivateNav()
       this.sectionNav.style.top = `${height - window.innerHeight}px`
       this.sectionNav.style.left = `${width - window.innerWidth}px`

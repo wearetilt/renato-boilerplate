@@ -46,6 +46,10 @@
   }
 }
 
+.alert__content[aria-hidden="true"] {
+  display: none;
+}
+
 .alert__dismiss {
   @include close-button(16px);
 }

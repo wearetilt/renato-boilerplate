@@ -52,7 +52,10 @@
       <a class="js-skip-trigger header__skip" href="#main">
         Skip to content
       </a>
-      <a class="js-header-button header__button" href="#registration">Register now</a>
+      <div class="header__buttons">
+        <a class="js-header-button header__button header__button--alt" href="#journey">BYO Journey</a>
+        <a class="js-header-button header__button" href="#registration">Register now</a>
+      </div>
       <div class="header">
         <div class="js-nav-label header__logo is-active" data-section="#welcome">
           <img src="<%=require('./assets/images/avatar.png')%>" alt="" width="60" height="60" />
@@ -224,6 +227,7 @@
                   </i>
                 </span>
               </a>
+              <br>
               <a class="link link--icon" href="" target="_blank" rel="noopener noreferrer nofollow" data-content="registration-part-1-ppmds-link">
                 <span data-content="registration-part-1-ppmds-button"></span>
                 <span class="link__icon">
@@ -234,6 +238,19 @@
                   </i>
                 </span>
               </a>
+              <br>
+              <a class="link link--icon" href="" target="_blank" rel="noopener noreferrer nofollow" data-content="registration-part-1-usi-link">
+                <span data-content="registration-part-1-usi-button"></span>
+                <span class="link__icon">
+                  <i class="icon icon--arrow" role="presentation">
+                    <svg>
+                      <use xlink:href="./assets/sprites/sprite.svg#arrow"></use>
+                    </svg>
+                  </i>
+                </span>
+              </a>
+              <br>
+              Continue scrolling to complete your registration for part 2.
             </p>
           </div>
         </div>
@@ -254,8 +271,20 @@
                   </i>
                 </span>
               </a>
-              <a class="link link--icon" href="" target="_blank" rel="noopener noreferrer nofollow" data-content="registration-part-2-ppmds-link">
+              <br>
+              <a class="js-alert-trigger link link--icon" href="" target="_blank" rel="noopener noreferrer nofollow" data-type="ppmd" data-content="registration-part-2-ppmds-link">
                 <span data-content="registration-part-2-ppmds-button"></span>
+                <span class="link__icon">
+                  <i class="icon icon--arrow" role="presentation">
+                    <svg>
+                      <use xlink:href="./assets/sprites/sprite.svg#arrow"></use>
+                    </svg>
+                  </i>
+                </span>
+              </a>
+              <br>
+              <a class="js-alert-trigger link link--icon" href="" target="_blank" rel="noopener noreferrer nofollow" data-type="usi" data-content="registration-part-2-usi-link">
+                <span data-content="registration-part-2-usi-button"></span>
                 <span class="link__icon">
                   <i class="icon icon--arrow" role="presentation">
                     <svg>
@@ -272,15 +301,32 @@
                 &times;
                 <span class="ut-screenreader">Close</span>
               </button>
-              <div class="alert__content">
-                <h3>Have you completed Part 1 yet?</h3>
+              <div class="alert__content" data-type="default" aria-hidden="true">
+                <h3>Have you completed Senior Managers & below Part 1 yet?</h3>
                 <p class="ut-italic">Please note that Part 1 is a pre-requisite for Part 2.</p>
                 <div>
                   <a data-content="registration-part-2-link" href="" target="_blank" rel="noopener noreferrer nofollow">Yes, register for <b>Part 2</b></a>
                   <a data-content="registration-part-1-link" href="" target="_blank" rel="noopener noreferrer nofollow">No, register for <b>Part 1</b></a>
                 </div>
               </div>
+              <div class="alert__content" data-type="ppmd" aria-hidden="true">
+                <h3>Have you completed PPMDs Part 1 yet?</h3>
+                <p class="ut-italic">Please note that Part 1 is a pre-requisite for Part 2.</p>
+                <div>
+                  <a data-content="registration-part-2-ppmds-link" href="" target="_blank" rel="noopener noreferrer nofollow">Yes, register for <b>Part 2</b></a>
+                  <a data-content="registration-part-1-ppmds-link" href="" target="_blank" rel="noopener noreferrer nofollow">No, register for <b>Part 1</b></a>
+                </div>
+              </div>
+              <div class="alert__content" data-type="usi" aria-hidden="true">
+                <h3>Have you completed USI Part 1 yet?</h3>
+                <p class="ut-italic">Please note that Part 1 is a pre-requisite for Part 2.</p>
+                <div>
+                  <a data-content="registration-part-2-usi-link" href="" target="_blank" rel="noopener noreferrer nofollow">Yes, register for <b>Part 2</b></a>
+                  <a data-content="registration-part-1-usi-link" href="" target="_blank" rel="noopener noreferrer nofollow">No, register for <b>Part 1</b></a>
+                </div>
+              </div>
             </div>
+          </div>
           </div>
         </div>
         <div class="content-block">
@@ -334,8 +380,8 @@
                         <source data-src="<%=require('./assets/media/sphere-3.mp4')%>" type="video/mp4">
                       </video>
                       <h3 class="orb-list__title">
-                        Continuously
-                        <span>Improves</span>
+                        Improves
+                        <span>Continuously</span>
                       </h3>
                     </a>
                   </li>
@@ -407,7 +453,7 @@
                           </div>
                         </a>
                       </div>
-                      <div class="content-columns__item content-columns__item--alt">
+                      <div class="content-columns__item content-columns__item--alt ut-self-center">
                         <a
                           class="content-columns__item__inner"
                           href=""
@@ -487,7 +533,7 @@
                           </div>
                         </a>
                       </div>
-                      <div class="content-columns__item content-columns__item--alt">
+                      <div class="content-columns__item content-columns__item--alt ut-self-center">
                         <a
                           class="content-columns__item__inner"
                           href=""
@@ -563,7 +609,7 @@
                           </div>
                         </a>
                       </div>
-                      <div class="content-columns__item content-columns__item--alt">
+                      <div class="content-columns__item content-columns__item--alt ut-self-center">
                         <a
                           class="content-columns__item__inner"
                           href=""

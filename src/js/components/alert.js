@@ -15,6 +15,12 @@ export default class Alert {
 
     this.activeElement = document.activeElement // cache currently active element
     this.wrap.setAttribute('aria-hidden', 'false')
+    const type = evt.currentTarget.dataset?.type || 'default'
+    const content = this.wrap.querySelectorAll('[data-type]')
+    const activeContent = this.wrap.querySelector(`[data-type="${type}"]`)
+
+    content.forEach(el => el.setAttribute('aria-hidden', 'true'))
+    activeContent.setAttribute('aria-hidden', 'false')
 
     const focusableElements = getKeyboardFocusableElements(this.wrap)
     this.wrap.addEventListener('keydown', this.handleKeydown)
