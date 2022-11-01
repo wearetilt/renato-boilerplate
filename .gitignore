@@ -1,7 +1,5 @@
 ## Compiled Assets ##
-dist
-art-of-allyship
-*.zip
+public
 
 ## Package things ##
 node_modules

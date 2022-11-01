@@ -9,7 +9,7 @@ module.exports = merge(base, {
   mode: "production",
   devtool: 'source-map',
   output: {
-    path: path.resolve(__dirname, 'art-of-allyship'),
+    path: path.resolve(__dirname, 'public'),
     publicPath: './',
     filename: "[name].[hash].js",
     assetModuleFilename: 'assets/*/[name].[hash][ext]',

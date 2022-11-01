@@ -2,7 +2,7 @@ const path = require("path")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const globImporter = require("node-sass-glob-importer")
 const { WebpackManifestPlugin } = require("webpack-manifest-plugin")
-const HtmlWebpackPlugin = require("html-webpack-plugin")
+const DynamicHtmlWebpackPlugin = require("dynamic-html-webpack-plugin")
 const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin')
 const CopyPlugin = require("copy-webpack-plugin")
 
@@ -12,7 +12,6 @@ module.exports = {
       "./src/js/app.js",
       "./src/css/app.scss"
     ],
-    content: "./src/js/content.js"
   },
   module: {
     rules: [
@@ -62,20 +61,18 @@ module.exports = {
           filename: 'assets/media/[name][ext]',
         },
       },
-      {
-        test: /\.pdf$/i,
-        exclude: /node_modules/,
-        type: 'asset/resource',
-        generator: {
-          filename: 'assets/documents/[name][ext]',
-        },
-      }
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: 'src/index.html',
-      inject: "body",
+    new DynamicHtmlWebpackPlugin({
+      dir: "src",
+      additionalChunks: {
+        all: "app",
+      },
+      commonOptions: {
+        scriptLoading: "defer",
+        cache: false
+      }
     }),
     new SVGSpritemapPlugin(path.resolve(__dirname, "./src/assets/sprites/svgs/*.svg"), {
       output: {
@@ -109,8 +106,7 @@ module.exports = {
     }),
     new CopyPlugin({
       patterns: [
-        { from: "src/static", to: "" },
-        { from: "src/content", to: "content" },
+        { from: "src/static", to: "" }
       ],
     }),
     new WebpackManifestPlugin({

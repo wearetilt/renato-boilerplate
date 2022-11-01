@@ -7,7 +7,7 @@ $fallbacks: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 // https://www.madebymike.com.au/writing/fluid-type-calc-examples/
-  // font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));
+// font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));
 @mixin font-size($min: '1rem', $max: '4rem') {
   font-size: $min;
 

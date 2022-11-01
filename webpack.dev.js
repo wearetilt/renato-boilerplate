@@ -15,7 +15,7 @@ const devConfig = {
     ignored: ["node_modules"],
   },
   output: {
-    path: path.resolve(__dirname, 'art-of-allyship'),
+    path: path.resolve(__dirname, 'public'),
     publicPath: '/',
     filename: "[name].js",
     assetModuleFilename: 'assets/*/[name][ext]',
