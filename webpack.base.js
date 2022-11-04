@@ -104,11 +104,11 @@ module.exports = {
         filename: "./src/assets/sprites/tmpl.scss"
       }
     }),
-    new CopyPlugin({
-      patterns: [
-        { from: "src/static", to: "" }
-      ],
-    }),
+    // new CopyPlugin({
+    //   patterns: [
+    //     { from: "src/static", to: "" }
+    //   ],
+    // }),
     new WebpackManifestPlugin({
       writeToFileEmit: true,
       seed: {}

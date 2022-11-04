@@ -1,0 +1,47 @@
+.products{ 
+    margin: 70px 0;
+    
+  
+}
+
+.products-row {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.product-card{
+    margin: 0 20px;
+
+}
+
+.product-card img{
+    width: 100%;
+    height: 400px;
+}
+
+.coffee-card{ 
+    width: 40%;
+    background-color: #F0F0F0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+    text-align: center;
+    padding: 60px;
+    
+
+img{
+    width: 140px;
+    height: 140px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+}
+@media screen and (max-width: 700px) {
+    .products-row {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }

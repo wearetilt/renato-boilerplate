@@ -1,0 +1,26 @@
+.gallery h4{
+    text-transform: uppercase;
+}
+
+
+
+.gallery-images {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    img{
+        width: 33.33%;
+        height: 400px;
+        margin-right: 20px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .gallery-images {
+      display: block;
+    }
+    .gallery-images img{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}

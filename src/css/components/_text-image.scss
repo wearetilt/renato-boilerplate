@@ -1,0 +1,32 @@
+.text-image {
+    display: flex;
+    
+
+    .text {
+        width: 50%;
+
+        p {
+            width: 100%;
+        }
+    }
+
+    .image{
+        width: 50%;
+        margin: 20px;
+
+         img{
+           width: 100%;
+        }
+    }
+
+}
+@media screen and (max-width: 700px) {
+    .text-image {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+      .text, .image {
+          width: 100%;
+      }
+    }
+}
