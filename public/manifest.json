@@ -1,0 +1,14 @@
+{
+  "spritemap.js": "/spritemap.js",
+  "spritemap.svg": "/assets/sprites/sprite.svg",
+  "app.css": "/app.css",
+  "app.js": "/app.js",
+  "assets/images/star@2x.png": "/assets/images/star@2x.png",
+  "assets/images/media-filter.png": "/assets/images/media-filter.png",
+  "assets/images/membrane-filter.png": "/assets/images/membrane-filter.png",
+  "assets/images/breathing-filter.png": "/assets/images/breathing-filter.png",
+  "assets/images/intravenous-filter.png": "/assets/images/intravenous-filter.png",
+  "assets/images/water-filter.png": "/assets/images/water-filter.png",
+  "assets/images/Filtration-Guide-Vector@2x.png": "/assets/images/Filtration-Guide-Vector@2x.png",
+  "assets/images/Calculator-Tool.png": "/assets/images/Calculator-Tool.png"
+}

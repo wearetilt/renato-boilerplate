@@ -1,0 +1,30 @@
+footer {
+    display: flex;
+    background-color: #F6F6F6;
+    color: #6A6A6A;
+    font-size: 14px;
+    padding: 20px 0 20px 20px;
+
+    i{
+        padding-right: 5px;
+    }
+}
+
+.footer__links {
+    a{
+       padding: 0 10px; 
+    }
+    a:not(:last-child):after {
+        content: '•';
+        position: absolute;
+        padding: 0 10px;
+    }
+    a:hover {
+        border-bottom: 1px solid #6A6A6A;
+    }
+   
+}
+.footer__icons {
+    position: absolute;
+    right: 40px;
+}

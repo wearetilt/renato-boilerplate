@@ -1,0 +1,48 @@
+@mixin bg-img($size: cover) {
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: $size;
+}
+
+@mixin transition($props, $ease: var(--transition-ease), $duration: var(--transition-dur)) {
+  transition-duration: $duration;
+  transition-property: $props;
+  transition-timing-function: $ease;
+}
+
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin aspect-ratio($aspect: 100%) {
+  // Fallback (current, using padding hack)
+  @supports not (aspect-ratio) {
+    &::before {
+      content: "";
+      float: left;
+      padding-top: $aspect;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+  }
+}
+
+@mixin close-button($spacing: 24px) {
+  @include font-opensans(600);
+  position: absolute;
+  top: $spacing;
+  right: $spacing;
+  padding: 0;
+  font-size: 32px;
+  line-height: 1;
+  background: none;
+  border: none;
+  cursor: pointer;
+}

@@ -1,0 +1,109 @@
+@mixin title-weight {
+  @include font-opensans(400);
+
+  b {
+    @include font-opensans(800, italic);
+  }
+}
+
+@mixin title-extra {
+  @include title-weight;
+  @include font-size(2.75rem, 5rem);
+  letter-spacing: -0.03em;
+  line-height: calc(94 / 80);
+}
+
+@mixin title {
+  @include title-weight;
+  @include font-size(2rem, 3.75rem);
+  letter-spacing: -1.8px;
+  line-height: calc(70 / 60);
+}
+
+@mixin title-mid {
+  @include title-weight;
+  @include font-size(1.5rem, 2.5rem);
+  letter-spacing: -0.03em;
+  line-height: calc(60px / 50px);
+}
+
+@mixin title-small {
+  @include font-opensans(700, italic);
+  @include font-size(1.5rem, 2.5rem);
+  letter-spacing: -0.03em;
+  line-height: calc(60 / 40);
+}
+
+@mixin title-xsmall {
+  @include font-opensans(700, italic);
+  @include font-size(1.25rem, 1.875rem);
+  letter-spacing: -0.03em;
+  line-height: calc(36 / 30);
+}
+
+@mixin label {
+  @include font-opensans(600);
+  font-size: var(--font-xsmall);
+  letter-spacing: 0.05em;
+  line-height: calc(42px / 15px);
+  text-transform: uppercase;
+
+  @media screen and (min-width: 1024px) {
+    font-size: var(--font-small);
+  }
+}
+
+@mixin body-extra {
+  @include font-opensans(300);
+  @include font-size(1rem, 1.5rem);
+  line-height: calc(34 / 24);
+}
+
+@mixin body-lg {
+  @include font-opensans(400);
+  @include font-size(1rem, 1.25rem);
+  letter-spacing: -0.025em;
+}
+
+@mixin body-mid {
+  @include font-opensans(400);
+  @include font-size(1rem, 1.125rem);
+  line-height: calc(26 / 18);
+}
+
+@mixin body {
+  @include font-opensans(400);
+  font-size: 1rem;
+  line-height: 1.625;
+}
+
+@mixin inline-link {
+  @include transition(color);
+  display: inline-block;
+  position: relative;
+  text-decoration: underline;
+
+  &:hover {
+    color: var(--deloitte-green);
+  }
+}
+
+h1 {
+  @include title-extra
+}
+
+h2 {
+  @include title;
+}
+
+h3 {
+  font-size: 28px;
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+}
+
+h4 {
+  font-size: 24px;
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+}
