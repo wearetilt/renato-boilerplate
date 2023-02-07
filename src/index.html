@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <div class="page">
+  <main class="page">
     <header class="header">
       <a href="" class="logo">PALL</a>
       <a href="" class="">Medical</a>
@@ -32,12 +32,12 @@
         <img class="hero__image" src="<%=require('./assets/images/star@2x.png')%>" alt="">
       </div>
     </section>
-    
-    <div class="cards__section">
-      <div class="cards__header">
+
+    <section class="cards__section">
+      <header class="cards__header">
         <h4>OUR APPLICATIONS</h4>
-      </div>
-      <div class="card">
+      </header>
+      <article class="card">
         <div class="card__container">
           <h4><b>Filters</b></h4>
           <p class="card__intro"><b>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
@@ -46,9 +46,9 @@
           <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
             et dolore magna aliquyam erat, sed diam</p>
         </div>
-      </div>
+      </article>
 
-      <div class="card">
+      <article class="card">
         <img class="card__image" src="<%=require('./assets/images/breathing-filter.png')%>" alt="Avatar">
         <div class="card__container">
           <h4><b>Breathing Filters</b></h4>
@@ -56,8 +56,8 @@
             et dolore magna aliquyam erat, sed diam</p>
           <a class="card__link" href="url">Learn More <i class="fa-light fa-arrow-right"></i></a>
         </div>
-      </div>
-      <div class="card">
+      </article>
+      <article class="card">
         <img class="card__image" src="<%=require('./assets/images/water-filter.png')%>" alt="Avatar">
         <div class="card__container">
           <h4><b>Water Filters</b></h4>
@@ -65,8 +65,8 @@
             et dolore magna aliquyam erat, sed diam</p>
           <a class="card__link" href="url">Learn More <i class="fa-light fa-arrow-right"></i></a>
         </div>
-      </div>
-      <div class="card">
+      </article>
+      <article class="card">
         <img class="card__image" src="<%=require('./assets/images/intravenous-filter.png')%>" alt="Avatar">
         <div class="card__container">
           <h4><b>Intravenous Filters</b></h4>
@@ -74,8 +74,8 @@
             et dolore magna aliquyam erat, sed diam</p>
           <a class="card__link" href="url">Learn More <i class="fa-light fa-arrow-right"></i></a>
         </div>
-      </div>
-      <div class="card">
+      </article>
+      <article class="card">
         <img class="card__image" src="<%=require('./assets/images/membrane-filter.png')%>" alt="Avatar">
         <div class="card__container">
           <h4><b>Membrane Filters</b></h4>
@@ -83,8 +83,8 @@
             et dolore magna aliquyam erat, sed diam</p>
           <a class="card__link" href="url">Learn More <i class="fa-light fa-arrow-right"></i></a>
         </div>
-      </div>
-      <div class="card">
+      </article>
+      <article class="card">
         <img class="card__image" src="<%=require('./assets/images/media-filter.png')%>" alt="Avatar">
         <div class="card__container">
           <h4><b>Media Filters</b></h4>
@@ -92,10 +92,10 @@
             et dolore magna aliquyam erat, sed diam</p>
           <a class="card__link" href="url">Learn More <i class="fa-light fa-arrow-right"></i></a>
         </div>
-      </div>
-    </div>
+      </article>
+    </section>
 
-    <div class="filtration__guide">
+    <section class="filtration__guide">
       <div class="guide__left">
         <div class="guide__image">
           <img src="<%=require('./assets/images/Filtration-Guide-Vector@2x.png')%>" alt="">
@@ -110,10 +110,10 @@
           <button class="hero__button">Register<i class="fa-light fa-arrow-right"></i></button>
         </div>
       </div>
-    </div>
+    </section>
 
 
-    <div class="calculation__tool">
+    <section class="calculation__tool">
       <div class="calculation__left">
         <div class="calculation__content">
           <h5 class="support">Support</h5>
@@ -128,29 +128,51 @@
           <img src="<%=require('./assets/images/Calculator-Tool.png')%>" alt="">
         </div>
       </div>
-    </div>
- 
+    </section>
+
     <footer>
       <p class="cp__text">
-        © 2022 Pall Corporation   
+        © 2022 Pall Corporation
       </p>
-      <div class="footer__links">
-      <a href="">Terms of use</a>
-      <a href="">Privacy Policy</a>
-      <a href="">Manage cookies</a>
-      <a href="">Trademarks</a>
-      <a href="">Preferences</a>
-    </div>
-    <div class="footer__icons">
-      <i class="fa-brands fa-facebook-f"></i>
-      <i class="fa-brands fa-linkedin-in"></i>
-      <i class="fa-brands fa-instagram"></i>
-      <i class="fa-brands fa-twitter"></i>
-      <i class="fa-brands fa-youtube"></i>
-    </div>
+      <nav>
+        <ul class="footer__links">
+          <li>
+            <a href="">Terms of use</a>
+          </li>
+          <li>
+            <a href="">Privacy Policy</a>
+          </li>
+          <li>
+            <a href="">Manage cookies</a>
+          </li>
+          <li>
+            <a href="">Trademarks</a>
+          </li>
+          <li>
+            <a href="">Preferences</a>
+          </li>
+        </ul>
+      </nav>
+      <ul class="footer__icons">
+        <li>
+          <i class="fa-brands fa-facebook-f"></i>
+        </li>
+        <li>
+          <i class="fa-brands fa-linkedin-in"></i>
+        </li>
+        <li>
+          <i class="fa-brands fa-instagram"></i>
+        </li>
+        <li>
+          <i class="fa-brands fa-twitter"></i>
+        </li>
+        <li>
+          <i class="fa-brands fa-youtube"></i>
+        </li>
+      </ul>
     </footer>
 
-  </div>
+  </main>
 
 </body>
 
