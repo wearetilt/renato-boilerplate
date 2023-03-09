@@ -1,84 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=Noto+Sans+KR:wght@400;500&display=swap" rel="stylesheet">
-    <title>Renato's Boilerplate</title>
-  </head>
-  <body>
-    <div class="header">
-      <a href="" class="logo">Lazy Loaf Bakery</a>
-      <div class="header-right">
-        <a class="" href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=Noto+Sans+KR:wght@400;500&display=swap"
+    rel="stylesheet">
+  <script src="https://kit.fontawesome.com/07a943bde7.js" crossorigin="anonymous"></script>
+  <title>Renato's Boilerplate</title>
+</head>
+
+<body>
+  <section class="page__top">
+    <header>
+      <div class="header__right">
+        <a href="" class="logo__icon"><img src="<%=require('./assets/sprites/svgs/logo.svg')%>" alt="Avatar"></a>
       </div>
-    </div>
-
-    <div class="container">
-      <div class="hero">
-        <img class="hero-image" src="<%=require('./assets/images/bread.png')%>" alt="">
-        <h2 class="slogan">ARTISAN, SOURDOUGH BREADS FINE PATISSERIE & BEAUTIFUL CAKES</h2>
-      </div>
-      <div class="products">
-        <h4>Our products</h4>
-        <div class="products-row">
-          <div class="product-card">
-            <img src="<%=require('./assets/images/products-bread.jpeg')%>" alt="">
-            <div class="card-container">
-              <h4 class="product-name">Breads</h4>
-              <p class="product-sumary">Our breads are handcrafted with skill and patience and we allow a slower fermentation, giving our dough more time to prove.</p>
-            </div>
-          </div>
-
-          <div class="product-card">
-            <img src="<%=require('./assets/images/products-pastries.jpeg')%>" alt="">
-            <div class="card-container">
-              <h4 class="product-name">Pastries</h4>
-              <p class="product-sumary">Our skilled and experienced pastry chefs bake through the night every night making fine patisserie of exceptional quality.</p>
-            </div>
-          </div>
-
-          <div class="product-card">
-            <img src="<%=require('./assets/images/products-cakes.jpeg')%>" alt="">
-            <div class="card-container">
-              <h4 class="product-name">Cakes</h4>
-              <p class="product-sumary">Our artisan cakes are baked and hand-decorated daily. We create high-quality, homemade style, traditional and contemporary cakes.</p>
-            </div>
-          </div>
+      <div class="header__menu">
+        <a href="" class="search__icon"> <img class="card__image"
+            src="<%=require('./assets/sprites/svgs/Search-Icon.svg')%>" alt="Avatar"></a>
+        <a href="" class="sign__in">Sign in</a>
+        <div class="get__started__button">
+          <a href="" class="get__started">Get started</a>
+          <a href="" class="its__free"> - it's free</a>
         </div>
       </div>
-    
-
-      <div class="coffee-card">
-        <img src="<%=require('./assets/images/coffee.png')%>" alt="">
-        <h4>Our coffee</h4>
-        <p>We source our coffee from a local company who supply exceptional quality beans. Quality and freshness from roaster to cup guaranteed.</p>
+    </header>
+    <section class="hero">
+      <div class="hero__text">
+        <h1>Gorgeus Code Snippets</h1>
+        <p>With snipper, create fully customizable code snippets in a matter of seconds right from your browser.</p>
+        <div class="get__started__button">
+          <a href="" class="get__started">Get started</a>
+          <a href="" class="its__free"> - it's free</a>
+        </div>
+        <p>No credit card required.</p>
       </div>
-    
-
-
-    
-      <div class="gallery">
-        <h4>The cafe</h4>
-          <div class="gallery-images">
-            <img src="<%=require('./assets/images/gallery-cafe.jpeg')%>" alt="">
-            <img src="<%=require('./assets/images/gallery-barista.jpeg')%>" alt="">
-            <img src="<%=require('./assets/images/gallery-customers.jpeg')%>" alt="">
-          </div>
+      <img class="card__image" src="<%=require('./assets/images/Snippet-Image.png')%>" alt="Avatar">
+    </section>
+  </section>
+  <section class="text__image">
+    <div class="text__left">
+      <h4>A fully customizable code snippet editor</h4>
+      <p>Fully customize the color scheme of oyur code snippet, or use our own premade color schemes. Export your code
+        snippets in JPG, PDF, PNG, or any of the other 10+ common extensions.</p>
+      <div class="get__started__button">
+        <a href="" class="get__started">Get started</a>
+        <a href="" class="its__free"> - it's free</a>
       </div>
     </div>
+    <div class="image__right">
+      <img class="card__image" src="<%=require('./assets/images/Customizable-Image.png')%>" alt="Avatar">
+    </div>
+  </section>
+  <footer>
+    <div class="logo">
+      <a href="" class="logo__icon"><img src="<%=require('./assets/sprites/svgs/logo.svg')%>" alt="Avatar"></i></a>
+    </div>
+    <div class="footer__menu">
+      <a href="" class="terms">Terms and Conditions</a>
+      <a href="" class="policy">Privacy policy</a>
+    </div>
+  </footer>
 
-   <div class="footer">
-    <a href="index.html" class="logo">Lazy Loaf Bakery</a>
-    <p>© 2022</p>
-   </div>
+</body>
 
-
-
-
-  </body>
 </html>

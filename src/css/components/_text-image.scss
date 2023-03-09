@@ -1,32 +1,19 @@
-.text-image {
-    display: flex;
-    
-
-    .text {
-        width: 50%;
-
-        p {
-            width: 100%;
-        }
-    }
-
-    .image{
-        width: 50%;
-        margin: 20px;
-
-         img{
-           width: 100%;
-        }
-    }
-
+.text__image {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 5px;
+  margin: 0 20px;
 }
 @media screen and (max-width: 700px) {
-    .text-image {
+  .text__image {
+    width: 100%;
+    display: block;
+    margin: 30px 20px;
+    .text__left,
+    .image__right {
       width: 100%;
-      display: block;
-      margin-bottom: 20px;
-      .text, .image {
-          width: 100%;
-      }
+      margin: 30px 0;
     }
+  }
 }

@@ -1,21 +1,19 @@
-
 .hero {
-    margin-bottom: 150px;
+  margin-bottom: 80px;
 }
 
-.hero-image{
-    width: 140px;
-    height: 140px;
-    display: flex;
-    margin: auto;
-    margin-top: 40px; 
-    margin-bottom: 40px;
+.card__image {
+  max-width: 70%;
+  display: flex;
+  margin: auto;
 }
 
-.slogan{
-    font-weight: 400;
-    width: 70%;
+.hero__text {
+  text-align: center;
+  h1 {
+    font-weight: 700;
+  }
+  .get__started__button {
     margin: auto;
-    text-align: center;
-  
+  }
 }
